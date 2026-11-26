@@ -1,8 +1,125 @@
 
 === gold_auctions ===
-[robots] https://www.manappuram.com/robots.txt -> HTTP 200, 1988 bytes
-[robots] https://www.manappuram.com/auction-publications -> HTTP 200, server=cloudflare
-[robots] DISALLOWED: https://www.manappuram.com/auction-publications?field_state_target_id=1032&page=0
-auction list disallowed by robots.txt; skipping
+[robots] allowed: https://www.manappuram.com/auction-publications?field_state_target_id=1032&page=0
+notices listed: 99 across 10 pages, 2026-04-30..2026-10-14
+[robots] allowed: https://www.manappuram.com/branch-network
+branches: 35 in TN, 35 mapped to 34 districts
+  2026-05_The-New-Indian-Express-Chennai-30-04-2026-page-12.pdf: ocr, 33105 chars
+  [probe] New indian Express Chennai 30.04.26: page 33105 chars, notice 4898 chars, loan-like tokens 6
+  [probe] layout:  W W W W W W W W 999999999 W 99.99, W W W W W W W W W W W (W W W W W W, 9999999999999999, W W W, W W, 9999999999999999, W W (9999999999999999, W), W W, (9999999999999999, W, W W W, ‘W999999999) W W W W W W W W W W W W W W W W W, 99,999-W W W W W W) W W W W W W W W W, W W W W W|W W W ‘W: (99) W W W, W W, W-999, W999, W W W W, W W, W, W - \999 999. W W : W W, 99. W W, W, [W -999 999. (99) W W W, W W, W-999, W999, W W W W, W W, W, W - |999 999. W W : W W, 99, W W, W [W - 999 999, W W, |W W W W W W W W W W W!W W W W W W W W: W- W 999W, W - 999999, W
+  2026-05_Dinamani---Tiruchy-30-04-2026-page-5.pdf: ocr, 5208 chars
+  2026-05_Dinamani--Tirunelveli-30-04-2026-page-2.pdf: ocr, 5754 chars
+  2026-05_Dinamani-Madurai-30-04-2026-page-2.pdf: ocr, 2970 chars
+  2026-05_Dinamani-Coimbatore-30-04-2026-page-5.pdf: ocr, 8482 chars
+  2026-05_The-New-Indian-Express-Coimbatore-30-04-2026-page-5.pdf: ocr, 2671 chars
+  [probe] NEW INDIAN EXRESS Coimbatore 30.04.26: page 2671 chars, notice 2076 chars, loan-like tokens 4
+  [probe] layout: W W W W W 9999999 W 9999 W W, W W W W W W W W W W W W W W W W W W W W W W W, W W W W W W W W W W W, W W W W W W W W W ‘W W W W W: W, W, 9999999999999999, W, W, (999999999999999,TIRUPUR, ANUPPARPALAYAM, 9999999999999999, W W W W W W W W W W W W W W W W! W W, 99999 W W W {W W W) W W W W W W W W W W ‘W W W W W W W, W W W W W W9999 99, W W W W W W) W W W W W W (W) W W W W W W W ‘& W W W W W W,, W W W W (W) W W W W W W ‘W W W “W W & W W W W W W, W (W)”. W W W W W W W W W W W W W W
+  2026-05_The-New-Indian-Express-Tiruchy-30-04-2026-page-9.pdf: ocr, 7862 chars
+  [probe] NEW INDIAN EXRESS Trichy 30.04.26: page 7862 chars, notice 7862 chars, loan-like tokens 14
+  [probe] layout: W W 9999999 W 99.99 W W W W 9W W W! W W W W W W W W W W W W W W W,W W W W W W W W ‘W W W W W W W W W W W W W W W W W W W KARUR, KARUR, 9999999999999999, W W 9999999999999999, 9999, W, W W W, 9999999999999999. W, W W, 9999999999999999, W, 999999999999999, W W’ 99999999999999999, THIRUPPANANTHAL, 9999999999999999 9999999999999999, W, W, 9W99999999999999, 9999, NIDAMANGALAM, 999999999999999% W, W! W, 9999999999999999, W W, W 9W9, W W W W W W W W W W W W W W W W W 9 999- W W {W W W) W W W W W W W W W W ‘W W W W 'W W/W W, W W W W W 99999999. ‘W W W W W W W W W W W W W, W (W (W) W) W:W:W:W:W-9/ 999 /9999-99 W:99-99-9999 W W W:99/
+  2026-05_The-New-Indian-Express-Tirunelveli-30-04-2026-page-12.pdf: ocr, 13084 chars
+  2026-05_The-New-Indian-Express-Madurai-30-04-2026-page-12.pdf: ocr, 10490 chars
+  2026-05_Dinamani-Chennai-30-04-2026-page-12.pdf: ocr, 10082 chars
+  2026-06_26.5.2026_20Andaman_20kural_20NEW.pdf: ocr, 19507 chars
+  2026-06_Dinamani---Vellore-26-05-2026-page-9.pdf: ocr, 2719 chars
+  2026-06_Dinamani---Tiruchy-26-05-2026-page-9.pdf: ocr, 5501 chars
+  2026-06_Dinamani--Tirunelveli-26-05-2026-page-9.pdf: ocr, 2477 chars
+  2026-06_Dinamani-Madurai-26-05-2026-page-9.pdf: ocr, 4755 chars
+  2026-06_Dinamani-Coimbatore-26-05-2026-page-12.pdf: ocr, 9210 chars
+  2026-06_Dinamani---Dharmapuri-26-05-2026-page-9.pdf: ocr, 11161 chars
+  2026-06_The-New-Indian-Express-Vellore-26-05-2026-page-9.pdf: ocr, 3560 chars
+  2026-06_The-New-Indian-Express-Tiruchy-26-05-2026-page-9.pdf: ocr, 5703 chars
+  2026-06_The-New-Indian-Express-Tirunelveli-26-05-2026-page-5.pdf: ocr, 7389 chars
+  2026-06_The-New-Indian-Express-Madurai-26-05-2026-page-7.pdf: ocr, 10628 chars
+  2026-06_The-New-Indian-Express-Dharmapuri-26-05-2026-page-9.pdf: ocr, 12291 chars
+  2026-06_The-New-Indian-Express-Coimbatore-26-05-2026-page-5.pdf: ocr, 13418 chars
+  2026-06_The-New-Indian-Express-Chennai-26-05-2026-page-7.pdf: ocr, 13921 chars
+  2026-06_Dinamani-Chennai-26-05-2026-page-2.pdf: ocr, 8083 chars
+  2026-07_Dinamani---Dharmapuri-29-06-2026-page-3.pdf: ocr, 5262 chars
+  2026-07_Andaman_20Kural_20NEW_20PDF_2029.06.26.pdf: ocr, 18883 chars
+  2026-07_Dinamani---Vellore-29-06-2026-page-5.pdf: ocr, 3801 chars
+  2026-07_Dinamani---Tiruchy-29-06-2026-page-2.pdf: ocr, 1388 chars
+  2026-07_Dinamani--Tirunelveli-29-06-2026-page-5.pdf: ocr, 2042 chars
+  2026-07_Dinamani-Madurai-29-06-2026-page-2.pdf: ocr, 2869 chars
+  2026-07_Dinamani-Coimbatore-29-06-2026-page-3.pdf: ocr, 2923 chars
+  2026-07_The-New-Indian-Express-Madurai-29-06-2026-page-7.pdf: ocr, 7245 chars
+  2026-07_Echo_20of_20India_2029.06.26.pdf: ocr, 716 chars
+  2026-07_The-New-Indian-Express-Vellore-29-06-2026-page-3.pdf: ocr, 2396 chars
+  2026-07_The-New-Indian-Express-Tiruchy-29-06-2026-page-7.pdf: ocr, 7469 chars
+  2026-07_The-New-Indian-Express-Tirunelveli-29-06-2026--page-9.pdf: ocr, 2733 chars
+  2026-07_The-New-Indian-Express-Dharmapuri-29-06-2026-page-9.pdf: ocr, 3777 chars
+  2026-07_The-New-Indian-Express-Coimbatore-29-06-2026-page-7.pdf: ocr, 6457 chars
+  2026-07_Dinamani-Chennai-29-06-2026-page-5.pdf: ocr, 3855 chars
+  2026-07_The-New-Indian-Express-Chennai-29-06-2026-page-11.pdf: ocr, 8955 chars
+  2026-09_The-New-Indian-Express-Chennai-28-07-2026-page-11.pdf: ocr, 30353 chars
+  2026-09_Dinamani-Chennai-28-07-2026-page-9.pdf: ocr, 17458 chars
+  2026-09_Dinamani-Coimbatore-28-07-2026-page-5.pdf: ocr, 12041 chars
+  2026-09_Dinamani---Dharmapuri-28-07-2026-page-2.pdf: ocr, 15087 chars
+  2026-09_Dinamani-Madurai-28-07-2026-page-2.pdf: ocr, 14600 chars
+  2026-09_Dinamani---Tiruchy-28-07-2026-page-3.pdf: ocr, 8007 chars
+  2026-09_Dinamani--Tirunelveli-28-07-2026-page-5.pdf: ocr, 6106 chars
+  2026-09_Dinamani---Vellore-28-07-2026-page-3.pdf: ocr, 5226 chars
+  2026-09_The-New-Indian-Express-Coimbatore-28-07-2026-page-9.pdf: ocr, 15753 chars
+  2026-09_The-New-Indian-Express-Madurai-28-07-2026-page-11.pdf: ocr, 5409 chars
+  2026-09_The-New-Indian-Express-Tirunelveli-28-07-2026-page-3.pdf: ocr, 8994 chars
+  2026-09_The-New-Indian-Express-Tiruchy-28-07-2026-page-5.pdf: ocr, 9748 chars
+  2026-09_The-New-Indian-Express-Vellore-28-07-2026-page-5.pdf: ocr, 5790 chars
+  2026-09_The-New-Indian-Express-Dharmapuri-28-07-2026-page-2.pdf: ocr, 20700 chars
+  2026-10_The-New-Indian-Express-Dharmapuri-19-08-2026-page-6.pdf: ocr, 25822 chars
+  2026-10_Dinamani---Vellore-19-08-2026-page-2.pdf: ocr, 10757 chars
+  2026-10_Dinamani---Tiruchy-19-08-2026-page-9.pdf: ocr, 14953 chars
+  2026-10_Dinamani--Tirunelveli-19-08-2026-page-5.pdf: ocr, 7539 chars
+  2026-10_Dinamani-Madurai-19-08-2026-page-5.pdf: ocr, 15488 chars
+  2026-10_Dinamani-Coimbatore-19-08-2026-page-9.pdf: ocr, 20756 chars
+  2026-10_Dinamani---Dharmapuri-19-08-2026-page-10.pdf: ocr, 18958 chars
+  2026-10_The-New-Indian-Express-Vellore-19-08-2026-page-12.pdf: ocr, 7948 chars
+  2026-10_The-New-Indian-Express-Tiruchy-19-08-2026-page-6.pdf: ocr, 26345 chars
+  2026-10_The-New-Indian-Express-Tirunelveli-19-08-2026-page-12.pdf: ocr, 10445 chars
+  2026-10_The-New-Indian-Express-Madurai-19-08-2026-page-11.pdf: ocr, 16900 chars
+  2026-10_The-New-Indian-Express-Coimbatore-19-08-2026-page-6.pdf: ocr, 26117 chars
+  2026-10_The-New-Indian-Express-Chennai-19-08-2026-page-12.pdf: ocr, 29954 chars
+  2026-10_Dinamani-Chennai-19-08-2026-page-6.pdf: ocr, 34591 chars
+  2026-10_Echo_20Of_20India_20-_20PB_20MF_2020.8.26.pdf: ocr, 3001 chars
+  2026-10_Andaman_20Kural_2020.08.2026.pdf: ocr, 3604 chars
+  2026-11_The-New-Indian-Express-Dharmapuri-22-08-2026-page-6.pdf: ocr, 23989 chars
+  2026-11_The-New-Indian-Express-Vellore-22-08-2026-page-5.pdf: ocr, 10366 chars
+  2026-11_The-New-Indian-Express-Tiruchy-22-08-2026-page-6.pdf: ocr, 23039 chars
+  2026-11_The-New-Indian-Express-Tirunelveli-22-08-2026-page-9.pdf: ocr, 7733 chars
+  2026-11_The-New-Indian-Express-Madurai-22-08-2026-page-5.pdf: ocr, 6200 chars
+  2026-11_The-New-Indian-Express-Coimbatore-22-08-2026-page-6.pdf: ocr, 28335 chars
+  2026-11_Dinamani--Tirunelveli-22-08-2026-page-2.pdf: ocr, 2958 chars
+  2026-11_Dinamani---Vellore-22-08-2026-page-5.pdf: ocr, 2820 chars
+  2026-11_Dinamani---Tiruchy-22-08-2026-page-2.pdf: ocr, 3597 chars
+  2026-11_Dinamani-Madurai-22-08-2026-page-2.pdf: ocr, 7838 chars
+  2026-11_Dinamani---Dharmapuri-22-08-2026-page-3.pdf: ocr, 3954 chars
+  2026-11_Dinamani-Coimbatore-22-08-2026-page-5.pdf: ocr, 10795 chars
+  2026-11_Dinamani-Chennai-22-08-2026-page-7.pdf: ocr, 19434 chars
+  2026-11_The-New-Indian-Express-Chennai-22-08-2026-page-6.pdf: ocr, 35121 chars
+  2026-11_14th_20Oct-Dinamani-Tiruchy.pdf: ocr, 14663 chars
+  2026-11_14th_20Oct-Dinamani-Tirunelveli.pdf: ocr, 5144 chars
+  2026-11_14th_20Oct-Dinamani-Madurai.pdf: ocr, 13395 chars
+  2026-11_14th_20Oct-Dinamani-Dharmapuri.pdf: ocr, 19690 chars
+  2026-11_14th_20Oct-Dinamani-Coimbatore.pdf: ocr, 3471 chars
+  2026-11_14th_20Oct-Dinamani-Chennai.pdf: ocr, 28508 chars
+  2026-11_14th_20Oct-TNIE-Tirunelveli.pdf: ocr, 14456 chars
+  2026-11_14th_20Oct-TNIE-Tiruchy.pdf: ocr, 29967 chars
+  2026-11_14th_20Oct-TNIE-Madurai.pdf: ocr, 28139 chars
+  2026-11_14th_20Oct-TNIE-Dharmapuri.pdf: ocr, 31856 chars
+  2026-11_14th_20Oct-TNIE-Coimbatore.pdf: ocr, 29171 chars
+  2026-11_14th_20Oct-TNIE-Chennai.pdf: ocr, 37901 chars
+  2026-11_14th_20Oct-TNIE-Vellore.pdf: ocr, 11628 chars
+  2026-11_14th_20Oct-Dinamani-Vellore.pdf: ocr, 7652 chars
+gold auctions: 1952 accounts, 30 branches, 29 districts, months 2026-04..2026-10
+status
+no branch found               58
+rules                         37
+no Manappuram notice found     4
+district  Coimbatore  Madurai  Villupuram
+month                                    
+2026-05           17       50           0
+2026-06            3        0           0
+2026-07           21       27          18
+2026-08          128       17           0
+2026-10           30       34           0
 
 Done. Failed: none
