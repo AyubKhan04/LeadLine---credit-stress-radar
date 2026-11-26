@@ -1,0 +1,6 @@
+
+=== gold_auctions ===
+[robots] DISALLOWED: https://www.manappuram.com/auction-publications?field_state_target_id=1032&page=0
+auction list disallowed by robots.txt; skipping
+
+Done. Failed: none
