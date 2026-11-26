@@ -59,7 +59,8 @@ def _gemini(prompt, system, max_tokens, json_mode):
     for model in list(GEMINI_MODELS):
         for attempt in range(4):
             r = requests.post(GEMINI_URL.format(model=model), json=body, headers=headers, timeout=120)
-            if r.status_code == 429:  # free-tier per-minute limit: wait and retry
+            if r.status_code == 429 or r.status_code >= 500:  # rate limit or Google busy: wait, retry
+                last = f"{model}: HTTP {r.status_code}"
                 time.sleep(15 * (attempt + 1))
                 continue
             if r.status_code == 404:  # model name retired: try the next one
@@ -70,7 +71,7 @@ def _gemini(prompt, system, max_tokens, json_mode):
             parts = r.json().get("candidates", [{}])[0].get("content", {}).get("parts", [])
             return "".join(x.get("text", "") for x in parts).strip()
         else:
-            last = f"{model}: rate limited"
+            continue  # retries used up on this model: try the next one
     raise RuntimeError(f"Gemini failed ({last})")
 
 
