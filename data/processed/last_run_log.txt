@@ -13,18 +13,18 @@ rainfall: 380 rows, 2019-01..2026-11
 gold: 94 rows, 2019-01..2026-10, FX missing for 0 months
 
 === trends ===
-[trends] retry in 60s after: The request failed: Google returned a response with code 429
 trends: 5 terms, 2019-01..2026-11
-trends city: 0 rows
 
 === app_reviews ===
 [robots] allowed: https://itunes.apple.com/in/rss/customerreviews/page=1/id=1/sortby=mostrecent/json
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   KreditBee: Personal Loans, UPI: 0 reviews
-  Navi: UPI, Payments, Insurance: 100 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Navi: UPI, Payments, Insurance: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   Moneyview: Personal Loan App: 0 reviews
-  Personal Loan App by Fibe: 50 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Personal Loan App by Fibe: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   mPokket: Instant Personal Loan: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
@@ -41,7 +41,9 @@ trends city: 0 rows
   Online Gold loan: Rupeek: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   IIFL Finance: 0 reviews
-AI classifier skipped (no ANTHROPIC_API_KEY)
-app reviews: 150 reviews from 2 apps, 2026-10..2026-11; not found: []
+app reviews: nothing collected
+
+=== review_dataset ===
+review dataset: data/raw/slicepay_reviews.csv not found and no Kaggle credentials; skipping
 
 Done. Failed: none
