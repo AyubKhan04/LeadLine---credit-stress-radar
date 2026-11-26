@@ -23,6 +23,8 @@ jobs:
       - name: Run collectors
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
         run: python run_collectors.py 2>&1 | tee data/processed/last_run_log.txt
       - name: Commit processed data
         run: |

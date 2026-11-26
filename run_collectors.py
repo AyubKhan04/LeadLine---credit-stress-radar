@@ -3,7 +3,7 @@ import importlib
 import sys
 import traceback
 
-COLLECTORS = ["repo_rate", "rainfall", "gold", "trends", "app_reviews"]
+COLLECTORS = ["repo_rate", "rainfall", "gold", "trends", "app_reviews", "review_dataset"]
 
 if __name__ == "__main__":
     wanted = sys.argv[1:] or COLLECTORS
