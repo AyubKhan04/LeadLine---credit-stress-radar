@@ -19,7 +19,7 @@ RULES = {
         r"தொல்லை", r"டார்ச்சர்", r"அசிங்க", r"கேவலம", r"திட்டு",
     ],
     "threats": [
-        r"threat", r"blackmail", r"legal action", r"police case", r"\bfir\b", r"arrest",
+        r"threat", r"blackmail", r"legal action", r"police case", r"(?-i:\bFIR\b)", r"arrest",
         r"viral", r"defam", r"photos? (to|with)", r"suicide",
         r"மிரட்ட", r"மிரட்டல்", r"போலீஸ்", r"தற்கொலை", r"mirat",
     ],
@@ -47,7 +47,11 @@ def language(text: str) -> str:
     return "ta" if _TAMIL.search(text or "") else "en"
 
 
-def rule_labels(text: str) -> list[str]:
+def rule_labels(text: str, rating: int | None = None) -> list[str]:
+    """Keyword labels. 4-5 star reviews are never counted as complaints
+    (they mention "fraud" mostly to praise the app as not being one)."""
+    if rating is not None and rating >= 4:
+        return []
     t = text or ""
     return [k for k, pats in _COMPILED.items() if any(p.search(t) for p in pats)]
 

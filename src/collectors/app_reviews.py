@@ -97,7 +97,7 @@ def main():
 
     df = pd.DataFrame(rows).drop_duplicates()
     df["lang"] = df["text"].map(language)
-    df["labels"] = df["text"].map(rule_labels)
+    df["labels"] = [rule_labels(t, r) for t, r in zip(df["text"], df["rating"])]
     df["labelled_by"] = df["labels"].map(lambda l: "rules" if l else "")
 
     # Optional AI pass: only low-star reviews the rules didn't catch

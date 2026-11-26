@@ -45,6 +45,7 @@ To use the AI classifier there, add `ANTHROPIC_API_KEY` as a repository secret.
 | `gold_monthly.csv` | [World Bank Pink Sheet](https://www.worldbank.org/en/research/commodity-markets) gold USD/oz x USD/INR from [FRED EXINUS](https://fred.stlouisfed.org/series/EXINUS), falling back to ECB reference rates | CC BY 4.0 / public | national x month |
 | `repo_rate_monthly.csv` | RBI Monetary Policy press releases (change dates kept in `repo_rate.py`) | public | national x month |
 | `trends_tn_monthly.csv` | Google Trends via pytrends, geo IN-TN | unofficial API; robots.txt only blocks the `/explore?` web page | state x month x term |
+| `play_reviews_dataset_monthly.csv` | [SLICE PAY App Reviews](https://www.kaggle.com/datasets/pavan9065/slice-pay-app-reviews) on Kaggle: Google Play reviews of the slice credit app | CC0 public domain | month |
 | `app_reviews_monthly.csv`, `app_reviews_monthly_by_app.csv` | Apple App Store public review RSS feed (India), 12 lending and gold-loan apps | public feed; only counts are committed | month (x app) |
 
 Every collector checks robots.txt before fetching and sends an identifying User-Agent at low volume.
@@ -59,11 +60,14 @@ programmatic use under its own terms, so we use it (4 requests per run) and log 
 | Gold (INR/10g) | 94 | 2019-01 to 2026-10 | Nov 2026 arrives with the World Bank's early-December update. FRED timed out from GitHub's runners, so FX came from the ECB fallback |
 | Repo rate | 95 | 2019-01 to 2026-11 | 19 rate changes, latest 5.50% from 7 Oct 2026 |
 | Google Trends (TN) | 475 | 2019-01 to 2026-11, 5 terms | English terms have no zero months. Tamil terms are thin: "நகை அடகு" is zero in 39 of 95 months, "நகை கடன்" in 14 |
-| App reviews | 150 reviews | 2026-10 to 2026-11 only | Only 2 of 12 apps (Navi, Fibe) have reviews in Apple's India feed. 10 stress complaints found by rules, no Tamil reviews |
+| Play reviews dataset (slice) | 150,444 reviews | 2019-01 to 2022-08 | 3,279 stress complaints (2.4% of reviews a month on average): fraud 2,052, hidden charges 861, harassment 367, threats 248, recovery agents 86. Only 13 Tamil-script reviews |
+| App reviews (Apple feed) | 150 reviews | 2026-10 to 2026-11 only | Only 2 of 12 apps (Navi, Fibe) have reviews in Apple's India feed |
 
 ### Complaint labels
 
-`harassment`, `threats`, `hidden_charges`, `recovery_agents`, `fraud`. Keyword rules in English, Tamil script and some Tanglish run first. If `ANTHROPIC_API_KEY` is set, low-star (1-2) reviews the rules missed go to `claude-haiku-5-5` in batches of 20, capped at 300 reviews per run (well under a cent at Haiku prices). Without a key the AI step is skipped and everything still runs.
+`harassment`, `threats`, `hidden_charges`, `recovery_agents`, `fraud`. Keyword rules in English, Tamil script and some Tanglish run first. If `ANTHROPIC_API_KEY` is set, low-star (1-2) reviews the rules missed go to `claude-haiku-5-5` in batches of 20, capped at 300 reviews per run (well under a cent at Haiku prices). Without a key the AI step is skipped and everything still runs. Reviews rated 4-5 stars are never counted as complaints (in the slice data, "fraud" in a 5-star review usually means "unlike fraud apps").
+
+To rebuild the slice numbers, put `slicepay_reviews.csv` in `data/raw/` (Kaggle needs a login to download), or add `KAGGLE_USERNAME` and `KAGGLE_KEY` as repository secrets so the workflow fetches it. Reviewer names and ids are never loaded.
 
 ## Known gaps and caveats (honest list)
 
@@ -71,7 +75,8 @@ programmatic use under its own terms, so we use it (4 requests per run) and log 
 - **Gold is the international price in rupees,** without import duty and GST, so it sits below IBJA/retail rates. Levels differ; month-on-month moves track closely. IBJA has no open API. The World Bank file updates early each month and FRED's FX series lags about a month, so the newest month can be missing.
 - **Repo rate is a hand-kept table.** Add a row after each MPC meeting that changes the rate (next one early December 2026).
 - **Google Trends has no district signal.** Google gives no city time series for India, and the city breakdown inside Tamil Nadu came back empty for every term and year, so Trends is a state-level series only. Values are 0-100 relative within each term. Tamil-script terms have low volume and can come back empty. pytrends is unofficial and Google rate-limits it; failed calls are listed in `trends_failures.csv`.
-- **Google Play reviews are not collected.** play.google.com/robots.txt disallows `/_/` and `/store/getreviews`, the endpoints review scrapers (including google-play-scraper) use. Apple's feed is used instead, which means: far fewer reviews (iPhone share in India is small; 10 of 12 apps returned none), mostly English, and at most the latest 500 reviews per app, so history only goes back weeks or months, not to 2019. As it stands this is too thin to drive the index; options are listed in the PR. Reviews carry no location, so this is a state/national signal, not a district one.
+- **Google Play reviews are not collected.** play.google.com/robots.txt disallows `/_/` and `/store/getreviews`, the endpoints review scrapers (including google-play-scraper) use. Apple's feed is used instead, which means: far fewer reviews (iPhone share in India is small; 10 of 12 apps returned none), mostly English, and at most the latest 500 reviews per app, so history only goes back weeks or months, not to 2019. On its own it is too thin to drive the index.
+- **The Play review dataset covers one app and stops in August 2022.** No openly licensed dataset of Indian loan-app Play reviews from 2023 on was found (Kaggle, Hugging Face, Mendeley searched in Nov 2026). slice is a credit-card/BNPL app used mostly by students and young earners, not a gold-loan or payday lender, so it shows digital-credit stress, not rural jewel-loan stress. Volume jumps from about 1,000 to 20,000 reviews a month in 2022, so use the complaint share, not raw counts. There's a gap from Sep 2022 to Sep 2026 between this dataset and the Apple feed. Reviews carry no location, so this is a state/national signal, not a district one.
 - **No personal data is stored in git.** Reviewer names and ids are never read; review text stays in git-ignored `data/raw/`.
 
 See `data/processed/last_run_log.txt` for the latest run's coverage.

@@ -49,7 +49,7 @@ def main():
     df = df[df["at"] >= pd.Timestamp(START)]
     df["rating"] = df["score"].astype(int)
     df["lang"] = df["content"].map(language)
-    df["labels"] = df["content"].map(rule_labels)
+    df["labels"] = [rule_labels(t, r) for t, r in zip(df["content"], df["rating"])]
     df["labelled_by"] = df["labels"].map(lambda l: "rules" if l else "")
 
     todo = df[(df["rating"] <= 2) & (df["labels"].str.len() == 0)]
