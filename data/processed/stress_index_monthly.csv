@@ -1,0 +1,381 @@
+district,month,stress_index,band,why,weight_used,score_pawn_search,score_rain,score_auctions,score_digital_credit,score_rates,score_gold_price,pts_pawn_search,pts_rain,pts_auctions,pts_digital_credit,pts_rates,pts_gold_price
+Chennai,2019-01,,,not enough data,10,,,,,97.9,,,,,,97.9,
+Chennai,2019-02,,,not enough data,30,,41.3,,,91.7,,,27.5,,,30.6,
+Chennai,2019-03,,,not enough data,30,,28.3,,,91.7,,,18.8,,,30.6,
+Chennai,2019-04,,,not enough data,30,,50.0,,,83.3,,,33.3,,,27.8,
+Chennai,2019-05,,,not enough data,30,,45.7,,,83.3,,,30.4,,,27.8,
+Chennai,2019-06,,,not enough data,30,,58.7,,,75.0,,,39.1,,,25.0,
+Chennai,2019-07,,,not enough data,30,,93.5,,,75.0,,,62.3,,,25.0,
+Chennai,2019-08,,,not enough data,30,,71.7,,,66.7,,,47.8,,,22.2,
+Chennai,2019-09,,,not enough data,30,,76.1,,,66.7,,,50.7,,,22.2,
+Chennai,2019-10,,,not enough data,30,,67.4,,,50.0,,,44.9,,,16.7,
+Chennai,2019-11,,,not enough data,30,,54.3,,,50.0,,,36.2,,,16.7,
+Chennai,2019-12,,,not enough data,30,,89.1,,,50.0,,,59.4,,,16.7,
+Chennai,2020-01,36.3,Low,falling gold prices (88/100); demand for and complaints about instant loan apps (79/100),80,4.2,32.6,,79.2,50.0,87.5,1.6,8.2,,14.8,6.2,5.5
+Chennai,2020-02,54.9,Watch,falling gold prices (96/100); demand for and complaints about instant loan apps (96/100),80,37.5,37.0,,95.8,60.4,95.8,14.1,9.2,,18.0,7.6,6.0
+Chennai,2020-03,42.2,Watch,demand for and complaints about instant loan apps (88/100),80,37.5,23.9,,87.5,14.6,62.5,14.1,6.0,,16.4,1.8,3.9
+Chennai,2020-04,33.2,Low,demand for and complaints about instant loan apps (71/100),80,37.5,6.5,,70.8,27.1,12.5,14.1,1.6,,13.3,3.4,0.8
+Chennai,2020-05,22.4,Low,all signals near or below normal,80,20.8,15.2,,54.2,2.1,4.2,7.8,3.8,,10.2,0.3,0.3
+Chennai,2020-06,52.2,Watch,people searching to pawn jewellery (96/100),80,95.8,19.6,,45.8,8.3,29.2,35.9,4.9,,8.6,1.0,1.8
+Chennai,2020-07,47.0,Watch,all signals near or below normal,80,62.5,63.0,,29.2,8.3,20.8,23.4,15.8,,5.5,1.0,1.3
+Chennai,2020-08,58.3,Watch,unusual rainfall (drought or flood) in recent months (98/100); people searching to pawn jewellery (71/100),80,70.8,97.8,,12.5,20.8,37.5,26.6,24.5,,2.3,2.6,2.3
+Chennai,2020-09,58.7,Watch,unusual rainfall (drought or flood) in recent months (85/100); people searching to pawn jewellery (79/100); falling gold prices (71/100),80,79.2,84.8,,4.2,20.8,70.8,29.7,21.2,,0.8,2.6,4.4
+Chennai,2020-10,52.1,Watch,unusual rainfall (drought or flood) in recent months (80/100),80,54.2,80.4,,20.8,35.4,54.2,20.3,20.1,,3.9,4.4,3.4
+Chennai,2020-11,49.8,Watch,people searching to pawn jewellery (88/100),80,87.5,10.9,,37.5,35.4,45.8,32.8,2.7,,7.0,4.4,2.9
+Chennai,2020-12,26.2,Low,falling gold prices (79/100),80,12.5,2.2,,62.5,35.4,79.2,4.7,0.5,,11.7,4.4,4.9
+Chennai,2021-01,48.9,Watch,falling gold prices (81/100); people searching to pawn jewellery (73/100),80,73.1,10.4,,50.0,36.0,80.8,27.4,2.6,,9.4,4.5,5.0
+Chennai,2021-02,71.0,High,people searching to pawn jewellery (96/100); falling gold prices (96/100); unusual rainfall (drought or flood) in recent months (94/100),80,96.4,94.0,,3.6,36.5,96.4,36.2,23.5,,0.7,4.6,6.0
+Chennai,2021-03,73.1,High,unusual rainfall (drought or flood) in recent months (98/100); people searching to pawn jewellery (97/100); falling gold prices (97/100),80,96.7,98.1,,3.3,46.3,96.7,36.2,24.5,,0.6,5.8,6.0
+Chennai,2021-04,74.7,High,falling gold prices (97/100); unusual rainfall (drought or flood) in recent months (94/100); demand for and complaints about instant loan apps (78/100),80,65.6,94.4,,78.1,46.4,96.9,24.6,23.6,,14.6,5.8,6.1
+Chennai,2021-05,79.4,Severe,falling gold prices (91/100); people searching to pawn jewellery (85/100); unusual rainfall (drought or flood) in recent months (84/100),80,85.3,83.9,,67.6,63.8,91.2,32.0,21.0,,12.7,8.0,5.7
+Chennai,2021-06,34.7,Low,falling gold prices (92/100),80,13.9,15.5,,63.9,63.3,91.7,5.2,3.9,,12.0,7.9,5.7
+Chennai,2021-07,58.4,Watch,falling gold prices (97/100); demand for and complaints about instant loan apps (76/100); people searching to pawn jewellery (66/100),80,65.8,21.7,,76.3,62.9,97.4,24.7,5.4,,14.3,7.9,6.1
+Chennai,2021-08,68.3,High,falling gold prices (98/100); people searching to pawn jewellery (92/100); demand for and complaints about instant loan apps (78/100),80,92.5,21.0,,77.5,62.5,97.5,34.7,5.2,,14.5,7.8,6.1
+Chennai,2021-09,57.0,Watch,falling gold prices (93/100); demand for and complaints about instant loan apps (69/100),80,59.5,32.8,,69.0,62.1,92.9,22.3,8.2,,12.9,7.8,5.8
+Chennai,2021-10,49.6,Watch,falling gold prices (89/100); demand for and complaints about instant loan apps (70/100),80,56.8,7.6,,70.5,61.8,88.6,21.3,1.9,,13.2,7.7,5.5
+Chennai,2021-11,60.8,High,falling gold prices (80/100),80,58.7,60.3,,58.7,61.4,80.4,22.0,15.1,,11.0,7.7,5.0
+Chennai,2021-12,68.8,High,unusual rainfall (drought or flood) in recent months (93/100); falling gold prices (77/100); people searching to pawn jewellery (69/100),80,68.8,92.9,,39.6,61.1,77.1,25.8,23.2,,7.4,7.6,4.8
+Chennai,2022-01,70.5,High,unusual rainfall (drought or flood) in recent months (88/100); people searching to pawn jewellery (84/100); falling gold prices (74/100),80,84.0,87.5,,26.0,60.8,74.0,31.5,21.9,,4.9,7.6,4.6
+Chennai,2022-02,51.4,Watch,unusual rainfall (drought or flood) in recent months (93/100); demand for and complaints about instant loan apps (79/100),80,5.8,93.2,,78.8,60.5,55.8,2.2,23.3,,14.8,7.6,3.5
+Chennai,2022-03,39.3,Low,demand for and complaints about instant loan apps (83/100),80,13.0,32.9,,83.3,60.3,50.0,4.9,8.2,,15.6,7.5,3.1
+Chennai,2022-04,51.8,Watch,people searching to pawn jewellery (70/100); demand for and complaints about instant loan apps (70/100),80,69.6,6.4,,69.6,60.0,55.4,26.1,1.6,,13.1,7.5,3.5
+Chennai,2022-05,38.5,Low,demand for and complaints about instant loan apps (88/100); higher interest rates (82/100),80,15.5,8.8,,87.9,81.7,60.3,5.8,2.2,,16.5,10.2,3.8
+Chennai,2022-06,40.5,Watch,higher interest rates (92/100); demand for and complaints about instant loan apps (88/100),80,18.3,8.5,,88.3,91.7,55.0,6.9,2.1,,16.6,11.5,3.4
+Chennai,2022-07,37.7,Low,higher interest rates (91/100); falling gold prices (76/100); demand for and complaints about instant loan apps (76/100),80,14.5,8.3,,75.8,90.7,75.8,5.4,2.1,,14.2,11.3,4.7
+Chennai,2022-08,32.3,Low,higher interest rates (99/100); demand for and complaints about instant loan apps (77/100),80,1.6,5.8,,76.6,98.9,54.7,0.6,1.5,,14.4,12.4,3.4
+Chennai,2022-09,42.9,Watch,higher interest rates (99/100); demand for and complaints about instant loan apps (89/100); falling gold prices (68/100),80,13.6,17.0,,89.4,98.9,68.2,5.1,4.3,,16.8,12.4,4.3
+Chennai,2022-10,33.8,Low,higher interest rates (98/100); falling gold prices (72/100),80,25.0,7.8,,30.9,97.8,72.1,9.4,1.9,,5.8,12.2,4.5
+Chennai,2022-11,29.3,Low,higher interest rates (97/100),80,15.7,5.4,,31.4,96.8,64.3,5.9,1.4,,5.9,12.1,4.0
+Chennai,2022-12,45.6,Watch,higher interest rates (99/100); demand for and complaints about instant loan apps (82/100),80,37.5,3.2,,81.9,99.0,45.8,14.1,0.8,,15.4,12.4,2.9
+Chennai,2023-01,41.2,Watch,higher interest rates (98/100); demand for and complaints about instant loan apps (88/100),80,23.0,5.2,,87.8,98.0,41.9,8.6,1.3,,16.5,12.2,2.6
+Chennai,2023-02,63.4,High,higher interest rates (99/100); demand for and complaints about instant loan apps (91/100),80,64.5,27.6,,90.8,99.0,46.1,24.2,6.9,,17.0,12.4,2.9
+Chennai,2023-03,58.8,Watch,higher interest rates (98/100); demand for and complaints about instant loan apps (88/100); unusual rainfall (drought or flood) in recent months (85/100),80,14.1,85.0,,88.5,98.0,55.1,5.3,21.2,,16.6,12.3,3.4
+Chennai,2023-04,68.7,High,unusual rainfall (drought or flood) in recent months (99/100); higher interest rates (97/100); demand for and complaints about instant loan apps (82/100),80,36.2,99.0,,82.5,97.1,43.8,13.6,24.8,,15.5,12.1,2.7
+Chennai,2023-05,68.9,High,unusual rainfall (drought or flood) in recent months (97/100); higher interest rates (93/100); demand for and complaints about instant loan apps (70/100),80,46.3,97.1,,69.5,93.4,40.2,17.4,24.3,,13.0,11.7,2.5
+Chennai,2023-06,67.0,High,unusual rainfall (drought or flood) in recent months (95/100); higher interest rates (88/100); demand for and complaints about instant loan apps (74/100),80,41.7,95.3,,73.8,88.0,44.0,15.6,23.8,,13.8,11.0,2.8
+Chennai,2023-07,81.3,Severe,demand for and complaints about instant loan apps (94/100); higher interest rates (87/100); people searching to pawn jewellery (85/100),80,84.9,75.0,,94.2,87.3,33.7,31.8,18.8,,17.7,10.9,2.1
+Chennai,2023-08,50.4,Watch,demand for and complaints about instant loan apps (94/100); higher interest rates (79/100),80,35.2,28.2,,94.3,79.5,42.0,13.2,7.0,,17.7,9.9,2.6
+Chennai,2023-09,62.9,High,demand for and complaints about instant loan apps (88/100); higher interest rates (78/100); people searching to pawn jewellery (67/100),80,66.7,38.4,,87.8,78.1,32.2,25.0,9.6,,16.5,9.8,2.0
+Chennai,2023-10,75.9,Severe,demand for and complaints about instant loan apps (99/100); unusual rainfall (drought or flood) in recent months (78/100); higher interest rates (78/100),80,69.6,78.1,,98.9,77.6,33.7,26.1,19.5,,18.5,9.7,2.1
+Chennai,2023-11,67.1,High,demand for and complaints about instant loan apps (99/100); higher interest rates (77/100),80,58.5,59.5,,98.9,77.1,33.0,21.9,14.9,,18.6,9.6,2.1
+Chennai,2023-12,60.6,High,demand for and complaints about instant loan apps (95/100); unusual rainfall (drought or flood) in recent months (91/100); higher interest rates (72/100),80,21.9,90.7,,94.8,72.5,44.8,8.2,22.7,,17.8,9.1,2.8
+Chennai,2024-01,55.6,Watch,demand for and complaints about instant loan apps (97/100); unusual rainfall (drought or flood) in recent months (79/100); higher interest rates (72/100),80,13.3,79.2,,96.9,72.1,58.2,5.0,19.8,,18.2,9.0,3.6
+Chennai,2024-02,50.9,Watch,demand for and complaints about instant loan apps (89/100); higher interest rates (69/100),80,36.0,33.6,,89.0,69.4,57.0,13.5,8.4,,16.7,8.7,3.6
+Chennai,2024-03,47.1,Watch,demand for and complaints about instant loan apps (75/100); higher interest rates (69/100),80,28.4,44.4,,74.5,69.0,43.1,10.7,11.1,,14.0,8.6,2.7
+Chennai,2024-04,55.9,Watch,demand for and complaints about instant loan apps (91/100); higher interest rates (69/100),80,58.7,26.2,,91.3,68.8,27.9,22.0,6.5,,17.1,8.6,1.7
+Chennai,2024-05,51.4,Watch,demand for and complaints about instant loan apps (77/100); unusual rainfall (drought or flood) in recent months (76/100); higher interest rates (68/100),80,20.8,75.8,,77.4,68.5,25.5,7.8,18.9,,14.5,8.6,1.6
+Chennai,2024-06,68.9,High,unusual rainfall (drought or flood) in recent months (99/100); demand for and complaints about instant loan apps (71/100); higher interest rates (68/100),80,55.6,99.2,,71.3,68.2,23.1,20.8,24.8,,13.4,8.5,1.4
+Chennai,2024-07,62.6,High,unusual rainfall (drought or flood) in recent months (99/100); higher interest rates (68/100),80,42.7,99.2,,64.5,67.9,19.1,16.0,24.8,,12.1,8.5,1.2
+Chennai,2024-08,69.6,High,unusual rainfall (drought or flood) in recent months (93/100); higher interest rates (68/100); people searching to pawn jewellery (67/100),80,67.0,93.3,,61.6,67.6,17.0,25.1,23.3,,11.6,8.5,1.1
+Chennai,2024-09,56.8,Watch,unusual rainfall (drought or flood) in recent months (85/100); higher interest rates (67/100),80,38.6,84.6,,64.9,67.4,9.6,14.5,21.1,,12.2,8.4,0.6
+Chennai,2024-10,50.2,Watch,higher interest rates (67/100),80,64.7,23.9,,59.5,67.1,6.0,24.2,6.0,,11.2,8.4,0.4
+Chennai,2024-11,24.1,Low,higher interest rates (67/100),80,11.0,10.7,,43.2,66.9,12.7,4.1,2.7,,8.1,8.4,0.8
+Chennai,2024-12,35.8,Low,higher interest rates (67/100),80,52.5,13.4,,19.2,66.7,14.2,19.7,3.3,,3.6,8.3,0.9
+Chennai,2025-01,30.9,Low,higher interest rates (66/100),80,52.5,3.5,,7.4,66.4,9.0,19.7,0.9,,1.4,8.3,0.6
+Chennai,2025-02,36.9,Low,all signals near or below normal,80,59.7,25.3,,5.6,56.1,0.8,22.4,6.3,,1.1,7.0,0.1
+Chennai,2025-03,32.6,Low,all signals near or below normal,80,26.2,43.9,,24.6,56.0,4.0,9.8,11.0,,4.6,7.0,0.2
+Chennai,2025-04,29.9,Low,unusual rainfall (drought or flood) in recent months (67/100),80,12.5,67.3,,8.6,49.3,10.2,4.7,16.8,,1.6,6.2,0.6
+Chennai,2025-05,60.6,High,people searching to pawn jewellery (95/100),80,94.6,57.2,,23.1,49.4,5.4,35.5,14.3,,4.3,6.2,0.3
+Chennai,2025-06,50.7,Watch,people searching to pawn jewellery (80/100),80,79.5,55.2,,8.3,42.9,2.3,29.8,13.8,,1.6,5.4,0.1
+Chennai,2025-07,53.0,Watch,all signals near or below normal,80,64.2,50.6,,54.5,43.0,9.7,24.1,12.7,,10.2,5.4,0.6
+Chennai,2025-08,60.6,High,people searching to pawn jewellery (82/100); unusual rainfall (drought or flood) in recent months (70/100),80,81.6,70.3,,33.1,43.1,12.5,30.6,17.6,,6.2,5.4,0.8
+Chennai,2025-09,40.9,Watch,unusual rainfall (drought or flood) in recent months (89/100),80,23.2,89.4,,23.9,43.2,0.7,8.7,22.3,,4.5,5.4,0.0
+Chennai,2025-10,65.7,High,unusual rainfall (drought or flood) in recent months (97/100); people searching to pawn jewellery (91/100),80,90.7,96.9,,11.4,43.3,0.7,34.0,24.2,,2.1,5.4,0.0
+Chennai,2025-11,73.9,High,unusual rainfall (drought or flood) in recent months (98/100); people searching to pawn jewellery (96/100),80,96.5,98.2,,41.5,43.4,0.7,36.2,24.5,,7.8,5.4,0.0
+Chennai,2025-12,73.5,High,people searching to pawn jewellery (97/100); unusual rainfall (drought or flood) in recent months (90/100),80,96.5,89.8,,60.4,29.2,0.7,36.2,22.4,,11.3,3.6,0.0
+Chennai,2026-01,74.4,High,unusual rainfall (drought or flood) in recent months (93/100); people searching to pawn jewellery (92/100); demand for and complaints about instant loan apps (67/100),80,92.5,93.5,,67.1,29.4,0.7,34.7,23.4,,12.6,3.7,0.0
+Chennai,2026-02,70.2,High,people searching to pawn jewellery (97/100); unusual rainfall (drought or flood) in recent months (70/100),80,96.6,70.0,,61.5,39.0,2.0,36.2,17.5,,11.5,4.9,0.1
+Chennai,2026-03,70.8,High,people searching to pawn jewellery (90/100); demand for and complaints about instant loan apps (86/100),80,90.0,63.4,,86.0,39.1,3.3,33.8,15.8,,16.1,4.9,0.2
+Chennai,2026-04,67.0,High,people searching to pawn jewellery (91/100); demand for and complaints about instant loan apps (68/100),80,91.4,54.6,,68.4,46.0,7.2,34.3,13.6,,12.8,5.8,0.5
+Chennai,2026-05,37.6,Low,demand for and complaints about instant loan apps (69/100),80,38.3,15.3,,69.5,46.1,9.7,14.4,3.8,,13.0,5.8,0.6
+Chennai,2026-06,37.2,Low,demand for and complaints about instant loan apps (97/100),80,12.2,25.3,,96.8,52.8,26.3,4.6,6.3,,18.1,6.6,1.6
+Chennai,2026-07,67.3,High,demand for and complaints about instant loan apps (87/100); people searching to pawn jewellery (81/100),80,81.0,48.3,,86.7,52.7,31.0,30.4,12.1,,16.3,6.6,1.9
+Chennai,2026-08,46.2,Watch,all signals near or below normal,80,35.6,53.3,,61.9,52.7,20.6,13.4,13.3,,11.6,6.6,1.3
+Chennai,2026-09,72.1,High,people searching to pawn jewellery (87/100); unusual rainfall (drought or flood) in recent months (77/100),80,87.0,76.6,,58.6,52.7,43.8,32.6,19.2,,11.0,6.6,2.7
+Chennai,2026-10,58.3,Watch,demand for and complaints about instant loan apps (85/100); falling gold prices (74/100); unusual rainfall (drought or flood) in recent months (68/100),80,36.0,68.3,,84.8,58.0,73.8,13.5,17.1,,15.9,7.2,4.6
+Chennai,2026-11,44.1,Watch,unusual rainfall (drought or flood) in recent months (68/100),75,16.3,67.6,,59.6,57.9,,6.5,18.0,,11.9,7.7,
+Coimbatore,2019-01,,,not enough data,10,,,,,97.9,,,,,,97.9,
+Coimbatore,2019-02,,,not enough data,30,,63.0,,,91.7,,,42.0,,,30.6,
+Coimbatore,2019-03,,,not enough data,30,,50.0,,,91.7,,,33.3,,,30.6,
+Coimbatore,2019-04,,,not enough data,30,,15.2,,,83.3,,,10.1,,,27.8,
+Coimbatore,2019-05,,,not enough data,30,,45.7,,,83.3,,,30.4,,,27.8,
+Coimbatore,2019-06,,,not enough data,30,,54.3,,,75.0,,,36.2,,,25.0,
+Coimbatore,2019-07,,,not enough data,30,,67.4,,,75.0,,,44.9,,,25.0,
+Coimbatore,2019-08,,,not enough data,30,,89.1,,,66.7,,,59.4,,,22.2,
+Coimbatore,2019-09,,,not enough data,30,,84.8,,,66.7,,,56.5,,,22.2,
+Coimbatore,2019-10,,,not enough data,30,,93.5,,,50.0,,,62.3,,,16.7,
+Coimbatore,2019-11,,,not enough data,30,,76.1,,,50.0,,,50.7,,,16.7,
+Coimbatore,2019-12,,,not enough data,30,,28.3,,,50.0,,,18.8,,,16.7,
+Coimbatore,2020-01,42.8,Watch,falling gold prices (88/100); demand for and complaints about instant loan apps (79/100),80,4.2,58.7,,79.2,50.0,87.5,1.6,14.7,,14.8,6.2,5.5
+Coimbatore,2020-02,47.3,Watch,falling gold prices (96/100); demand for and complaints about instant loan apps (96/100),80,37.5,6.5,,95.8,60.4,95.8,14.1,1.6,,18.0,7.6,6.0
+Coimbatore,2020-03,36.7,Low,demand for and complaints about instant loan apps (88/100),80,37.5,2.2,,87.5,14.6,62.5,14.1,0.5,,16.4,1.8,3.9
+Coimbatore,2020-04,36.5,Low,demand for and complaints about instant loan apps (71/100),80,37.5,19.6,,70.8,27.1,12.5,14.1,4.9,,13.3,3.4,0.8
+Coimbatore,2020-05,26.8,Low,all signals near or below normal,80,20.8,32.6,,54.2,2.1,4.2,7.8,8.2,,10.2,0.3,0.3
+Coimbatore,2020-06,53.3,Watch,people searching to pawn jewellery (96/100),80,95.8,23.9,,45.8,8.3,29.2,35.9,6.0,,8.6,1.0,1.8
+Coimbatore,2020-07,40.4,Watch,all signals near or below normal,80,62.5,37.0,,29.2,8.3,20.8,23.4,9.2,,5.5,1.0,1.3
+Coimbatore,2020-08,44.1,Watch,people searching to pawn jewellery (71/100),80,70.8,41.3,,12.5,20.8,37.5,26.6,10.3,,2.3,2.6,2.3
+Coimbatore,2020-09,40.2,Watch,people searching to pawn jewellery (79/100); falling gold prices (71/100),80,79.2,10.9,,4.2,20.8,70.8,29.7,2.7,,0.8,2.6,4.4
+Coimbatore,2020-10,52.1,Watch,unusual rainfall (drought or flood) in recent months (80/100),80,54.2,80.4,,20.8,35.4,54.2,20.3,20.1,,3.9,4.4,3.4
+Coimbatore,2020-11,65.0,High,people searching to pawn jewellery (88/100); unusual rainfall (drought or flood) in recent months (72/100),80,87.5,71.7,,37.5,35.4,45.8,32.8,17.9,,7.0,4.4,2.9
+Coimbatore,2020-12,50.2,Watch,unusual rainfall (drought or flood) in recent months (98/100); falling gold prices (79/100),80,12.5,97.8,,62.5,35.4,79.2,4.7,24.5,,11.7,4.4,4.9
+Coimbatore,2021-01,70.8,High,unusual rainfall (drought or flood) in recent months (98/100); falling gold prices (81/100); people searching to pawn jewellery (73/100),80,73.1,97.9,,50.0,36.0,80.8,27.4,24.5,,9.4,4.5,5.0
+Coimbatore,2021-02,71.0,High,people searching to pawn jewellery (96/100); falling gold prices (96/100); unusual rainfall (drought or flood) in recent months (94/100),80,96.4,94.0,,3.6,36.5,96.4,36.2,23.5,,0.7,4.6,6.0
+Coimbatore,2021-03,73.1,High,unusual rainfall (drought or flood) in recent months (98/100); people searching to pawn jewellery (97/100); falling gold prices (97/100),80,96.7,98.1,,3.3,46.3,96.7,36.2,24.5,,0.6,5.8,6.0
+Coimbatore,2021-04,71.9,High,falling gold prices (97/100); unusual rainfall (drought or flood) in recent months (83/100); demand for and complaints about instant loan apps (78/100),80,65.6,83.3,,78.1,46.4,96.9,24.6,20.8,,14.6,5.8,6.1
+Coimbatore,2021-05,74.0,High,falling gold prices (91/100); people searching to pawn jewellery (85/100); demand for and complaints about instant loan apps (68/100),80,85.3,62.5,,67.6,63.8,91.2,32.0,15.6,,12.7,8.0,5.7
+Coimbatore,2021-06,33.8,Low,falling gold prices (92/100),80,13.9,12.1,,63.9,63.3,91.7,5.2,3.0,,12.0,7.9,5.7
+Coimbatore,2021-07,55.1,Watch,falling gold prices (97/100); demand for and complaints about instant loan apps (76/100); people searching to pawn jewellery (66/100),80,65.8,8.3,,76.3,62.9,97.4,24.7,2.1,,14.3,7.9,6.1
+Coimbatore,2021-08,67.5,High,falling gold prices (98/100); people searching to pawn jewellery (92/100); demand for and complaints about instant loan apps (78/100),80,92.5,17.7,,77.5,62.5,97.5,34.7,4.4,,14.5,7.8,6.1
+Coimbatore,2021-09,55.4,Watch,falling gold prices (93/100); demand for and complaints about instant loan apps (69/100),80,59.5,26.6,,69.0,62.1,92.9,22.3,6.6,,12.9,7.8,5.8
+Coimbatore,2021-10,63.2,High,falling gold prices (89/100); demand for and complaints about instant loan apps (70/100),80,56.8,62.1,,70.5,61.8,88.6,21.3,15.5,,13.2,7.7,5.5
+Coimbatore,2021-11,68.1,High,unusual rainfall (drought or flood) in recent months (90/100); falling gold prices (80/100),80,58.7,89.7,,58.7,61.4,80.4,22.0,22.4,,11.0,7.7,5.0
+Coimbatore,2021-12,67.4,High,unusual rainfall (drought or flood) in recent months (87/100); falling gold prices (77/100); people searching to pawn jewellery (69/100),80,68.8,87.1,,39.6,61.1,77.1,25.8,21.8,,7.4,7.6,4.8
+Coimbatore,2022-01,69.8,High,unusual rainfall (drought or flood) in recent months (85/100); people searching to pawn jewellery (84/100); falling gold prices (74/100),80,84.0,84.7,,26.0,60.8,74.0,31.5,21.2,,4.9,7.6,4.6
+Coimbatore,2022-02,47.4,Watch,demand for and complaints about instant loan apps (79/100); unusual rainfall (drought or flood) in recent months (77/100),80,5.8,77.0,,78.8,60.5,55.8,2.2,19.3,,14.8,7.6,3.5
+Coimbatore,2022-03,42.6,Watch,demand for and complaints about instant loan apps (83/100),80,13.0,46.1,,83.3,60.3,50.0,4.9,11.5,,15.6,7.5,3.1
+Coimbatore,2022-04,67.2,High,people searching to pawn jewellery (70/100); demand for and complaints about instant loan apps (70/100); unusual rainfall (drought or flood) in recent months (68/100),80,69.6,67.9,,69.6,60.0,55.4,26.1,17.0,,13.1,7.5,3.5
+Coimbatore,2022-05,52.9,Watch,demand for and complaints about instant loan apps (88/100); higher interest rates (82/100); unusual rainfall (drought or flood) in recent months (66/100),80,15.5,66.2,,87.9,81.7,60.3,5.8,16.6,,16.5,10.2,3.8
+Coimbatore,2022-06,50.3,Watch,higher interest rates (92/100); demand for and complaints about instant loan apps (88/100),80,18.3,47.6,,88.3,91.7,55.0,6.9,11.9,,16.6,11.5,3.4
+Coimbatore,2022-07,52.6,Watch,higher interest rates (91/100); falling gold prices (76/100); demand for and complaints about instant loan apps (76/100),80,14.5,67.9,,75.8,90.7,75.8,5.4,17.0,,14.2,11.3,4.7
+Coimbatore,2022-08,41.0,Watch,higher interest rates (99/100); demand for and complaints about instant loan apps (77/100),80,1.6,40.7,,76.6,98.9,54.7,0.6,10.2,,14.4,12.4,3.4
+Coimbatore,2022-09,54.2,Watch,higher interest rates (99/100); demand for and complaints about instant loan apps (89/100); falling gold prices (68/100),80,13.6,62.5,,89.4,98.9,68.2,5.1,15.6,,16.8,12.4,4.3
+Coimbatore,2022-10,51.6,Watch,higher interest rates (98/100); unusual rainfall (drought or flood) in recent months (79/100); falling gold prices (72/100),80,25.0,78.9,,30.9,97.8,72.1,9.4,19.7,,5.8,12.2,4.5
+Coimbatore,2022-11,39.6,Low,higher interest rates (97/100),80,15.7,46.7,,31.4,96.8,64.3,5.9,11.7,,5.9,12.1,4.0
+Coimbatore,2022-12,56.8,Watch,higher interest rates (99/100); demand for and complaints about instant loan apps (82/100),80,37.5,47.9,,81.9,99.0,45.8,14.1,12.0,,15.4,12.4,2.9
+Coimbatore,2023-01,50.6,Watch,higher interest rates (98/100); demand for and complaints about instant loan apps (88/100),80,23.0,42.7,,87.8,98.0,41.9,8.6,10.7,,16.5,12.2,2.6
+Coimbatore,2023-02,65.4,High,higher interest rates (99/100); demand for and complaints about instant loan apps (91/100),80,64.5,35.7,,90.8,99.0,46.1,24.2,8.9,,17.0,12.4,2.9
+Coimbatore,2023-03,49.4,Watch,higher interest rates (98/100); demand for and complaints about instant loan apps (88/100),80,14.1,47.0,,88.5,98.0,55.1,5.3,11.8,,16.6,12.3,3.4
+Coimbatore,2023-04,54.9,Watch,higher interest rates (97/100); demand for and complaints about instant loan apps (82/100),80,36.2,44.1,,82.5,97.1,43.8,13.6,11.0,,15.5,12.1,2.7
+Coimbatore,2023-05,49.6,Watch,higher interest rates (93/100); demand for and complaints about instant loan apps (70/100),80,46.3,20.2,,69.5,93.4,40.2,17.4,5.0,,13.0,11.7,2.5
+Coimbatore,2023-06,55.7,Watch,higher interest rates (88/100); demand for and complaints about instant loan apps (74/100),80,41.7,50.0,,73.8,88.0,44.0,15.6,12.5,,13.8,11.0,2.8
+Coimbatore,2023-07,81.7,Severe,demand for and complaints about instant loan apps (94/100); higher interest rates (87/100); people searching to pawn jewellery (85/100),80,84.9,76.9,,94.2,87.3,33.7,31.8,19.2,,17.7,10.9,2.1
+Coimbatore,2023-08,66.8,High,demand for and complaints about instant loan apps (94/100); unusual rainfall (drought or flood) in recent months (94/100); higher interest rates (79/100),80,35.2,93.6,,94.3,79.5,42.0,13.2,23.4,,17.7,9.9,2.6
+Coimbatore,2023-09,77.2,Severe,unusual rainfall (drought or flood) in recent months (96/100); demand for and complaints about instant loan apps (88/100); higher interest rates (78/100),80,66.7,95.5,,87.8,78.1,32.2,25.0,23.9,,16.5,9.8,2.0
+Coimbatore,2023-10,77.2,Severe,demand for and complaints about instant loan apps (99/100); unusual rainfall (drought or flood) in recent months (83/100); higher interest rates (78/100),80,69.6,83.3,,98.9,77.6,33.7,26.1,20.8,,18.5,9.7,2.1
+Coimbatore,2023-11,67.5,High,demand for and complaints about instant loan apps (99/100); higher interest rates (77/100),80,58.5,61.2,,98.9,77.1,33.0,21.9,15.3,,18.6,9.6,2.1
+Coimbatore,2023-12,47.4,Watch,demand for and complaints about instant loan apps (95/100); higher interest rates (72/100),80,21.9,38.1,,94.8,72.5,44.8,8.2,9.5,,17.8,9.1,2.8
+Coimbatore,2024-01,46.0,Watch,demand for and complaints about instant loan apps (97/100); higher interest rates (72/100),80,13.3,40.8,,96.9,72.1,58.2,5.0,10.2,,18.2,9.0,3.6
+Coimbatore,2024-02,57.0,Watch,demand for and complaints about instant loan apps (89/100); higher interest rates (69/100),80,36.0,58.2,,89.0,69.4,57.0,13.5,14.5,,16.7,8.7,3.6
+Coimbatore,2024-03,50.3,Watch,demand for and complaints about instant loan apps (75/100); higher interest rates (69/100),80,28.4,57.3,,74.5,69.0,43.1,10.7,14.3,,14.0,8.6,2.7
+Coimbatore,2024-04,67.9,High,demand for and complaints about instant loan apps (91/100); unusual rainfall (drought or flood) in recent months (74/100); higher interest rates (69/100),80,58.7,73.8,,91.3,68.8,27.9,22.0,18.5,,17.1,8.6,1.7
+Coimbatore,2024-05,54.6,Watch,unusual rainfall (drought or flood) in recent months (88/100); demand for and complaints about instant loan apps (77/100); higher interest rates (68/100),80,20.8,88.3,,77.4,68.5,25.5,7.8,22.1,,14.5,8.6,1.6
+Coimbatore,2024-06,68.9,High,unusual rainfall (drought or flood) in recent months (99/100); demand for and complaints about instant loan apps (71/100); higher interest rates (68/100),80,55.6,99.2,,71.3,68.2,23.1,20.8,24.8,,13.4,8.5,1.4
+Coimbatore,2024-07,61.1,High,unusual rainfall (drought or flood) in recent months (93/100); higher interest rates (68/100),80,42.7,93.2,,64.5,67.9,19.1,16.0,23.3,,12.1,8.5,1.2
+Coimbatore,2024-08,67.0,High,unusual rainfall (drought or flood) in recent months (83/100); higher interest rates (68/100); people searching to pawn jewellery (67/100),80,67.0,82.8,,61.6,67.6,17.0,25.1,20.7,,11.6,8.5,1.1
+Coimbatore,2024-09,55.0,Watch,unusual rainfall (drought or flood) in recent months (77/100); higher interest rates (67/100),80,38.6,77.2,,64.9,67.4,9.6,14.5,19.3,,12.2,8.4,0.6
+Coimbatore,2024-10,48.7,Watch,higher interest rates (67/100),80,64.7,18.1,,59.5,67.1,6.0,24.2,4.5,,11.2,8.4,0.4
+Coimbatore,2024-11,29.8,Low,higher interest rates (67/100),80,11.0,33.6,,43.2,66.9,12.7,4.1,8.4,,8.1,8.4,0.8
+Coimbatore,2024-12,36.2,Low,higher interest rates (67/100),80,52.5,14.8,,19.2,66.7,14.2,19.7,3.7,,3.6,8.3,0.9
+Coimbatore,2025-01,30.2,Low,higher interest rates (66/100),80,52.5,0.7,,7.4,66.4,9.0,19.7,0.2,,1.4,8.3,0.6
+Coimbatore,2025-02,32.1,Low,all signals near or below normal,80,59.7,6.2,,5.6,56.1,0.8,22.4,1.5,,1.1,7.0,0.1
+Coimbatore,2025-03,39.3,Low,unusual rainfall (drought or flood) in recent months (71/100),80,26.2,70.9,,24.6,56.0,4.0,9.8,17.7,,4.6,7.0,0.2
+Coimbatore,2025-04,30.6,Low,unusual rainfall (drought or flood) in recent months (70/100),80,12.5,70.0,,8.6,49.3,10.2,4.7,17.5,,1.6,6.2,0.6
+Coimbatore,2025-05,62.6,High,people searching to pawn jewellery (95/100); unusual rainfall (drought or flood) in recent months (65/100),80,94.6,65.1,,23.1,49.4,5.4,35.5,16.3,,4.3,6.2,0.3
+Coimbatore,2025-06,48.1,Watch,people searching to pawn jewellery (80/100),80,79.5,44.8,,8.3,42.9,2.3,29.8,11.2,,1.6,5.4,0.1
+Coimbatore,2025-07,40.5,Watch,all signals near or below normal,80,64.2,0.6,,54.5,43.0,9.7,24.1,0.2,,10.2,5.4,0.6
+Coimbatore,2025-08,47.9,Watch,people searching to pawn jewellery (82/100),80,81.6,19.6,,33.1,43.1,12.5,30.6,4.9,,6.2,5.4,0.8
+Coimbatore,2025-09,25.9,Low,all signals near or below normal,80,23.2,29.4,,23.9,43.2,0.7,8.7,7.3,,4.5,5.4,0.0
+Coimbatore,2025-10,49.4,Watch,people searching to pawn jewellery (91/100),80,90.7,31.5,,11.4,43.3,0.7,34.0,7.9,,2.1,5.4,0.0
+Coimbatore,2025-11,61.1,High,people searching to pawn jewellery (96/100),80,96.5,47.0,,41.5,43.4,0.7,36.2,11.7,,7.8,5.4,0.0
+Coimbatore,2025-12,62.7,High,people searching to pawn jewellery (97/100),80,96.5,46.4,,60.4,29.2,0.7,36.2,11.6,,11.3,3.6,0.0
+Coimbatore,2026-01,61.9,High,people searching to pawn jewellery (92/100); demand for and complaints about instant loan apps (67/100),80,92.5,43.5,,67.1,29.4,0.7,34.7,10.9,,12.6,3.7,0.0
+Coimbatore,2026-02,71.1,High,people searching to pawn jewellery (97/100); unusual rainfall (drought or flood) in recent months (74/100),80,96.6,73.5,,61.5,39.0,2.0,36.2,18.4,,11.5,4.9,0.1
+Coimbatore,2026-03,68.8,High,people searching to pawn jewellery (90/100); demand for and complaints about instant loan apps (86/100),80,90.0,55.2,,86.0,39.1,3.3,33.8,13.8,,16.1,4.9,0.2
+Coimbatore,2026-04,68.2,High,people searching to pawn jewellery (91/100); demand for and complaints about instant loan apps (68/100),80,91.4,59.2,,68.4,46.0,7.2,34.3,14.8,,12.8,5.8,0.5
+Coimbatore,2026-05,43.6,Watch,demand for and complaints about instant loan apps (69/100),80,38.3,39.2,,69.5,46.1,9.7,14.4,9.8,,13.0,5.8,0.6
+Coimbatore,2026-06,32.2,Low,demand for and complaints about instant loan apps (97/100),80,12.2,5.1,,96.8,52.8,26.3,4.6,1.3,,18.1,6.6,1.6
+Coimbatore,2026-07,61.7,High,demand for and complaints about instant loan apps (87/100); people searching to pawn jewellery (81/100),80,81.0,26.1,,86.7,52.7,31.0,30.4,6.5,,16.3,6.6,1.9
+Coimbatore,2026-08,34.1,Low,all signals near or below normal,80,35.6,4.9,,61.9,52.7,20.6,13.4,1.2,,11.6,6.6,1.3
+Coimbatore,2026-09,58.5,Watch,people searching to pawn jewellery (87/100),80,87.0,22.3,,58.6,52.7,43.8,32.6,5.6,,11.0,6.6,2.7
+Coimbatore,2026-10,49.9,Watch,demand for and complaints about instant loan apps (85/100); falling gold prices (74/100),80,36.0,34.9,,84.8,58.0,73.8,13.5,8.7,,15.9,7.2,4.6
+Coimbatore,2026-11,32.2,Low,all signals near or below normal,75,16.3,22.9,,59.6,57.9,,6.5,6.1,,11.9,7.7,
+Madurai,2019-01,,,not enough data,10,,,,,97.9,,,,,,97.9,
+Madurai,2019-02,,,not enough data,30,,15.2,,,91.7,,,10.1,,,30.6,
+Madurai,2019-03,,,not enough data,30,,19.6,,,91.7,,,13.0,,,30.6,
+Madurai,2019-04,,,not enough data,30,,23.9,,,83.3,,,15.9,,,27.8,
+Madurai,2019-05,,,not enough data,30,,28.3,,,83.3,,,18.8,,,27.8,
+Madurai,2019-06,,,not enough data,30,,67.4,,,75.0,,,44.9,,,25.0,
+Madurai,2019-07,,,not enough data,30,,76.1,,,75.0,,,50.7,,,25.0,
+Madurai,2019-08,,,not enough data,30,,80.4,,,66.7,,,53.6,,,22.2,
+Madurai,2019-09,,,not enough data,30,,84.8,,,66.7,,,56.5,,,22.2,
+Madurai,2019-10,,,not enough data,30,,71.7,,,50.0,,,47.8,,,16.7,
+Madurai,2019-11,,,not enough data,30,,54.3,,,50.0,,,36.2,,,16.7,
+Madurai,2019-12,,,not enough data,30,,41.3,,,50.0,,,27.5,,,16.7,
+Madurai,2020-01,29.7,Low,falling gold prices (88/100); demand for and complaints about instant loan apps (79/100),80,4.2,6.5,,79.2,50.0,87.5,1.6,1.6,,14.8,6.2,5.5
+Madurai,2020-02,57.1,Watch,falling gold prices (96/100); demand for and complaints about instant loan apps (96/100),80,37.5,45.7,,95.8,60.4,95.8,14.1,11.4,,18.0,7.6,6.0
+Madurai,2020-03,48.7,Watch,demand for and complaints about instant loan apps (88/100),80,37.5,50.0,,87.5,14.6,62.5,14.1,12.5,,16.4,1.8,3.9
+Madurai,2020-04,39.8,Low,demand for and complaints about instant loan apps (71/100),80,37.5,32.6,,70.8,27.1,12.5,14.1,8.2,,13.3,3.4,0.8
+Madurai,2020-05,33.3,Low,all signals near or below normal,80,20.8,58.7,,54.2,2.1,4.2,7.8,14.7,,10.2,0.3,0.3
+Madurai,2020-06,50.0,Watch,people searching to pawn jewellery (96/100),80,95.8,10.9,,45.8,8.3,29.2,35.9,2.7,,8.6,1.0,1.8
+Madurai,2020-07,31.7,Low,all signals near or below normal,80,62.5,2.2,,29.2,8.3,20.8,23.4,0.5,,5.5,1.0,1.3
+Madurai,2020-08,43.0,Watch,people searching to pawn jewellery (71/100),80,70.8,37.0,,12.5,20.8,37.5,26.6,9.2,,2.3,2.6,2.3
+Madurai,2020-09,53.3,Watch,people searching to pawn jewellery (79/100); falling gold prices (71/100),80,79.2,63.0,,4.2,20.8,70.8,29.7,15.8,,0.8,2.6,4.4
+Madurai,2020-10,54.3,Watch,unusual rainfall (drought or flood) in recent months (89/100),80,54.2,89.1,,20.8,35.4,54.2,20.3,22.3,,3.9,4.4,3.4
+Madurai,2020-11,70.5,High,unusual rainfall (drought or flood) in recent months (93/100); people searching to pawn jewellery (88/100),80,87.5,93.5,,37.5,35.4,45.8,32.8,23.4,,7.0,4.4,2.9
+Madurai,2020-12,50.2,Watch,unusual rainfall (drought or flood) in recent months (98/100); falling gold prices (79/100),80,12.5,97.8,,62.5,35.4,79.2,4.7,24.5,,11.7,4.4,4.9
+Madurai,2021-01,70.8,High,unusual rainfall (drought or flood) in recent months (98/100); falling gold prices (81/100); people searching to pawn jewellery (73/100),80,73.1,97.9,,50.0,36.0,80.8,27.4,24.5,,9.4,4.5,5.0
+Madurai,2021-02,70.0,High,people searching to pawn jewellery (96/100); falling gold prices (96/100); unusual rainfall (drought or flood) in recent months (90/100),80,96.4,90.0,,3.6,36.5,96.4,36.2,22.5,,0.7,4.6,6.0
+Madurai,2021-03,70.2,High,people searching to pawn jewellery (97/100); falling gold prices (97/100); unusual rainfall (drought or flood) in recent months (87/100),80,96.7,86.5,,3.3,46.3,96.7,36.2,21.6,,0.6,5.8,6.0
+Madurai,2021-04,69.2,High,falling gold prices (97/100); demand for and complaints about instant loan apps (78/100); unusual rainfall (drought or flood) in recent months (72/100),80,65.6,72.2,,78.1,46.4,96.9,24.6,18.1,,14.6,5.8,6.1
+Madurai,2021-05,59.7,Watch,falling gold prices (91/100); people searching to pawn jewellery (85/100); demand for and complaints about instant loan apps (68/100),80,85.3,5.4,,67.6,63.8,91.2,32.0,1.3,,12.7,8.0,5.7
+Madurai,2021-06,35.5,Low,falling gold prices (92/100),80,13.9,19.0,,63.9,63.3,91.7,5.2,4.7,,12.0,7.9,5.7
+Madurai,2021-07,55.1,Watch,falling gold prices (97/100); demand for and complaints about instant loan apps (76/100); people searching to pawn jewellery (66/100),80,65.8,8.3,,76.3,62.9,97.4,24.7,2.1,,14.3,7.9,6.1
+Madurai,2021-08,72.4,High,falling gold prices (98/100); people searching to pawn jewellery (92/100); demand for and complaints about instant loan apps (78/100),80,92.5,37.1,,77.5,62.5,97.5,34.7,9.3,,14.5,7.8,6.1
+Madurai,2021-09,60.1,High,falling gold prices (93/100); demand for and complaints about instant loan apps (69/100),80,59.5,45.3,,69.0,62.1,92.9,22.3,11.3,,12.9,7.8,5.8
+Madurai,2021-10,50.4,Watch,falling gold prices (89/100); demand for and complaints about instant loan apps (70/100),80,56.8,10.6,,70.5,61.8,88.6,21.3,2.7,,13.2,7.7,5.5
+Madurai,2021-11,63.0,High,falling gold prices (80/100); unusual rainfall (drought or flood) in recent months (69/100),80,58.7,69.1,,58.7,61.4,80.4,22.0,17.3,,11.0,7.7,5.0
+Madurai,2021-12,62.4,High,falling gold prices (77/100); people searching to pawn jewellery (69/100); unusual rainfall (drought or flood) in recent months (67/100),80,68.8,67.1,,39.6,61.1,77.1,25.8,16.8,,7.4,7.6,4.8
+Madurai,2022-01,67.7,High,people searching to pawn jewellery (84/100); unusual rainfall (drought or flood) in recent months (76/100); falling gold prices (74/100),80,84.0,76.4,,26.0,60.8,74.0,31.5,19.1,,4.9,7.6,4.6
+Madurai,2022-02,49.4,Watch,unusual rainfall (drought or flood) in recent months (85/100); demand for and complaints about instant loan apps (79/100),80,5.8,85.1,,78.8,60.5,55.8,2.2,21.3,,14.8,7.6,3.5
+Madurai,2022-03,43.3,Watch,demand for and complaints about instant loan apps (83/100),80,13.0,48.7,,83.3,60.3,50.0,4.9,12.2,,15.6,7.5,3.1
+Madurai,2022-04,70.4,High,unusual rainfall (drought or flood) in recent months (81/100); people searching to pawn jewellery (70/100); demand for and complaints about instant loan apps (70/100),80,69.6,80.8,,69.6,60.0,55.4,26.1,20.2,,13.1,7.5,3.5
+Madurai,2022-05,54.7,Watch,demand for and complaints about instant loan apps (88/100); higher interest rates (82/100); unusual rainfall (drought or flood) in recent months (74/100),80,15.5,73.8,,87.9,81.7,60.3,5.8,18.4,,16.5,10.2,3.8
+Madurai,2022-06,59.4,Watch,higher interest rates (92/100); demand for and complaints about instant loan apps (88/100); unusual rainfall (drought or flood) in recent months (84/100),80,18.3,84.1,,88.3,91.7,55.0,6.9,21.0,,16.6,11.5,3.4
+Madurai,2022-07,57.9,Watch,higher interest rates (91/100); unusual rainfall (drought or flood) in recent months (89/100); falling gold prices (76/100),80,14.5,89.3,,75.8,90.7,75.8,5.4,22.3,,14.2,11.3,4.7
+Madurai,2022-08,49.1,Watch,higher interest rates (99/100); demand for and complaints about instant loan apps (77/100); unusual rainfall (drought or flood) in recent months (73/100),80,1.6,73.3,,76.6,98.9,54.7,0.6,18.3,,14.4,12.4,3.4
+Madurai,2022-09,59.9,Watch,higher interest rates (99/100); demand for and complaints about instant loan apps (89/100); unusual rainfall (drought or flood) in recent months (85/100),80,13.6,85.2,,89.4,98.9,68.2,5.1,21.3,,16.8,12.4,4.3
+Madurai,2022-10,53.3,Watch,higher interest rates (98/100); unusual rainfall (drought or flood) in recent months (86/100); falling gold prices (72/100),80,25.0,85.6,,30.9,97.8,72.1,9.4,21.4,,5.8,12.2,4.5
+Madurai,2022-11,45.0,Watch,higher interest rates (97/100); unusual rainfall (drought or flood) in recent months (68/100),80,15.7,68.5,,31.4,96.8,64.3,5.9,17.1,,5.9,12.1,4.0
+Madurai,2022-12,57.3,Watch,higher interest rates (99/100); demand for and complaints about instant loan apps (82/100),80,37.5,50.0,,81.9,99.0,45.8,14.1,12.5,,15.4,12.4,2.9
+Madurai,2023-01,51.6,Watch,higher interest rates (98/100); demand for and complaints about instant loan apps (88/100),80,23.0,46.9,,87.8,98.0,41.9,8.6,11.7,,16.5,12.2,2.6
+Madurai,2023-02,68.0,High,higher interest rates (99/100); demand for and complaints about instant loan apps (91/100),80,64.5,45.9,,90.8,99.0,46.1,24.2,11.5,,17.0,12.4,2.9
+Madurai,2023-03,49.4,Watch,higher interest rates (98/100); demand for and complaints about instant loan apps (88/100),80,14.1,47.0,,88.5,98.0,55.1,5.3,11.8,,16.6,12.3,3.4
+Madurai,2023-04,56.4,Watch,higher interest rates (97/100); demand for and complaints about instant loan apps (82/100),80,36.2,50.0,,82.5,97.1,43.8,13.6,12.5,,15.5,12.1,2.7
+Madurai,2023-05,55.9,Watch,higher interest rates (93/100); demand for and complaints about instant loan apps (70/100),80,46.3,45.2,,69.5,93.4,40.2,17.4,11.3,,13.0,11.7,2.5
+Madurai,2023-06,48.2,Watch,higher interest rates (88/100); demand for and complaints about instant loan apps (74/100),80,41.7,19.8,,73.8,88.0,44.0,15.6,5.0,,13.8,11.0,2.8
+Madurai,2023-07,72.0,High,demand for and complaints about instant loan apps (94/100); higher interest rates (87/100); people searching to pawn jewellery (85/100),80,84.9,38.0,,94.2,87.3,33.7,31.8,9.5,,17.7,10.9,2.1
+Madurai,2023-08,57.3,Watch,demand for and complaints about instant loan apps (94/100); higher interest rates (79/100),80,35.2,55.5,,94.3,79.5,42.0,13.2,13.9,,17.7,9.9,2.6
+Madurai,2023-09,64.2,High,demand for and complaints about instant loan apps (88/100); higher interest rates (78/100); people searching to pawn jewellery (67/100),80,66.7,43.8,,87.8,78.1,32.2,25.0,10.9,,16.5,9.8,2.0
+Madurai,2023-10,68.0,High,demand for and complaints about instant loan apps (99/100); higher interest rates (78/100); people searching to pawn jewellery (70/100),80,69.6,46.5,,98.9,77.6,33.7,26.1,11.6,,18.5,9.7,2.1
+Madurai,2023-11,56.7,Watch,demand for and complaints about instant loan apps (99/100); higher interest rates (77/100),80,58.5,18.1,,98.9,77.1,33.0,21.9,4.5,,18.6,9.6,2.1
+Madurai,2023-12,41.1,Watch,demand for and complaints about instant loan apps (95/100); higher interest rates (72/100),80,21.9,12.7,,94.8,72.5,44.8,8.2,3.2,,17.8,9.1,2.8
+Madurai,2024-01,40.2,Watch,demand for and complaints about instant loan apps (97/100); higher interest rates (72/100),80,13.3,17.5,,96.9,72.1,58.2,5.0,4.4,,18.2,9.0,3.6
+Madurai,2024-02,49.3,Watch,demand for and complaints about instant loan apps (89/100); higher interest rates (69/100),80,36.0,27.0,,89.0,69.4,57.0,13.5,6.8,,16.7,8.7,3.6
+Madurai,2024-03,47.1,Watch,demand for and complaints about instant loan apps (75/100); higher interest rates (69/100),80,28.4,44.4,,74.5,69.0,43.1,10.7,11.1,,14.0,8.6,2.7
+Madurai,2024-04,61.5,High,demand for and complaints about instant loan apps (91/100); higher interest rates (69/100),80,58.7,48.4,,91.3,68.8,27.9,22.0,12.1,,17.1,8.6,1.7
+Madurai,2024-05,54.2,Watch,unusual rainfall (drought or flood) in recent months (87/100); demand for and complaints about instant loan apps (77/100); higher interest rates (68/100),80,20.8,86.7,,77.4,68.5,25.5,7.8,21.7,,14.5,8.6,1.6
+Madurai,2024-06,65.8,High,unusual rainfall (drought or flood) in recent months (87/100); demand for and complaints about instant loan apps (71/100); higher interest rates (68/100),80,55.6,86.9,,71.3,68.2,23.1,20.8,21.7,,13.4,8.5,1.4
+Madurai,2024-07,60.7,High,unusual rainfall (drought or flood) in recent months (92/100); higher interest rates (68/100),80,42.7,91.7,,64.5,67.9,19.1,16.0,22.9,,12.1,8.5,1.2
+Madurai,2024-08,69.6,High,unusual rainfall (drought or flood) in recent months (93/100); higher interest rates (68/100); people searching to pawn jewellery (67/100),80,67.0,93.3,,61.6,67.6,17.0,25.1,23.3,,11.6,8.5,1.1
+Madurai,2024-09,57.6,Watch,unusual rainfall (drought or flood) in recent months (88/100); higher interest rates (67/100),80,38.6,87.5,,64.9,67.4,9.6,14.5,21.9,,12.2,8.4,0.6
+Madurai,2024-10,67.2,High,unusual rainfall (drought or flood) in recent months (92/100); higher interest rates (67/100),80,64.7,92.0,,59.5,67.1,6.0,24.2,23.0,,11.2,8.4,0.4
+Madurai,2024-11,41.2,Watch,unusual rainfall (drought or flood) in recent months (79/100); higher interest rates (67/100),80,11.0,79.3,,43.2,66.9,12.7,4.1,19.8,,8.1,8.4,0.8
+Madurai,2024-12,47.8,Watch,higher interest rates (67/100),80,52.5,61.3,,19.2,66.7,14.2,19.7,15.3,,3.6,8.3,0.9
+Madurai,2025-01,34.7,Low,higher interest rates (66/100),80,52.5,18.8,,7.4,66.4,9.0,19.7,4.7,,1.4,8.3,0.6
+Madurai,2025-02,31.1,Low,all signals near or below normal,80,59.7,2.1,,5.6,56.1,0.8,22.4,0.5,,1.1,7.0,0.1
+Madurai,2025-03,36.6,Low,all signals near or below normal,80,26.2,60.1,,24.6,56.0,4.0,9.8,15.0,,4.6,7.0,0.2
+Madurai,2025-04,26.3,Low,all signals near or below normal,80,12.5,52.7,,8.6,49.3,10.2,4.7,13.2,,1.6,6.2,0.6
+Madurai,2025-05,61.3,High,people searching to pawn jewellery (95/100),80,94.6,59.9,,23.1,49.4,5.4,35.5,15.0,,4.3,6.2,0.3
+Madurai,2025-06,55.6,Watch,people searching to pawn jewellery (80/100); unusual rainfall (drought or flood) in recent months (75/100),80,79.5,74.7,,8.3,42.9,2.3,29.8,18.7,,1.6,5.4,0.1
+Madurai,2025-07,53.0,Watch,all signals near or below normal,80,64.2,50.6,,54.5,43.0,9.7,24.1,12.7,,10.2,5.4,0.6
+Madurai,2025-08,57.1,Watch,people searching to pawn jewellery (82/100),80,81.6,56.3,,33.1,43.1,12.5,30.6,14.1,,6.2,5.4,0.8
+Madurai,2025-09,31.3,Low,all signals near or below normal,80,23.2,50.6,,23.9,43.2,0.7,8.7,12.7,,4.5,5.4,0.0
+Madurai,2025-10,46.0,Watch,people searching to pawn jewellery (91/100),80,90.7,17.9,,11.4,43.3,0.7,34.0,4.5,,2.1,5.4,0.0
+Madurai,2025-11,49.9,Watch,people searching to pawn jewellery (96/100),80,96.5,1.8,,41.5,43.4,0.7,36.2,0.5,,7.8,5.4,0.0
+Madurai,2025-12,56.7,Watch,people searching to pawn jewellery (97/100),80,96.5,22.3,,60.4,29.2,0.7,36.2,5.6,,11.3,3.6,0.0
+Madurai,2026-01,54.4,Watch,people searching to pawn jewellery (92/100); demand for and complaints about instant loan apps (67/100),80,92.5,13.7,,67.1,29.4,0.7,34.7,3.4,,12.6,3.7,0.0
+Madurai,2026-02,66.1,High,people searching to pawn jewellery (97/100),80,96.6,53.5,,61.5,39.0,2.0,36.2,13.4,,11.5,4.9,0.1
+Madurai,2026-03,62.7,High,people searching to pawn jewellery (90/100); demand for and complaints about instant loan apps (86/100),80,90.0,30.8,,86.0,39.1,3.3,33.8,7.7,,16.1,4.9,0.2
+Madurai,2026-04,61.0,High,people searching to pawn jewellery (91/100); demand for and complaints about instant loan apps (68/100),80,91.4,30.5,,68.4,46.0,7.2,34.3,7.6,,12.8,5.8,0.5
+Madurai,2026-05,41.3,Watch,demand for and complaints about instant loan apps (69/100),80,38.3,30.1,,69.5,46.1,9.7,14.4,7.5,,13.0,5.8,0.6
+Madurai,2026-06,32.7,Low,demand for and complaints about instant loan apps (97/100),80,12.2,7.3,,96.8,52.8,26.3,4.6,1.8,,18.1,6.6,1.6
+Madurai,2026-07,63.4,High,demand for and complaints about instant loan apps (87/100); people searching to pawn jewellery (81/100),80,81.0,32.8,,86.7,52.7,31.0,30.4,8.2,,16.3,6.6,1.9
+Madurai,2026-08,36.3,Low,all signals near or below normal,80,35.6,13.7,,61.9,52.7,20.6,13.4,3.4,,11.6,6.6,1.3
+Madurai,2026-09,58.7,Watch,people searching to pawn jewellery (87/100),80,87.0,23.4,,58.6,52.7,43.8,32.6,5.8,,11.0,6.6,2.7
+Madurai,2026-10,47.5,Watch,demand for and complaints about instant loan apps (85/100); falling gold prices (74/100),80,36.0,25.3,,84.8,58.0,73.8,13.5,6.3,,15.9,7.2,4.6
+Madurai,2026-11,37.3,Low,all signals near or below normal,75,16.3,42.0,,59.6,57.9,,6.5,11.2,,11.9,7.7,
+Villupuram,2019-01,,,not enough data,10,,,,,97.9,,,,,,97.9,
+Villupuram,2019-02,,,not enough data,30,,32.6,,,91.7,,,21.7,,,30.6,
+Villupuram,2019-03,,,not enough data,30,,41.3,,,91.7,,,27.5,,,30.6,
+Villupuram,2019-04,,,not enough data,30,,54.3,,,83.3,,,36.2,,,27.8,
+Villupuram,2019-05,,,not enough data,30,,63.0,,,83.3,,,42.0,,,27.8,
+Villupuram,2019-06,,,not enough data,30,,80.4,,,75.0,,,53.6,,,25.0,
+Villupuram,2019-07,,,not enough data,30,,71.7,,,75.0,,,47.8,,,25.0,
+Villupuram,2019-08,,,not enough data,30,,67.4,,,66.7,,,44.9,,,22.2,
+Villupuram,2019-09,,,not enough data,30,,58.7,,,66.7,,,39.1,,,22.2,
+Villupuram,2019-10,,,not enough data,30,,37.0,,,50.0,,,24.6,,,16.7,
+Villupuram,2019-11,,,not enough data,30,,50.0,,,50.0,,,33.3,,,16.7,
+Villupuram,2019-12,,,not enough data,30,,45.7,,,50.0,,,30.4,,,16.7,
+Villupuram,2020-01,35.2,Low,falling gold prices (88/100); demand for and complaints about instant loan apps (79/100),80,4.2,28.3,,79.2,50.0,87.5,1.6,7.1,,14.8,6.2,5.5
+Villupuram,2020-02,50.6,Watch,falling gold prices (96/100); demand for and complaints about instant loan apps (96/100),80,37.5,19.6,,95.8,60.4,95.8,14.1,4.9,,18.0,7.6,6.0
+Villupuram,2020-03,38.9,Low,demand for and complaints about instant loan apps (88/100),80,37.5,10.9,,87.5,14.6,62.5,14.1,2.7,,16.4,1.8,3.9
+Villupuram,2020-04,32.1,Low,demand for and complaints about instant loan apps (71/100),80,37.5,2.2,,70.8,27.1,12.5,14.1,0.5,,13.3,3.4,0.8
+Villupuram,2020-05,20.2,Low,all signals near or below normal,80,20.8,6.5,,54.2,2.1,4.2,7.8,1.6,,10.2,0.3,0.3
+Villupuram,2020-06,51.1,Watch,people searching to pawn jewellery (96/100),80,95.8,15.2,,45.8,8.3,29.2,35.9,3.8,,8.6,1.0,1.8
+Villupuram,2020-07,37.2,Low,all signals near or below normal,80,62.5,23.9,,29.2,8.3,20.8,23.4,6.0,,5.5,1.0,1.3
+Villupuram,2020-08,52.8,Watch,unusual rainfall (drought or flood) in recent months (76/100); people searching to pawn jewellery (71/100),80,70.8,76.1,,12.5,20.8,37.5,26.6,19.0,,2.3,2.6,2.3
+Villupuram,2020-09,60.9,High,unusual rainfall (drought or flood) in recent months (93/100); people searching to pawn jewellery (79/100); falling gold prices (71/100),80,79.2,93.5,,4.2,20.8,70.8,29.7,23.4,,0.8,2.6,4.4
+Villupuram,2020-10,56.5,Watch,unusual rainfall (drought or flood) in recent months (98/100),80,54.2,97.8,,20.8,35.4,54.2,20.3,24.5,,3.9,4.4,3.4
+Villupuram,2020-11,69.4,High,unusual rainfall (drought or flood) in recent months (89/100); people searching to pawn jewellery (88/100),80,87.5,89.1,,37.5,35.4,45.8,32.8,22.3,,7.0,4.4,2.9
+Villupuram,2020-12,46.9,Watch,unusual rainfall (drought or flood) in recent months (85/100); falling gold prices (79/100),80,12.5,84.8,,62.5,35.4,79.2,4.7,21.2,,11.7,4.4,4.9
+Villupuram,2021-01,67.7,High,unusual rainfall (drought or flood) in recent months (85/100); falling gold prices (81/100); people searching to pawn jewellery (73/100),80,73.1,85.4,,50.0,36.0,80.8,27.4,21.4,,9.4,4.5,5.0
+Villupuram,2021-02,71.0,High,people searching to pawn jewellery (96/100); falling gold prices (96/100); unusual rainfall (drought or flood) in recent months (94/100),80,96.4,94.0,,3.6,36.5,96.4,36.2,23.5,,0.7,4.6,6.0
+Villupuram,2021-03,73.1,High,unusual rainfall (drought or flood) in recent months (98/100); people searching to pawn jewellery (97/100); falling gold prices (97/100),80,96.7,98.1,,3.3,46.3,96.7,36.2,24.5,,0.6,5.8,6.0
+Villupuram,2021-04,75.6,Severe,unusual rainfall (drought or flood) in recent months (98/100); falling gold prices (97/100); demand for and complaints about instant loan apps (78/100),80,65.6,98.1,,78.1,46.4,96.9,24.6,24.5,,14.6,5.8,6.1
+Villupuram,2021-05,79.4,Severe,falling gold prices (91/100); people searching to pawn jewellery (85/100); unusual rainfall (drought or flood) in recent months (84/100),80,85.3,83.9,,67.6,63.8,91.2,32.0,21.0,,12.7,8.0,5.7
+Villupuram,2021-06,45.0,Watch,falling gold prices (92/100),80,13.9,56.9,,63.9,63.3,91.7,5.2,14.2,,12.0,7.9,5.7
+Villupuram,2021-07,71.8,High,falling gold prices (97/100); demand for and complaints about instant loan apps (76/100); unusual rainfall (drought or flood) in recent months (75/100),80,65.8,75.0,,76.3,62.9,97.4,24.7,18.8,,14.3,7.9,6.1
+Villupuram,2021-08,82.1,Severe,falling gold prices (98/100); people searching to pawn jewellery (92/100); demand for and complaints about instant loan apps (78/100),80,92.5,75.8,,77.5,62.5,97.5,34.7,19.0,,14.5,7.8,6.1
+Villupuram,2021-09,64.8,High,falling gold prices (93/100); demand for and complaints about instant loan apps (69/100),80,59.5,64.1,,69.0,62.1,92.9,22.3,16.0,,12.9,7.8,5.8
+Villupuram,2021-10,66.3,High,falling gold prices (89/100); unusual rainfall (drought or flood) in recent months (74/100); demand for and complaints about instant loan apps (70/100),80,56.8,74.2,,70.5,61.8,88.6,21.3,18.6,,13.2,7.7,5.5
+Villupuram,2021-11,64.5,High,falling gold prices (80/100); unusual rainfall (drought or flood) in recent months (75/100),80,58.7,75.0,,58.7,61.4,80.4,22.0,18.8,,11.0,7.7,5.0
+Villupuram,2021-12,60.2,High,falling gold prices (77/100); people searching to pawn jewellery (69/100),80,68.8,58.6,,39.6,61.1,77.1,25.8,14.6,,7.4,7.6,4.8
+Villupuram,2022-01,64.2,High,people searching to pawn jewellery (84/100); falling gold prices (74/100),80,84.0,62.5,,26.0,60.8,74.0,31.5,15.6,,4.9,7.6,4.6
+Villupuram,2022-02,47.4,Watch,demand for and complaints about instant loan apps (79/100); unusual rainfall (drought or flood) in recent months (77/100),80,5.8,77.0,,78.8,60.5,55.8,2.2,19.3,,14.8,7.6,3.5
+Villupuram,2022-03,42.6,Watch,demand for and complaints about instant loan apps (83/100),80,13.0,46.1,,83.3,60.3,50.0,4.9,11.5,,15.6,7.5,3.1
+Villupuram,2022-04,64.6,High,people searching to pawn jewellery (70/100); demand for and complaints about instant loan apps (70/100),80,69.6,57.7,,69.6,60.0,55.4,26.1,14.4,,13.1,7.5,3.5
+Villupuram,2022-05,47.9,Watch,demand for and complaints about instant loan apps (88/100); higher interest rates (82/100),80,15.5,46.2,,87.9,81.7,60.3,5.8,11.6,,16.5,10.2,3.8
+Villupuram,2022-06,44.8,Watch,higher interest rates (92/100); demand for and complaints about instant loan apps (88/100),80,18.3,25.6,,88.3,91.7,55.0,6.9,6.4,,16.6,11.5,3.4
+Villupuram,2022-07,37.7,Low,higher interest rates (91/100); falling gold prices (76/100); demand for and complaints about instant loan apps (76/100),80,14.5,8.3,,75.8,90.7,75.8,5.4,2.1,,14.2,11.3,4.7
+Villupuram,2022-08,31.1,Low,higher interest rates (99/100); demand for and complaints about instant loan apps (77/100),80,1.6,1.2,,76.6,98.9,54.7,0.6,0.3,,14.4,12.4,3.4
+Villupuram,2022-09,40.6,Watch,higher interest rates (99/100); demand for and complaints about instant loan apps (89/100); falling gold prices (68/100),80,13.6,8.0,,89.4,98.9,68.2,5.1,2.0,,16.8,12.4,4.3
+Villupuram,2022-10,35.5,Low,higher interest rates (98/100); falling gold prices (72/100),80,25.0,14.4,,30.9,97.8,72.1,9.4,3.6,,5.8,12.2,4.5
+Villupuram,2022-11,31.4,Low,higher interest rates (97/100),80,15.7,14.1,,31.4,96.8,64.3,5.9,3.5,,5.9,12.1,4.0
+Villupuram,2022-12,48.8,Watch,higher interest rates (99/100); demand for and complaints about instant loan apps (82/100),80,37.5,16.0,,81.9,99.0,45.8,14.1,4.0,,15.4,12.4,2.9
+Villupuram,2023-01,42.2,Watch,higher interest rates (98/100); demand for and complaints about instant loan apps (88/100),80,23.0,9.4,,87.8,98.0,41.9,8.6,2.3,,16.5,12.2,2.6
+Villupuram,2023-02,57.3,Watch,higher interest rates (99/100); demand for and complaints about instant loan apps (91/100),80,64.5,3.1,,90.8,99.0,46.1,24.2,0.8,,17.0,12.4,2.9
+Villupuram,2023-03,49.8,Watch,higher interest rates (98/100); demand for and complaints about instant loan apps (88/100),80,14.1,49.0,,88.5,98.0,55.1,5.3,12.2,,16.6,12.3,3.4
+Villupuram,2023-04,59.3,Watch,higher interest rates (97/100); demand for and complaints about instant loan apps (82/100),80,36.2,61.8,,82.5,97.1,43.8,13.6,15.4,,15.5,12.1,2.7
+Villupuram,2023-05,54.5,Watch,higher interest rates (93/100); demand for and complaints about instant loan apps (70/100),80,46.3,39.4,,69.5,93.4,40.2,17.4,9.9,,13.0,11.7,2.5
+Villupuram,2023-06,64.7,High,higher interest rates (88/100); unusual rainfall (drought or flood) in recent months (86/100); demand for and complaints about instant loan apps (74/100),80,41.7,85.8,,73.8,88.0,44.0,15.6,21.5,,13.8,11.0,2.8
+Villupuram,2023-07,71.1,High,demand for and complaints about instant loan apps (94/100); higher interest rates (87/100); people searching to pawn jewellery (85/100),80,84.9,34.3,,94.2,87.3,33.7,31.8,8.6,,17.7,10.9,2.1
+Villupuram,2023-08,50.9,Watch,demand for and complaints about instant loan apps (94/100); higher interest rates (79/100),80,35.2,30.0,,94.3,79.5,42.0,13.2,7.5,,17.7,9.9,2.6
+Villupuram,2023-09,61.1,High,demand for and complaints about instant loan apps (88/100); higher interest rates (78/100); people searching to pawn jewellery (67/100),80,66.7,31.2,,87.8,78.1,32.2,25.0,7.8,,16.5,9.8,2.0
+Villupuram,2023-10,59.7,Watch,demand for and complaints about instant loan apps (99/100); higher interest rates (78/100); people searching to pawn jewellery (70/100),80,69.6,13.2,,98.9,77.6,33.7,26.1,3.3,,18.5,9.7,2.1
+Villupuram,2023-11,58.0,Watch,demand for and complaints about instant loan apps (99/100); higher interest rates (77/100),80,58.5,23.3,,98.9,77.1,33.0,21.9,5.8,,18.6,9.6,2.1
+Villupuram,2023-12,43.6,Watch,demand for and complaints about instant loan apps (95/100); higher interest rates (72/100),80,21.9,22.9,,94.8,72.5,44.8,8.2,5.7,,17.8,9.1,2.8
+Villupuram,2024-01,48.5,Watch,demand for and complaints about instant loan apps (97/100); higher interest rates (72/100),80,13.3,50.8,,96.9,72.1,58.2,5.0,12.7,,18.2,9.0,3.6
+Villupuram,2024-02,48.9,Watch,demand for and complaints about instant loan apps (89/100); higher interest rates (69/100),80,36.0,25.4,,89.0,69.4,57.0,13.5,6.4,,16.7,8.7,3.6
+Villupuram,2024-03,41.8,Watch,demand for and complaints about instant loan apps (75/100); higher interest rates (69/100),80,28.4,23.4,,74.5,69.0,43.1,10.7,5.8,,14.0,8.6,2.7
+Villupuram,2024-04,56.7,Watch,demand for and complaints about instant loan apps (91/100); higher interest rates (69/100),80,58.7,29.4,,91.3,68.8,27.9,22.0,7.3,,17.1,8.6,1.7
+Villupuram,2024-05,46.4,Watch,demand for and complaints about instant loan apps (77/100); higher interest rates (68/100),80,20.8,55.5,,77.4,68.5,25.5,7.8,13.9,,14.5,8.6,1.6
+Villupuram,2024-06,64.7,High,unusual rainfall (drought or flood) in recent months (82/100); demand for and complaints about instant loan apps (71/100); higher interest rates (68/100),80,55.6,82.3,,71.3,68.2,23.1,20.8,20.6,,13.4,8.5,1.4
+Villupuram,2024-07,56.2,Watch,unusual rainfall (drought or flood) in recent months (73/100); higher interest rates (68/100),80,42.7,73.5,,64.5,67.9,19.1,16.0,18.4,,12.1,8.5,1.2
+Villupuram,2024-08,67.0,High,unusual rainfall (drought or flood) in recent months (83/100); higher interest rates (68/100); people searching to pawn jewellery (67/100),80,67.0,82.8,,61.6,67.6,17.0,25.1,20.7,,11.6,8.5,1.1
+Villupuram,2024-09,50.6,Watch,higher interest rates (67/100),80,38.6,59.6,,64.9,67.4,9.6,14.5,14.9,,12.2,8.4,0.6
+Villupuram,2024-10,54.2,Watch,higher interest rates (67/100),80,64.7,39.9,,59.5,67.1,6.0,24.2,10.0,,11.2,8.4,0.4
+Villupuram,2024-11,32.6,Low,higher interest rates (67/100),80,11.0,45.0,,43.2,66.9,12.7,4.1,11.2,,8.1,8.4,0.8
+Villupuram,2024-12,48.5,Watch,higher interest rates (67/100),80,52.5,64.1,,19.2,66.7,14.2,19.7,16.0,,3.6,8.3,0.9
+Villupuram,2025-01,41.3,Watch,higher interest rates (66/100),80,52.5,45.1,,7.4,66.4,9.0,19.7,11.3,,1.4,8.3,0.6
+Villupuram,2025-02,42.4,Watch,all signals near or below normal,80,59.7,47.3,,5.6,56.1,0.8,22.4,11.8,,1.1,7.0,0.1
+Villupuram,2025-03,33.3,Low,all signals near or below normal,80,26.2,46.6,,24.6,56.0,4.0,9.8,11.7,,4.6,7.0,0.2
+Villupuram,2025-04,13.6,Low,all signals near or below normal,80,12.5,2.0,,8.6,49.3,10.2,4.7,0.5,,1.6,6.2,0.6
+Villupuram,2025-05,49.1,Watch,people searching to pawn jewellery (95/100),80,94.6,11.2,,23.1,49.4,5.4,35.5,2.8,,4.3,6.2,0.3
+Villupuram,2025-06,41.0,Watch,people searching to pawn jewellery (80/100),80,79.5,16.2,,8.3,42.9,2.3,29.8,4.1,,1.6,5.4,0.1
+Villupuram,2025-07,46.5,Watch,all signals near or below normal,80,64.2,25.0,,54.5,43.0,9.7,24.1,6.2,,10.2,5.4,0.6
+Villupuram,2025-08,54.6,Watch,people searching to pawn jewellery (82/100),80,81.6,46.2,,33.1,43.1,12.5,30.6,11.6,,6.2,5.4,0.8
+Villupuram,2025-09,25.3,Low,all signals near or below normal,80,23.2,26.9,,23.9,43.2,0.7,8.7,6.7,,4.5,5.4,0.0
+Villupuram,2025-10,54.3,Watch,people searching to pawn jewellery (91/100),80,90.7,51.2,,11.4,43.3,0.7,34.0,12.8,,2.1,5.4,0.0
+Villupuram,2025-11,63.0,High,people searching to pawn jewellery (96/100),80,96.5,54.3,,41.5,43.4,0.7,36.2,13.6,,7.8,5.4,0.0
+Villupuram,2025-12,62.1,High,people searching to pawn jewellery (97/100),80,96.5,44.0,,60.4,29.2,0.7,36.2,11.0,,11.3,3.6,0.0
+Villupuram,2026-01,62.2,High,people searching to pawn jewellery (92/100); demand for and complaints about instant loan apps (67/100),80,92.5,44.6,,67.1,29.4,0.7,34.7,11.2,,12.6,3.7,0.0
+Villupuram,2026-02,58.1,Watch,people searching to pawn jewellery (97/100),80,96.6,21.8,,61.5,39.0,2.0,36.2,5.4,,11.5,4.9,0.1
+Villupuram,2026-03,60.4,High,people searching to pawn jewellery (90/100); demand for and complaints about instant loan apps (86/100),80,90.0,21.5,,86.0,39.1,3.3,33.8,5.4,,16.1,4.9,0.2
+Villupuram,2026-04,63.9,High,people searching to pawn jewellery (91/100); demand for and complaints about instant loan apps (68/100),80,91.4,42.0,,68.4,46.0,7.2,34.3,10.5,,12.8,5.8,0.5
+Villupuram,2026-05,44.2,Watch,demand for and complaints about instant loan apps (69/100),80,38.3,41.5,,69.5,46.1,9.7,14.4,10.4,,13.0,5.8,0.6
+Villupuram,2026-06,35.5,Low,demand for and complaints about instant loan apps (97/100),80,12.2,18.5,,96.8,52.8,26.3,4.6,4.6,,18.1,6.6,1.6
+Villupuram,2026-07,69.0,High,demand for and complaints about instant loan apps (87/100); people searching to pawn jewellery (81/100),80,81.0,55.0,,86.7,52.7,31.0,30.4,13.8,,16.3,6.6,1.9
+Villupuram,2026-08,41.3,Watch,all signals near or below normal,80,35.6,33.5,,61.9,52.7,20.6,13.4,8.4,,11.6,6.6,1.3
+Villupuram,2026-09,64.2,High,people searching to pawn jewellery (87/100),80,87.0,45.1,,58.6,52.7,43.8,32.6,11.3,,11.0,6.6,2.7
+Villupuram,2026-10,52.4,Watch,demand for and complaints about instant loan apps (85/100); falling gold prices (74/100),80,36.0,44.6,,84.8,58.0,73.8,13.5,11.2,,15.9,7.2,4.6
+Villupuram,2026-11,33.6,Low,all signals near or below normal,75,16.3,28.2,,59.6,57.9,,6.5,7.5,,11.9,7.7,
