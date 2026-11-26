@@ -1,0 +1,7 @@
+driver,transform,n,best_lag,corr_at_best,corr_lag0,granger_best_lag,granger_p
+rain_deficit,level,82,2,-0.28,0.1,4,0.012
+gold_inr_yoy_pct,1-month change,81,-5,-0.26,-0.13,5,0.064
+repo_rate,1-month change,83,3,-0.28,-0.18,1,0.077
+trends_instant_loan,1-month change,83,-2,0.12,-0.07,1,0.354
+trends_loan_app,1-month change,83,4,0.12,-0.03,4,0.792
+app_complaint_share,12-month change,38,-4,-0.31,-0.04,4,0.687
