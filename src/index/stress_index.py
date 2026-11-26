@@ -8,7 +8,7 @@ out and the rest are re-weighted. Each component's points (weight x sub-score)
 are kept, so the "why" is just the biggest contributors.
 
 Component choices come from docs/analysis.md (phase 4):
-- rainfall leads pawn searches by about 4 months, and floods matter as well as
+- rainfall tends to lead pawn searches by about 4 months (a hint, p~0.1), and floods matter as well as
   drought, so rain stress is a two-tailed z-score (vs the same calendar month)
   averaged over this month and the 3 before
 - seasonal series are compared year on year

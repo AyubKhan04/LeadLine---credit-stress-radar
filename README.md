@@ -91,11 +91,11 @@ Bands: Low < 40, Watch 40-60, High 60-75, Severe 75+. The `why` column names the
 components scoring 65+. Weights are set by judgement guided by [phase 4](docs/analysis.md),
 not fitted, because there is no ground-truth stress series to fit to.
 
-**Backtest** (`data/processed/stress_index_backtest.csv`): the index ran High during the
-Delta wave (mean 61, peak 79) and reached 56 in Chennai after Cyclone Michaung, but it
-did **not** flag the 2020 lockdown (mean 38) or the Villupuram floods after Cyclone Fengal
-(mean 44). Searches for pawning fell when branches were shut, and the rainfall signal
-averages over 4 months. These are listed as gaps below.
+**Backtest** (`data/processed/stress_index_backtest.csv`, as of 26 Nov 2026): the index ran
+High during the Delta wave (mean 60, peak 79) and in Chennai after Cyclone Michaung
+(mean 63, peak 78), but it did **not** flag the 2020 lockdown (mean 40) or the Villupuram
+floods after Cyclone Fengal (mean 43). Searches for pawning fell when branches were shut,
+and the rainfall signal averages over 4 months. These are listed as gaps below.
 
 ## API (phase 6)
 

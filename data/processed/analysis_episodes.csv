@@ -1,6 +1,6 @@
 episode,months,where,context,z_pawn_search,z_trends_gold_loan,z_trends_instant_loan,z_rain_deficit,z_gold_inr_yoy_pct
-COVID lockdown,2020-04..2020-06,all,"income stop, gold loan rush",-0.7,-0.66,-1.27,0.7,0.81
-Delta wave,2021-04..2021-06,all,second lockdown in TN,-0.05,-0.41,-1.13,-0.01,-1.03
-RBI tightening,2022-05..2023-02,all,repo 4.0% to 6.5%,-0.3,-0.39,-0.8,0.03,-0.88
-Cyclone Michaung floods,2023-12..2024-01,Chennai,Chennai flooding,-1.02,-0.22,1.13,-1.04,-0.65
-Cyclone Fengal floods,2024-12..2025-01,Villupuram,Villupuram flooding,-1.0,0.3,0.58,-0.78,0.5
+COVID lockdown,2020-04..2020-06,all,"income stop, gold loan rush",-0.84,-0.66,-1.3,0.7,0.81
+Delta wave,2021-04..2021-06,all,second lockdown in TN,0.32,-0.39,-1.18,-0.01,-1.03
+RBI tightening,2022-05..2023-02,all,repo 4.0% to 6.5%,-0.41,-0.38,-0.78,0.03,-0.88
+Cyclone Michaung floods,2023-12..2024-01,Chennai,Chennai flooding,-0.24,-0.25,1.1,-1.04,-0.65
+Cyclone Fengal floods,2024-12..2025-01,Villupuram,Villupuram flooding,-0.33,0.28,0.55,-0.78,0.5

@@ -13,7 +13,7 @@ Villupuram), updated monthly from 2019 on, using only open signals:
 🏦 Gold price and the RBI repo rate
 
 What I learned:
-• Rainfall deficits lead pawn searches by about 4 months (Granger test, p≈0.01).
+• Rainfall shocks tend to come about 4 months before spikes in pawn searches, but with 8 years of monthly data that is a hint, not a proven effect (Granger p≈0.12). Being honest about that matters more than a pretty p-value.
 • Pawn searches *fell* during the 2020 lockdown, because when branches shut, search signals go quiet. An index has to know its blind spots, so the README lists what it missed.
 • Every score comes with a "why", and a what-if slider shows how a bad monsoon would move it.
 

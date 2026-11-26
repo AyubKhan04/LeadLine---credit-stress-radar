@@ -16,9 +16,9 @@ Gold auction counts would be the better target, but the lender only posts about
 
 | series | seasonal_strength | peak_month | trough_month | peak_vs_avg_pct |
 |---|---|---|---|---|
-| pawn_search | 0.26 | 8 | 4 | 30.7 |
-| trends_gold_loan | 0.09 | 2 | 4 | 20.5 |
-| trends_instant_loan | 0.16 | 12 | 4 | 10.2 |
+| pawn_search | 0.52 | 2 | 1 | 46.8 |
+| trends_gold_loan | 0.1 | 2 | 4 | 21.9 |
+| trends_instant_loan | 0.15 | 12 | 4 | 9.8 |
 
 *Seasonal strength* runs 0 to 1 (STL decomposition); above about 0.4 the calendar
 explains a lot of the movement, so the index must compare each month with the same
@@ -30,12 +30,12 @@ month in other years, not with last month.
 
 | driver | transform | n | best_lag | corr_at_best | corr_lag0 | granger_best_lag | granger_p |
 |---|---|---|---|---|---|---|---|
-| rain_deficit | level | 82 | 2 | -0.28 | 0.1 | 4 | 0.012 |
-| gold_inr_yoy_pct | 1-month change | 81 | -5 | -0.26 | -0.13 | 5 | 0.064 |
-| repo_rate | 1-month change | 83 | 3 | -0.28 | -0.18 | 1 | 0.077 |
-| trends_instant_loan | 1-month change | 83 | -2 | 0.12 | -0.07 | 1 | 0.354 |
-| trends_loan_app | 1-month change | 83 | 4 | 0.12 | -0.03 | 4 | 0.792 |
-| app_complaint_share | 12-month change | 38 | -4 | -0.31 | -0.04 | 4 | 0.687 |
+| rain_deficit | level | 93 | 4 | -0.19 | -0.04 | 4 | 0.121 |
+| gold_inr_yoy_pct | 1-month change | 81 | 6 | -0.16 | 0.04 | 6 | 0.525 |
+| repo_rate | 1-month change | 94 | 6 | 0.15 | 0.09 | 6 | 0.103 |
+| trends_instant_loan | level | 94 | -6 | 0.1 | -0.05 | 1 | 0.59 |
+| trends_loan_app | 1-month change | 94 | -6 | 0.26 | -0.03 | 5 | 0.126 |
+| app_complaint_share | level | 47 | 3 | -0.22 | -0.06 | 3 | 0.622 |
 
 How to read it: `best_lag` > 0 means the driver moves that many months **before**
 pawn searches. `granger_p` < 0.05 means past values of the driver improve a forecast
@@ -44,7 +44,7 @@ stationary first (`transform`). Granger causality is about forecasting, not proo
 of cause. The lowest p-value across lags 1-6 is shown, which flatters
 results a little (six tries), so treat p between 0.01 and 0.05 as a hint.
 
-Drivers with Granger p < 0.05: rain_deficit.
+Drivers with Granger p < 0.05: none at the 5% level.
 
 ## 3. Known stress periods
 
@@ -53,11 +53,11 @@ normal). For district episodes, `z_rain_deficit` uses that district's own rainfa
 
 | episode | months | where | context | z_pawn_search | z_trends_gold_loan | z_trends_instant_loan | z_rain_deficit | z_gold_inr_yoy_pct |
 |---|---|---|---|---|---|---|---|---|
-| COVID lockdown | 2020-04..2020-06 | all | income stop, gold loan rush | -0.7 | -0.66 | -1.27 | 0.7 | 0.81 |
-| Delta wave | 2021-04..2021-06 | all | second lockdown in TN | -0.05 | -0.41 | -1.13 | -0.01 | -1.03 |
-| RBI tightening | 2022-05..2023-02 | all | repo 4.0% to 6.5% | -0.3 | -0.39 | -0.8 | 0.03 | -0.88 |
-| Cyclone Michaung floods | 2023-12..2024-01 | Chennai | Chennai flooding | -1.02 | -0.22 | 1.13 | -1.04 | -0.65 |
-| Cyclone Fengal floods | 2024-12..2025-01 | Villupuram | Villupuram flooding | -1.0 | 0.3 | 0.58 | -0.78 | 0.5 |
+| COVID lockdown | 2020-04..2020-06 | all | income stop, gold loan rush | -0.84 | -0.66 | -1.3 | 0.7 | 0.81 |
+| Delta wave | 2021-04..2021-06 | all | second lockdown in TN | 0.32 | -0.39 | -1.18 | -0.01 | -1.03 |
+| RBI tightening | 2022-05..2023-02 | all | repo 4.0% to 6.5% | -0.41 | -0.38 | -0.78 | 0.03 | -0.88 |
+| Cyclone Michaung floods | 2023-12..2024-01 | Chennai | Chennai flooding | -0.24 | -0.25 | 1.1 | -1.04 | -0.65 |
+| Cyclone Fengal floods | 2024-12..2025-01 | Villupuram | Villupuram flooding | -0.33 | 0.28 | 0.55 | -0.78 | 0.5 |
 
 Reading the episodes: pawn searches **fell** during the COVID lockdowns, when
 branches were shut and Trends' relative scale was swamped by health searches. So

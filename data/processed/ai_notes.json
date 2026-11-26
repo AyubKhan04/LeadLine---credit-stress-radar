@@ -1,6 +1,6 @@
 {
  "2026-11": {
-  "en": "Credit Stress Radar, November 2026. Index 0-100, higher means more stress.\n- Chennai: 44/100 (Watch); vs last month -14, vs a year ago -30. Why: unusual rainfall (drought or flood) in recent months (68/100).\n- Coimbatore: 32/100 (Low); vs last month -18, vs a year ago -29. Why: all signals near or below normal.\n- Madurai: 37/100 (Low); vs last month -10, vs a year ago -13. Why: all signals near or below normal.\n- Villupuram: 34/100 (Low); vs last month -19, vs a year ago -29. Why: all signals near or below normal.\nNo anomaly flags this month.",
+  "en": "Credit Stress Radar, November 2026. Index 0-100, higher means more stress.\n- Chennai: 41/100 (Watch); vs last month -5, vs a year ago -29. Why: unusual rainfall (drought or flood) in recent months (68/100).\n- Coimbatore: 29/100 (Low); vs last month -8, vs a year ago -28. Why: all signals near or below normal.\n- Madurai: 34/100 (Low); vs last month -4, vs a year ago -12. Why: all signals near or below normal.\n- Villupuram: 30/100 (Low); vs last month -10, vs a year ago -29. Why: all signals near or below normal.\nNo anomaly flags this month.",
   "_source": "rules"
  }
 }
