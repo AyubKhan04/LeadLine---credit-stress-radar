@@ -1,0 +1,49 @@
+
+=== repo_rate ===
+repo rate: 95 months, latest {'month': '2026-11', 'repo_rate': 5.5, 'repo_rate_change_bps': 0}
+
+=== rainfall ===
+[robots] DISALLOWED: https://archive-api.open-meteo.com/v1/archive
+rainfall: 380 rows, 2019-01..2026-11
+
+=== gold ===
+[gold] retry https://fred.stlouisfed.org/graph/fredgraph.csv?id=EXINUS: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)
+[gold] retry https://fred.stlouisfed.org/graph/fredgraph.csv?id=EXINUS: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)
+[gold] usd_inr_fred failed: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)
+gold: 94 rows, 2019-01..2026-10, FX missing for 0 months
+
+=== trends ===
+trends: 5 terms, 2019-01..2026-11
+
+=== app_reviews ===
+[robots] allowed: https://itunes.apple.com/in/rss/customerreviews/page=1/id=1/sortby=mostrecent/json
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  KreditBee: Personal Loans, UPI: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Navi: UPI, Payments, Insurance: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Moneyview: Personal Loan App: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Personal Loan App by Fibe: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  mPokket: Instant Personal Loan: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  CASHe: Online Instant Loan App: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Kissht: Instant Personal Loan: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Bajaj Finance: Loans, UPI & FD: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Muthoot FinCorp ONE: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Manappuram OGL Lite: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Online Gold loan: Rupeek: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  IIFL Finance: 0 reviews
+app reviews: nothing collected
+
+=== review_dataset ===
+review dataset: data/raw/slicepay_reviews.csv not found and no Kaggle credentials; skipping
+
+Done. Failed: none
