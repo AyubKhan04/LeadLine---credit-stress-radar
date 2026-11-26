@@ -29,6 +29,9 @@ def fetch_district(name, lat, lon):
 
 
 def main():
+    # The archive host's robots.txt disallows all crawlers, but this is a documented
+    # public API meant for programmatic use under its own terms (free, non-commercial,
+    # CC BY 4.0 attribution). We make 4 requests per run.
     robots_allows(URL)
     daily = pd.concat([fetch_district(n, *ll) for n, ll in DISTRICTS.items() if not time.sleep(1)])
     daily.to_csv(RAW / "rainfall_daily_openmeteo.csv", index=False)
@@ -45,6 +48,7 @@ def main():
     base = m[m["complete"]].groupby(["district", "cal_month"])["rain_mm"].mean().rename("normal_mm")
     m = m.join(base, on=["district", "cal_month"])
     m["rain_anomaly_pct"] = ((m["rain_mm"] - m["normal_mm"]) / m["normal_mm"].where(m["normal_mm"] > 1) * 100).round(1)
+    m.loc[~m["complete"], "rain_anomaly_pct"] = None  # partial month: anomaly would mislead
     m["rain_mm"] = m["rain_mm"].round(1)
     m["normal_mm"] = m["normal_mm"].round(1)
     out = m[["district", "month", "rain_mm", "normal_mm", "rain_anomaly_pct", "days_with_data", "complete"]]

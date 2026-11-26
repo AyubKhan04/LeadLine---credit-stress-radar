@@ -47,8 +47,16 @@ def fetch_reviews(app_id, app_name):
     for page in range(1, 11):
         r = requests.get(FEED.format(page=page, app_id=app_id), headers=H, timeout=30)
         if r.status_code != 200:
+            print(f"    page {page}: HTTP {r.status_code} {r.text[:150]!r}")
             break
-        entries = r.json().get("feed", {}).get("entry", [])
+        try:
+            feed = r.json().get("feed", {})
+        except ValueError:
+            print(f"    page {page}: not JSON: {r.text[:150]!r}")
+            break
+        entries = feed.get("entry", [])
+        if page == 1 and not entries:
+            print(f"    page 1: no entries; feed keys {list(feed)[:8]}")
         if isinstance(entries, dict):
             entries = [entries]
         entries = [e for e in entries if "im:rating" in e]  # first entry can be app metadata

@@ -22,13 +22,21 @@ PINK_SHEET_URLS = [
     "https://thedocs.worldbank.org/en/doc/5d903e848db1d1b83e0ec8f744e55570-0350012021/related/CMO-Historical-Data-Monthly.xlsx",
 ]
 FRED_URL = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=EXINUS"
+# Fallback: ECB euro reference rates (USD/INR = EUR/INR / EUR/USD). Free, keyless.
+ECB_URL = "https://data-api.ecb.europa.eu/service/data/EXR/M.{cur}.EUR.SP00.A?format=csvdata&startPeriod=2018-01"
 GRAMS_PER_TROY_OZ = 31.1035
 
 
-def get(url):
-    r = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=90)
-    r.raise_for_status()
-    return r.content
+def get(url, tries=3):
+    for attempt in range(tries):
+        try:
+            r = requests.get(url, headers={"User-Agent": USER_AGENT}, timeout=(15, 60))
+            r.raise_for_status()
+            return r.content
+        except Exception as e:
+            if attempt == tries - 1:
+                raise
+            print(f"[gold] retry {url[:60]}: {e}")
 
 
 def gold_usd():
@@ -54,13 +62,38 @@ def gold_usd():
     return data[["month", "gold_usd_oz"]]
 
 
-def usd_inr():
+def usd_inr_fred():
     fx = pd.read_csv(io.BytesIO(get(FRED_URL)))
     fx.columns = ["date", "usd_inr"]
     fx["usd_inr"] = pd.to_numeric(fx["usd_inr"], errors="coerce")
     fx["month"] = pd.to_datetime(fx["date"]).dt.to_period("M").astype(str)
-    fx.to_csv(RAW / "fred_exinus.csv", index=False)
-    return fx[["month", "usd_inr"]].dropna()
+    fx["fx_source"] = "FRED EXINUS"
+    return fx[["month", "usd_inr", "fx_source"]].dropna()
+
+
+def usd_inr_ecb():
+    def series(cur):
+        d = pd.read_csv(io.BytesIO(get(ECB_URL.format(cur=cur))))
+        return d.set_index("TIME_PERIOD")["OBS_VALUE"].astype(float)
+    inr, usd = series("INR"), series("USD")
+    fx = (inr / usd).dropna().round(4).rename("usd_inr").reset_index().rename(columns={"TIME_PERIOD": "month"})
+    fx["fx_source"] = "ECB EUR/INR / EUR/USD"
+    return fx
+
+
+def usd_inr():
+    """FRED first; ECB fills months FRED lacks (or everything if FRED is down)."""
+    parts = []
+    for fn in (usd_inr_fred, usd_inr_ecb):
+        try:
+            parts.append(fn())
+        except Exception as e:
+            print(f"[gold] {fn.__name__} failed: {e}")
+    if not parts:
+        raise RuntimeError("no USD/INR source reachable")
+    fx = pd.concat(parts).drop_duplicates("month", keep="first").sort_values("month")
+    fx.to_csv(RAW / "usd_inr_monthly.csv", index=False)
+    return fx
 
 
 def main():

@@ -24,7 +24,20 @@ PAUSE = 8  # seconds between calls, to stay polite and avoid 429s
 
 
 def client():
-    return TrendReq(hl="en-IN", tz=-330, timeout=(10, 30), retries=3, backoff_factor=2)
+    # no retries= here: pytrends' retry option breaks on urllib3 2.x, so we retry ourselves
+    return TrendReq(hl="en-IN", tz=-330, timeout=(10, 30))
+
+
+def with_retry(fn, tries=3):
+    for attempt in range(tries):
+        try:
+            return fn()
+        except Exception as e:
+            if attempt == tries - 1:
+                raise
+            wait = 60 * (attempt + 1) if "429" in str(e) else 10
+            print(f"[trends] retry in {wait}s after: {str(e)[:120]}")
+            time.sleep(wait)
 
 
 def main():
@@ -33,8 +46,10 @@ def main():
     timeframe = f"{START.isoformat()} {TODAY.isoformat()}"
     for term in TERMS:
         try:
-            py.build_payload([term], timeframe=timeframe, geo=GEO)
-            ts = py.interest_over_time()
+            def ts_call():
+                py.build_payload([term], timeframe=timeframe, geo=GEO)
+                return py.interest_over_time()
+            ts = with_retry(ts_call)
             if ts.empty:
                 failed.append((term, "no data"))
             else:
@@ -48,8 +63,10 @@ def main():
         for year in range(START.year, TODAY.year + 1):
             end = min(pd.Timestamp(f"{year}-12-31").date(), TODAY)
             try:
-                py.build_payload([term], timeframe=f"{year}-01-01 {end.isoformat()}", geo=GEO)
-                c = py.interest_by_region(resolution="CITY", inc_low_vol=True, inc_geo_code=False)
+                def city_call():
+                    py.build_payload([term], timeframe=f"{year}-01-01 {end.isoformat()}", geo=GEO)
+                    return py.interest_by_region(resolution="CITY", inc_low_vol=True, inc_geo_code=False)
+                c = with_retry(city_call)
                 c = c.reset_index().rename(columns={"geoName": "city", term: "interest"})
                 c["term"], c["year"] = term, year
                 cities.append(c[["year", "term", "city", "interest"]])
@@ -68,6 +85,7 @@ def main():
         print(f"trends: {out['term'].nunique()} terms, {out['month'].min()}..{out['month'].max()}")
     if cities:
         c = pd.concat(cities)
+        c = c[c["interest"] > 0]
         c.to_csv(PROCESSED / "trends_tn_city_yearly.csv", index=False)
         print(f"trends city: {len(c)} rows")
     if failed:
