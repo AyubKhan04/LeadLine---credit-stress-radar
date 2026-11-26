@@ -24,15 +24,26 @@ USER_AGENT = "LeadLine-research/0.1 (portfolio project; low volume)"
 
 
 def robots_allows(url: str) -> bool:
-    """Check robots.txt for the URL's host before fetching it."""
+    """Check robots.txt for the URL's host before fetching it.
+
+    robots.txt is fetched with our own User-Agent: some hosts (Cloudflare) refuse
+    Python's default urllib agent, which RobotFileParser.read() would then treat
+    as "disallow everything".
+    """
     from urllib.parse import urlparse
+    import requests
     p = urlparse(url)
-    rp = urllib.robotparser.RobotFileParser(f"{p.scheme}://{p.netloc}/robots.txt")
+    robots = f"{p.scheme}://{p.netloc}/robots.txt"
+    rp = urllib.robotparser.RobotFileParser(robots)
     try:
-        rp.read()
+        r = requests.get(robots, headers={"User-Agent": USER_AGENT}, timeout=30)
+        if r.status_code in (401, 403):
+            print(f"[robots] {robots} refused us (HTTP {r.status_code}): treating as disallowed")
+            return False
+        rp.parse(r.text.splitlines() if r.ok else [])
     except Exception as e:  # robots.txt unreachable: treat as allowed but say so
         print(f"[robots] could not read robots.txt for {p.netloc}: {e}")
         return True
-    ok = rp.can_fetch("*", url)
+    ok = rp.can_fetch(USER_AGENT, url) and rp.can_fetch("*", url)
     print(f"[robots] {'allowed' if ok else 'DISALLOWED'}: {url}")
     return ok
