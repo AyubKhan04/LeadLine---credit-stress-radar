@@ -337,7 +337,11 @@ def probe(text, pats, label):
 
 
 # ------------------------------------------------------------------------ main
+BUDGET_MIN = float(os.environ.get("AUCTION_MAX_MINUTES", "60"))
+
+
 def main():
+    t0 = time.time()
     if not robots_allows(LIST_URL + f"?field_state_target_id={TN_STATE_ID}&page=0"):
         print("auction list disallowed by robots.txt; skipping")
         return
@@ -351,6 +355,12 @@ def main():
         if n.pub_date is None:
             continue
         month = n.pub_date.strftime("%Y-%m")
+        # OCR of a full newspaper page takes about a minute. Stop starting new
+        # pages after the time budget; cached text carries over to the next run.
+        path = RAW_DIR / re.sub(r"[^A-Za-z0-9._-]+", "_", n.url.rsplit("/", 2)[-2] + "_" + n.url.rsplit("/", 1)[-1])
+        if time.time() - t0 > BUDGET_MIN * 60 and not path.with_suffix(".ocr450.txt").exists():
+            coverage.append(dict(month=month, title=n.title, status="skipped: time budget, next run"))
+            continue
         try:
             text = pdf_text(download(n.url))
         except Exception as e:

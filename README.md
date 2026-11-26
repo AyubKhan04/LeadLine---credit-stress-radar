@@ -52,7 +52,7 @@ streamlit run dashboard/app.py    # dashboard
 
 GitHub Actions: `monthly-refresh.yml` runs all of that on the 5th of each month and commits
 the results (also runnable by hand from the Actions tab). `collect-data.yml` and
-`collect-auctions.yml` run when their code changes on a `claude/` branch.
+`collect-auctions.yml` can be run by hand (Actions tab > Run workflow); `collect-data.yml` also runs when collector code changes on a `claude/` branch.
 To turn on AI notes, ask-the-data and the AI fallbacks, add `ANTHROPIC_API_KEY` as a
 repository secret (Settings > Secrets and variables > Actions).
 
@@ -138,6 +138,7 @@ To rebuild the slice numbers, put `slicepay_reviews.csv` in `data/raw/` (Kaggle 
 ## Known gaps and caveats (honest list)
 
 - **Auction history is short: April to October 2026.** Manappuram only keeps recent notices online. IIFL's robots.txt blocks its auction list beyond page one (`Disallow: /auction?*`) and Muthoot doesn't post notices online, so neither is used. Older notices exist only in newspaper archives (paid). The monthly workflow adds each new month, so the series grows from here.
+- **The committed counts come from a first OCR pass at the scan's native resolution** (about 2,000 accounts across 29 districts), which misses many loan numbers. The collector now OCRs at 450 dpi, but that takes about a minute per page, so it works through the pages within a 60-minute budget each run and caches the text. The monthly refresh catches up over its first couple of runs.
 - **Auction counts are a floor, not a census.** OCR of small newspaper type misses some loan numbers, and a district only appears when its name is read correctly. Use the trend within a district, not exact totals. The branch list from Manappuram's branch locator returns only one branch per district, so branch-to-district mapping comes from the notice text itself.
 
 - **The index has no ground truth.** No public monthly district series of household credit stress exists, so phase 4 uses Tamil pawn searches as the yardstick and the weights are judgement, not fitted. Treat scores as a ranking of "how unusual is this month for this district", not a default probability.

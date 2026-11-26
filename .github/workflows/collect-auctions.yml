@@ -2,9 +2,6 @@ name: Collect gold auction notices (phase 3)
 
 on:
   workflow_dispatch:
-  push:
-    branches: ["claude/**"]
-    paths: ["src/collectors/gold_auctions.py", ".github/workflows/collect-auctions.yml"]
 
 permissions:
   contents: write
@@ -12,7 +9,7 @@ permissions:
 jobs:
   auctions:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 100
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
