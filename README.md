@@ -56,6 +56,22 @@ the results (also runnable by hand from the Actions tab). `collect-data.yml` and
 To turn on AI notes, ask-the-data and the AI fallbacks, add `ANTHROPIC_API_KEY` as a
 repository secret (Settings > Secrets and variables > Actions).
 
+## Gold auction notices (phase 3)
+
+`gold_auctions_monthly.csv` (district x month), `gold_auctions_branch_monthly.csv`,
+`gold_auctions_coverage.csv` (one row per newspaper page: parsed or why not).
+
+- **Source:** [Manappuram Finance auction publications](https://www.manappuram.com/auction-publications),
+  filtered to Tamil Nadu: scanned newspaper pages (Dinamani, The New Indian Express;
+  8 editions) carrying each gold auction notice. robots.txt allows these pages and the
+  terms don't forbid reuse. Requests are spaced 1.5 s apart with an identifying User-Agent.
+- **Method:** Tesseract OCR at 450 dpi, cut out the Manappuram notice, anchor on district
+  names ("DISTRICT, BRANCH, loan number, ..."), count distinct loan numbers per district
+  and month (the same notice runs in several papers, so numbers are de-duplicated). If no
+  district is found and `ANTHROPIC_API_KEY` is set, Claude Haiku returns branch counts.
+- **Privacy:** only counts are committed. Loan numbers and anything else OCR reads stay
+  in git-ignored `data/raw/` and the Actions cache.
+
 ## The stress index (phase 5)
 
 Each month every district gets a 0-100 score. Each signal is turned into a 0-100
@@ -120,6 +136,9 @@ programmatic use under its own terms, so we use it (4 requests per run) and log 
 To rebuild the slice numbers, put `slicepay_reviews.csv` in `data/raw/` (Kaggle needs a login to download), or add `KAGGLE_USERNAME` and `KAGGLE_KEY` as repository secrets so the workflow fetches it. Reviewer names and ids are never loaded.
 
 ## Known gaps and caveats (honest list)
+
+- **Auction history is short: April to October 2026.** Manappuram only keeps recent notices online. IIFL's robots.txt blocks its auction list beyond page one (`Disallow: /auction?*`) and Muthoot doesn't post notices online, so neither is used. Older notices exist only in newspaper archives (paid). The monthly workflow adds each new month, so the series grows from here.
+- **Auction counts are a floor, not a census.** OCR of small newspaper type misses some loan numbers, and a district only appears when its name is read correctly. Use the trend within a district, not exact totals. The branch list from Manappuram's branch locator returns only one branch per district, so branch-to-district mapping comes from the notice text itself.
 
 - **The index has no ground truth.** No public monthly district series of household credit stress exists, so phase 4 uses Tamil pawn searches as the yardstick and the weights are judgement, not fitted. Treat scores as a ranking of "how unusual is this month for this district", not a default probability.
 - **It missed two known episodes** (2020 lockdown, Cyclone Fengal in Villupuram), see the backtest above. Search signals fall when access to branches stops.
