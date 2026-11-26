@@ -1,0 +1,79 @@
+"""Google Trends search interest for credit-stress terms in Tamil Nadu.
+
+Uses pytrends (unofficial). robots.txt on trends.google.com only disallows the
+/explore? web page, not the /trends/api endpoints pytrends calls; we still keep
+volume tiny (one request per term, plus one city snapshot per term per year) with
+pauses between calls.
+
+Outputs
+- trends_tn_monthly.csv: monthly 0-100 interest per term for Tamil Nadu (IN-TN).
+  Each term is fetched on its own, so values compare months within a term, not
+  terms with each other.
+- trends_tn_city_yearly.csv: per-year city breakdown inside Tamil Nadu. Google
+  gives no city-level time series for India, only these cross-sections.
+"""
+import time
+import pandas as pd
+from pytrends.request import TrendReq
+
+from src.config import START, TODAY, RAW, PROCESSED
+
+TERMS = ["gold loan", "instant loan", "loan app", "நகை அடகு", "நகை கடன்"]
+GEO = "IN-TN"
+PAUSE = 8  # seconds between calls, to stay polite and avoid 429s
+
+
+def client():
+    return TrendReq(hl="en-IN", tz=-330, timeout=(10, 30), retries=3, backoff_factor=2)
+
+
+def main():
+    py = client()
+    frames, cities, failed = [], [], []
+    timeframe = f"{START.isoformat()} {TODAY.isoformat()}"
+    for term in TERMS:
+        try:
+            py.build_payload([term], timeframe=timeframe, geo=GEO)
+            ts = py.interest_over_time()
+            if ts.empty:
+                failed.append((term, "no data"))
+            else:
+                ts = ts.reset_index().rename(columns={term: "interest"})
+                ts["term"] = term
+                frames.append(ts[["date", "term", "interest", "isPartial"]])
+        except Exception as e:
+            failed.append((term, f"timeseries: {e}"))
+        time.sleep(PAUSE)
+
+        for year in range(START.year, TODAY.year + 1):
+            end = min(pd.Timestamp(f"{year}-12-31").date(), TODAY)
+            try:
+                py.build_payload([term], timeframe=f"{year}-01-01 {end.isoformat()}", geo=GEO)
+                c = py.interest_by_region(resolution="CITY", inc_low_vol=True, inc_geo_code=False)
+                c = c.reset_index().rename(columns={"geoName": "city", term: "interest"})
+                c["term"], c["year"] = term, year
+                cities.append(c[["year", "term", "city", "interest"]])
+            except Exception as e:
+                failed.append((term, f"city {year}: {e}"))
+            time.sleep(PAUSE)
+
+    if frames:
+        ts = pd.concat(frames)
+        ts.to_csv(RAW / "trends_tn_raw.csv", index=False)
+        ts["month"] = pd.to_datetime(ts["date"]).dt.to_period("M").astype(str)
+        out = (ts.groupby(["term", "month"], as_index=False)
+                 .agg(interest=("interest", "mean"), partial=("isPartial", "max")))
+        out["interest"] = out["interest"].round(1)
+        out.to_csv(PROCESSED / "trends_tn_monthly.csv", index=False)
+        print(f"trends: {out['term'].nunique()} terms, {out['month'].min()}..{out['month'].max()}")
+    if cities:
+        c = pd.concat(cities)
+        c.to_csv(PROCESSED / "trends_tn_city_yearly.csv", index=False)
+        print(f"trends city: {len(c)} rows")
+    if failed:
+        pd.DataFrame(failed, columns=["term", "error"]).to_csv(PROCESSED / "trends_failures.csv", index=False)
+        print(f"trends: {len(failed)} calls failed (see trends_failures.csv)")
+
+
+if __name__ == "__main__":
+    main()
