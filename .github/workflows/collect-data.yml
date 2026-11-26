@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: ["claude/**"]
-    paths: ["src/**", "run_collectors.py", "requirements.txt", ".github/workflows/collect-data.yml"]
+    paths: ["src/**", "!src/collectors/gold_auctions.py", "run_collectors.py", ".github/workflows/collect-data.yml"]
 
 permissions:
   contents: write

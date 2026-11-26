@@ -1,0 +1,45 @@
+name: Collect gold auction notices (phase 3)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 3 5 * *"   # 5th of each month, 09:00 IST
+  push:
+    branches: ["claude/**"]
+    paths: ["src/collectors/gold_auctions.py", ".github/workflows/collect-auctions.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  auctions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq tesseract-ocr poppler-utils
+      - run: pip install -r requirements.txt
+      # Downloaded PDFs and OCR text (may contain personal details) are cached
+      # between runs but never committed.
+      - uses: actions/cache@v4
+        with:
+          path: data/raw/manappuram_auctions
+          key: manappuram-${{ github.run_id }}
+          restore-keys: manappuram-
+      - name: Run auction collector
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AUCTION_PROBE: "1"
+        run: python run_collectors.py gold_auctions 2>&1 | tee data/processed/last_auction_run_log.txt
+      - name: Commit counts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/processed
+          git diff --cached --quiet || git commit -m "data: refresh gold auction counts"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
