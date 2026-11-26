@@ -1,7 +1,7 @@
 driver,transform,n,best_lag,corr_at_best,corr_lag0,granger_best_lag,granger_p
-rain_deficit,level,93,4,-0.19,-0.04,4,0.121
-gold_inr_yoy_pct,1-month change,81,6,-0.16,0.04,6,0.525
-repo_rate,1-month change,94,6,0.15,0.09,6,0.103
-trends_instant_loan,level,94,-6,0.1,-0.05,1,0.59
-trends_loan_app,1-month change,94,-6,0.26,-0.03,5,0.126
-app_complaint_share,level,45,-6,-0.26,-0.14,1,0.362
+rain_deficit,level,82,2,-0.28,0.1,4,0.012
+gold_inr_yoy_pct,1-month change,81,-5,-0.26,-0.13,5,0.064
+repo_rate,1-month change,83,3,-0.28,-0.18,1,0.077
+trends_instant_loan,1-month change,83,-2,0.12,-0.07,1,0.354
+trends_loan_app,1-month change,83,4,0.11,-0.01,1,0.785
+app_complaint_share,1-month change,73,-3,-0.17,-0.09,5,0.399

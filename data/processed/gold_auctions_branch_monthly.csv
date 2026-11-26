@@ -183,14 +183,18 @@ month,district,branch,branch_code,accounts
 2026-07,Villupuram,Villupuram,,9
 2026-07,Virudhunagar,Aruppurkkottai Oos Topoqorb S,,4
 2026-08,Chennai,Adambarkam O,,4
+2026-08,Chennai,Alandur Mkn Road,,1
+2026-08,Chennai,Aminjiraral O Annanagar Chennal,,4
 2026-08,Chennai,B,,5
-2026-08,Chennai,Chennai,,67
+2026-08,Chennai,C Kasturba Nagar Adayar,,1
+2026-08,Chennai,Chennai,,70
 2026-08,Chennai,O,,7
+2026-08,Chennai,O . Madhavaran High,,4
 2026-08,Chennai,O F F P,,10
 2026-08,Chennai,Soe O O Annanagar,,2
 2026-08,Chennai,Trr Baat S Ees,,1
 2026-08,Coimbatore,B S,,1
-2026-08,Coimbatore,Coimbatore,,16
+2026-08,Coimbatore,Coimbatore,,40
 2026-08,Coimbatore,G . Venrataramanan Street,,1
 2026-08,Coimbatore,O,,2
 2026-08,Coimbatore,O F,,1
@@ -201,10 +205,15 @@ month,district,branch,branch_code,accounts
 2026-08,Cuddalore,Cuddallore Old Town,,2
 2026-08,Cuddalore,Cuddalore,,2
 2026-08,Cuddalore,O D . G,,2
+2026-08,Cuddalore,Panruti Giz I O,,1
 2026-08,Dharmapuri,Dharmapuri,,6
 2026-08,Dharmapuri,S A . A,,1
+2026-08,Dindigul,Dindigul,,6
+2026-08,Dindigul,G Vedachandur,,1
+2026-08,Erode,A Punjaipuliyampatti,,1
 2026-08,Erode,Aff . P B,,1
-2026-08,Erode,Erode,,1
+2026-08,Erode,Bhavani,,2
+2026-08,Erode,Erode,,16
 2026-08,Erode,O,,2
 2026-08,Erode,Omesro S F Ta,,1
 2026-08,Erode,Oo Or . Fa,,1
@@ -213,10 +222,15 @@ month,district,branch,branch_code,accounts
 2026-08,Kancheepuram,Kancheepuram,,16
 2026-08,Kancheepuram,Kanchipuram,,1
 2026-08,Kancheepuram,Oe S . .,,3
+2026-08,Kancheepuram,Of,,2
+2026-08,Kanyakumari,Beach Road Nagarcoil,,7
 2026-08,Karur,Karur,,7
 2026-08,Karur,Paradip Port Authority,,1
 2026-08,Krishnagiri,Balai Nagar B S,,1
 2026-08,Krishnagiri,Krishnagiri,,12
+2026-08,Madurai,Alagar Kovil Road Tallakulam,,1
+2026-08,Madurai,Id And Password. Members,,1
+2026-08,Madurai,Madurai,,5
 2026-08,Mayiladuthurai,Mayiladuthurai,,1
 2026-08,Nagapattinam,Nagapattinam,,2
 2026-08,Namakkal,Cpst O S .,,1
@@ -224,9 +238,11 @@ month,district,branch,branch_code,accounts
 2026-08,Namakkal,Namakkal,,4
 2026-08,Namakkal,O S S Ge,,1
 2026-08,Namakkal,Ot B S Mo,,1
+2026-08,Nilgiris,Coonoor,,2
 2026-08,Nilgiris,Coonoor D B Ba,,2
 2026-08,Perambalur,Perambalur,,12
 2026-08,Pudukkottai,Nidamangalam,,2
+2026-08,Ramanathapuram,Ramanathapuram,,6
 2026-08,Ranipet,Old Bus Stand Circle,,2
 2026-08,Ranipet,Ranipet,,3
 2026-08,Salem,Attur,,1
@@ -234,20 +250,29 @@ month,district,branch,branch_code,accounts
 2026-08,Salem,O,,4
 2026-08,Salem,Road,,2
 2026-08,Salem,Salem,,14
+2026-08,Sivaganga,Www.Sihra.In. In Case Of,,5
 2026-08,Tenkasi,Dist Ta Mill Enened,,24
 2026-08,Thanjavur,S . - .,,2
 2026-08,Thanjavur,Thanjavur,,11
+2026-08,Thoothukudi,Kamaraj Despite Repeated Requests,,1
+2026-08,Thoothukudi,Registration District Ottapidaram Sub-Registration,,1
 2026-08,Tiruchirappalli,Elect-Gssrey. E-Tenders Are Invited,,3
 2026-08,Tiruchirappalli,Road. Wamareal,,1
 2026-08,Tiruchirappalli,S S O Sro,,6
 2026-08,Tiruchirappalli,Trichy,,13
+2026-08,Tirunelveli,Kadayam Thirunelveli,,2
+2026-08,Tirunelveli,Tirunelveli,,2
 2026-08,Tirupathur,Thiruppathur Fai A A,,1
+2026-08,Tiruppur,Anupparpalayam,,1
 2026-08,Tiruppur,Pitchampalayam,,1
 2026-08,Tiruppur,Pn Road,,3
-2026-08,Tiruppur,Tirupur,,7
+2026-08,Tiruppur,Tiruppur,,2
+2026-08,Tiruppur,Tirupur,,12
 2026-08,Tiruvallur,Avadi O Ayyaparram D,,6
+2026-08,Tiruvallur,Chittoor Road Tiruttani,,1
 2026-08,Tiruvallur,O,,7
 2026-08,Tiruvallur,O S O Tb,,1
+2026-08,Tiruvallur,Thiruvallur,,2
 2026-08,Tiruvallur,Tiruvallur,,1
 2026-08,Tiruvannamalai,Erattai Pillayar Koil Street,,3
 2026-08,Tiruvannamalai,Thiruvannamalai,,2
@@ -260,3 +285,93 @@ month,district,branch,branch_code,accounts
 2026-08,Vellore,Vellore,,19
 2026-08,Villupuram,Gingee,,1
 2026-08,Villupuram,Market O . S,,3
+2026-08,Villupuram,Nehru Street Tindivanam Q,,1
+2026-08,Villupuram,Villupuram,,6
+2026-10,Chennai,Adambakkam T Adayar,,5
+2026-10,Chennai,Chennai,,41
+2026-10,Chennai,Dtsotopo O Ts Ot,,1
+2026-10,Chennai,Gba B Erikkarai,,12
+2026-10,Chennai,Methanagar,,5
+2026-10,Chennai,O Goa O Th,,4
+2026-10,Chennai,S O Annanagar East,,8
+2026-10,Coimbatore,Coimbatore,,14
+2026-10,Coimbatore,O Q Ofz S,,1
+2026-10,Coimbatore,Oe Stop G O,,1
+2026-10,Coimbatore,R B E,,1
+2026-10,Coimbatore,T O S O,,2
+2026-10,Coimbatore,Tee Chinniampalayam S Chinthamanipudur,,2
+2026-10,Coimbatore,Th Street Gandhipuram,,1
+2026-10,Cuddalore,Cuddallore Old Town,,2
+2026-10,Cuddalore,F Boo Thos. .,,5
+2026-10,Cuddalore,O . G O,,1
+2026-10,Dharmapuri,F,,1
+2026-10,Dindigul,Dindigul,,2
+2026-10,Dindigul,Foi Oe F Fi,,1
+2026-10,Erode,Erode,,16
+2026-10,Erode,O T . O,,1
+2026-10,Erode,Perundurai Road P P,,3
+2026-10,Kallakurichi,Bo O Iriots Bait,,1
+2026-10,Kancheepuram,Ayyappan Thangal,,3
+2026-10,Kancheepuram,Kancheepuram,,10
+2026-10,Kancheepuram,Kanchipuram,,2
+2026-10,Kancheepuram,O T P,,21
+2026-10,Kanyakumari,Anjugramam Kan Yakumari G,,1
+2026-10,Kanyakumari,O Toot T Kolachel,,1
+2026-10,Kanyakumari,Road Monday Market. Da,,3
+2026-10,Karur,Karur,,5
+2026-10,Karur,Pasupathipalayamkarur,,1
+2026-10,Krishnagiri,Foe Oo A .,,2
+2026-10,Krishnagiri,Krishnagiri,,1
+2026-10,Krishnagiri,O . Shantinagar Hoslir,,2
+2026-10,Krishnagiri,S S B Bb,,2
+2026-10,Madurai,I . F .,,3
+2026-10,Madurai,Madurai,,10
+2026-10,Madurai,O,,2
+2026-10,Madurai,S O,,1
+2026-10,Nagapattinam,Tas A A,,1
+2026-10,Namakkal,Bbs Tssb Be Hrz,,1
+2026-10,Namakkal,Namakkal,,17
+2026-10,Nilgiris,Coonoor,,8
+2026-10,Nilgiris,O,,1
+2026-10,Pudukkottai,Alamkudi,,2
+2026-10,Pudukkottai,Pudukkottai,,3
+2026-10,Ramanathapuram,Ramanathapuram,,2
+2026-10,Ramanathapuram,S S O Rameswaram,,1
+2026-10,Salem,A S Sea Sig.,,1
+2026-10,Salem,D B Op S,,1
+2026-10,Salem,F Tare Poo F,,1
+2026-10,Salem,O O S,,1
+2026-10,Salem,Salem,,16
+2026-10,Sivaganga,Devakottal,,1
+2026-10,Thanjavur,Ayyampetta Thanmavur Teas Ao,,2
+2026-10,Thanjavur,C R S S,,1
+2026-10,Thanjavur,O,,3
+2026-10,Theni,Theni,,6
+2026-10,Thoothukudi,Chidambaram Nagar Tuticorn O,,3
+2026-10,Tiruchirappalli,A A R Aag.,,1
+2026-10,Tiruchirappalli,An Amene Uel Ued,,37
+2026-10,Tiruchirappalli,An R.Mahamudhaa Banu S,,1
+2026-10,Tiruchirappalli,B . Costa. S,,1
+2026-10,Tiruchirappalli,N Kkn K Sath,,2
+2026-10,Tiruchirappalli,O,,2
+2026-10,Tiruchirappalli,O Ig B Toon,,11
+2026-10,Tiruchirappalli,O Spas Da D,,2
+2026-10,Tiruchirappalli,R,,3
+2026-10,Tiruchirappalli,Road,,1
+2026-10,Tiruchirappalli,S Sob S,,1
+2026-10,Tiruchirappalli,Trichy,,4
+2026-10,Tirunelveli,Kadayam Theirunelveli Otst So,,2
+2026-10,Tirupathur,Thirupathur,,5
+2026-10,Tiruppur,Anupparpalayam,,2
+2026-10,Tiruppur,Tiruppur,,3
+2026-10,Tiruppur,Tirupur,,18
+2026-10,Tiruvallur,Avadi,,10
+2026-10,Tiruvallur,O G,,1
+2026-10,Tiruvallur,Ot Ger Ot Ts,,10
+2026-10,Tiruvallur,Thiruvallur,,3
+2026-10,Tiruvannamalai,Road Gingee S S,,1
+2026-10,Villupuram,Gingee,,2
+2026-10,Villupuram,Market,,7
+2026-10,Villupuram,O . S S,,1
+2026-10,Villupuram,Villupuram,,1
+2026-10,Villupuram,West Street Thirukovilur,,1

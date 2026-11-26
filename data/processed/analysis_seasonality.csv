@@ -1,4 +1,4 @@
 series,seasonal_strength,peak_month,trough_month,peak_vs_avg_pct
-pawn_search,0.52,2,1,46.8
-trends_gold_loan,0.1,2,4,22.0
-trends_instant_loan,0.15,12,4,9.8
+pawn_search,0.26,8,4,30.7
+trends_gold_loan,0.09,2,4,20.5
+trends_instant_loan,0.16,12,4,10.2

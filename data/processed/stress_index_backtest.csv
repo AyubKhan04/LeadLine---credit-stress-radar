@@ -1,6 +1,6 @@
 episode,window,where,mean_index,peak_index,months_high_or_worse,months_scored
-COVID lockdown,2020-04..2020-07,all,39.5,50.2,0,16
-Delta wave,2021-04..2021-07,all,59.8,79.4,8,16
-RBI tightening,2022-05..2023-03,all,43.9,62.2,1,44
-Cyclone Michaung floods,2023-12..2024-02,Chennai,63.4,77.8,2,3
-Cyclone Fengal floods,2024-12..2025-02,Villupuram,42.6,53.9,0,3
+COVID lockdown,2020-04..2020-07,all,38.3,53.3,0,16
+Delta wave,2021-04..2021-07,all,60.3,78.3,8,16
+RBI tightening,2022-05..2023-03,all,47.9,68.5,4,44
+Cyclone Michaung floods,2023-12..2024-02,Chennai,55.5,60.2,1,3
+Cyclone Fengal floods,2024-12..2025-02,Villupuram,50.5,56.6,0,3
