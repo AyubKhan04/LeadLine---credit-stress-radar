@@ -1,5 +1,5 @@
 """'Ask the data' (phase 8): a question in any dashboard language, answered by
-Claude Haiku from a compact summary of the index. Needs ANTHROPIC_API_KEY.
+an AI model (Gemini free tier, or Claude) from a compact summary of the index. Needs GEMINI_API_KEY (free) or ANTHROPIC_API_KEY.
 
     python -m src.ai.ask "Which district was most stressed in 2021?"
 """
@@ -9,7 +9,7 @@ from functools import lru_cache
 import pandas as pd
 
 from src.config import PROCESSED
-from src.ai.common import available, ask_claude  # noqa: F401  (available re-exported)
+from src.ai.common import available, ask_ai  # noqa: F401  (available re-exported)
 
 LANG_NAMES = {"en": "English", "ta": "Tamil", "hi": "Hindi", "te": "Telugu", "ml": "Malayalam", "kn": "Kannada"}
 
@@ -33,7 +33,7 @@ def answer(question: str, lang: str = "en") -> str:
               "jewellery, rainfall, gold price, RBI repo rate, loan-app complaints, gold auction notices). "
               "Use only the data given. If it can't answer, say so. Keep it under 120 words. "
               f"Answer in {LANG_NAMES.get(lang, 'English')}.")
-    return ask_claude(f"Data:\n{context()}\n\nQuestion: {question}", max_tokens=500, system=system)
+    return ask_ai(f"Data:\n{context()}\n\nQuestion: {question}", max_tokens=500, system=system)
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 """Monthly credit note (phase 8). Run: python -m src.ai.notes [YYYY-MM]
 
-Always writes a short rules-based English note. If ANTHROPIC_API_KEY is set, Claude
-Haiku rewrites it as a readable analyst note in each dashboard language (one call
+Always writes a short rules-based English note. If GEMINI_API_KEY (free) or ANTHROPIC_API_KEY is set, an AI model
+(Gemini free tier, or Claude if configured) rewrites it as a readable analyst note in each dashboard language (one call
 per language, about 6 calls a month, well under a cent each).
 Output: data/processed/ai_notes.json  {month: {lang: text}}
 """
@@ -11,7 +11,7 @@ import sys
 import pandas as pd
 
 from src.config import PROCESSED
-from src.ai.common import available, ask_claude
+from src.ai.common import available, ask_ai
 
 LANG_NAMES = {"en": "English", "ta": "Tamil", "hi": "Hindi", "te": "Telugu", "ml": "Malayalam", "kn": "Kannada"}
 
@@ -49,11 +49,11 @@ def main(month=None):
     if available():
         for code, name in LANG_NAMES.items():
             try:
-                notes[month][code] = ask_claude(
+                notes[month][code] = ask_ai(
                     f"Write a 120-word monthly credit stress note in {name} for a bank's risk team, "
                     f"from these facts only. Plain language, no hype, mention the biggest change and "
                     f"what to watch next month. Do not invent numbers.\n\n{base}", max_tokens=700)
-                notes[month]["_source"] = "claude"
+                notes[month]["_source"] = "ai"
             except Exception as e:
                 print(f"[notes] {code} failed: {e}")
     path.write_text(json.dumps(notes, ensure_ascii=False, indent=1), encoding="utf-8")

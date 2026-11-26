@@ -24,7 +24,7 @@ data/raw/          downloads, OCR text, review text (git-ignored: may hold perso
 data/processed/    tidy monthly CSVs, index, flags, notes (committed)
 data/powerbi/      star-schema CSVs for Power BI
 src/collectors/    one script per source (gold_auctions.py = phase 3)
-src/classify/      review complaint classifier (rules + optional Claude Haiku)
+src/classify/      review complaint classifier (rules + optional AI: Gemini free tier or Claude)
 src/analysis/      panel builder + phase 4 analysis (writes docs/analysis.md)
 src/index/         stress index (phase 5) and Power BI export
 src/api/           FastAPI app (phase 6)
@@ -39,12 +39,12 @@ run_collectors.py  runs collectors; one failing source doesn't stop the rest
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env              # optional: ANTHROPIC_API_KEY turns on the AI parts
+cp .env.example .env              # optional: GEMINI_API_KEY (free) turns on the AI parts
 python run_collectors.py          # phase 1-2 sources (add gold_auctions for phase 3; needs tesseract)
 python -m src.analysis.explore    # phase 4 -> docs/analysis.md
 python -m src.index.stress_index  # phase 5 -> data/processed/stress_index_monthly.csv
 python -m src.ai.anomaly          # anomaly flags
-python -m src.ai.notes            # monthly note (rules; Claude rewrites it in 6 languages if a key is set)
+python -m src.ai.notes            # monthly note (rules; AI rewrites it in 6 languages if a key is set)
 python -m src.index.powerbi_export
 uvicorn src.api.main:app --reload # API docs at http://127.0.0.1:8000/docs
 streamlit run dashboard/app.py    # dashboard
@@ -53,8 +53,22 @@ streamlit run dashboard/app.py    # dashboard
 GitHub Actions: `monthly-refresh.yml` runs all of that on the 5th of each month and commits
 the results (also runnable by hand from the Actions tab). `collect-data.yml` and
 `collect-auctions.yml` can be run by hand (Actions tab > Run workflow); `collect-data.yml` also runs when collector code changes on a `claude/` branch.
-To turn on AI notes, ask-the-data and the AI fallbacks, add `ANTHROPIC_API_KEY` as a
-repository secret (Settings > Secrets and variables > Actions).
+## AI features for free (Gemini)
+
+Everything runs without AI: the monthly note falls back to a rules-based English note and
+the review classifier to keyword rules. To turn on AI notes in 6 languages, "ask the data"
+and the AI review classifier **at no cost**, use Google's Gemini free tier:
+
+1. Go to [aistudio.google.com/apikey](https://aistudio.google.com/apikey) and sign in with a Google account.
+2. Click **Create API key** (pick or create any project). No card or billing is needed.
+3. Copy the key. On GitHub open the repo, then **Settings > Secrets and variables > Actions >
+   New repository secret**. Name it `GEMINI_API_KEY`, paste the key, then click **Add secret**.
+4. For running on your own computer, put the same key in `.env` as `GEMINI_API_KEY=...`.
+
+Notes on the free tier (checked Nov 2026):
+- **Limits:** there are per-minute and per-day request limits, shown in AI Studio. This project makes about 20-40 calls a month, well inside them, and the code waits and retries when it hits a per-minute limit.
+- **Your prompts:** Google may use free-tier prompts to improve its products, and people may review them. So the OCR text of auction notices, which can contain personal details, is **never** sent to Gemini. Only the index summary and public app-store review text are.
+- **Claude (paid):** Claude still works if you set `ANTHROPIC_API_KEY` instead. It is the only provider the auction-notice fallback will use. Use `LEADLINE_AI_PROVIDER=gemini|anthropic|none` to force a choice.
 
 ## Gold auction notices (phase 3)
 
@@ -68,7 +82,7 @@ repository secret (Settings > Secrets and variables > Actions).
 - **Method:** Tesseract OCR at 450 dpi, cut out the Manappuram notice, anchor on district
   names ("DISTRICT, BRANCH, loan number, ..."), count distinct loan numbers per district
   and month (the same notice runs in several papers, so numbers are de-duplicated). If no
-  district is found and `ANTHROPIC_API_KEY` is set, Claude Haiku returns branch counts.
+  district is found and `ANTHROPIC_API_KEY` is set, Claude returns branch counts (never sent to Gemini's free tier).
 - **Privacy:** only counts are committed. Loan numbers and anything else OCR reads stay
   in git-ignored `data/raw/` and the Actions cache.
 
@@ -131,7 +145,7 @@ programmatic use under its own terms, so we use it (4 requests per run) and log 
 
 ### Complaint labels
 
-`harassment`, `threats`, `hidden_charges`, `recovery_agents`, `fraud`. Keyword rules in English, Tamil script and some Tanglish run first. If `ANTHROPIC_API_KEY` is set, low-star (1-2) reviews the rules missed go to `claude-haiku-5-5` in batches of 20, capped at 300 reviews per run (well under a cent at Haiku prices). Without a key the AI step is skipped and everything still runs. Reviews rated 4-5 stars are never counted as complaints (in the slice data, "fraud" in a 5-star review usually means "unlike fraud apps").
+`harassment`, `threats`, `hidden_charges`, `recovery_agents`, `fraud`. Keyword rules in English, Tamil script and some Tanglish run first. If `GEMINI_API_KEY` (free) or `ANTHROPIC_API_KEY` is set, low-star (1-2) reviews the rules missed go to the AI model in batches of 20, capped at 300 reviews per run (free on Gemini). Without a key the AI step is skipped and everything still runs. Reviews rated 4-5 stars are never counted as complaints (in the slice data, "fraud" in a 5-star review usually means "unlike fraud apps").
 
 To rebuild the slice numbers, put `slicepay_reviews.csv` in `data/raw/` (Kaggle needs a login to download), or add `KAGGLE_USERNAME` and `KAGGLE_KEY` as repository secrets so the workflow fetches it. Reviewer names and ids are never loaded.
 

@@ -2,7 +2,7 @@ name: Monthly refresh (all phases)
 
 # Collects every source, rebuilds the analysis, index, anomaly flags, AI note and
 # Power BI files, then commits the results. AI steps run only if the
-# ANTHROPIC_API_KEY repository secret is set.
+# GEMINI_API_KEY (free) or ANTHROPIC_API_KEY repository secret is set.
 on:
   schedule:
     - cron: "30 3 5 * *"   # 5th of each month, 09:00 IST
@@ -30,6 +30,7 @@ jobs:
           restore-keys: manappuram-
       - name: Collect, analyse, score, note
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}

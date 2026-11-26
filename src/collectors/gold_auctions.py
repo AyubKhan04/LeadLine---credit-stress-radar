@@ -16,7 +16,8 @@ Steps
    numbers listed under each branch. The same notice runs in several papers, so
    loan numbers are de-duplicated within a month.
 5. Optional: if rules find no branch in a notice and ANTHROPIC_API_KEY is set,
-   ask Claude Haiku to split the text into branch -> count (counts only).
+   Claude splits the text into branch -> count (counts only). Not sent to Gemini's
+   free tier, which may use prompts for training.
 
 Output: gold_auctions_monthly.csv (district x month), plus a branch-level file.
 Only counts are written; loan numbers, and any names that OCR picks up, stay in
@@ -303,21 +304,18 @@ def split_by_branch(section, pats):
 
 
 def ai_split(section):
-    """Optional Claude Haiku fallback: returns [(branch, count)]; never stores text."""
-    key = os.environ.get("ANTHROPIC_API_KEY")
-    if not key or not section:
+    """Optional AI fallback: returns [(branch, count)]; never stores text.
+
+    OCR text can hold personal details, so this runs only on a provider that
+    doesn't train on prompts (Claude via ANTHROPIC_API_KEY), never Gemini's free tier."""
+    from src.ai.common import available, ask_ai
+    if not section or not available(sensitive=True):
         return []
-    import anthropic
-    client = anthropic.Anthropic(api_key=key)
-    msg = client.messages.create(
-        model=os.getenv("LEADLINE_AI_MODEL", "claude-haiku-5-5"), max_tokens=1500,
-        messages=[{"role": "user", "content":
-                   "This is OCR text of a Manappuram Finance gold auction notice from a Tamil Nadu "
-                   "newspaper. List each branch and how many loan accounts are listed under it. "
-                   "Reply with JSON only: [{\"branch\": str, \"accounts\": int}]. Do not include "
-                   "any names or loan numbers.\n\n" + section[:60000]}])
+    txt = ask_ai("This is OCR text of a Manappuram Finance gold auction notice from a Tamil Nadu "
+                 "newspaper. List each branch and how many loan accounts are listed under it. "
+                 "Reply with JSON only: [{\"branch\": str, \"accounts\": int}]. Do not include "
+                 "any names or loan numbers.\n\n" + section[:60000], max_tokens=1500)
     try:
-        txt = msg.content[0].text
         return [(d["branch"], int(d["accounts"])) for d in json.loads(txt[txt.find("["): txt.rfind("]") + 1])]
     except Exception as e:
         print(f"  [ai] could not parse reply: {e}")
