@@ -1,0 +1,7 @@
+component,label,weight
+pawn_search,people searching to pawn jewellery,30
+rain,unusual rainfall (drought or flood) in recent months,20
+auctions,gold loan auctions,20
+digital_credit,demand for and complaints about instant loan apps,15
+rates,higher interest rates,10
+gold_price,falling gold prices,5
