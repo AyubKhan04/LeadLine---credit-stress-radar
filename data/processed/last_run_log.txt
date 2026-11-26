@@ -17,13 +17,12 @@ trends: 5 terms, 2019-01..2026-11
 
 === app_reviews ===
 [robots] allowed: https://itunes.apple.com/in/rss/customerreviews/page=1/id=1/sortby=mostrecent/json
-    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
-  KreditBee: Personal Loans, UPI: 0 reviews
-    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
-  Navi: UPI, Payments, Insurance: 0 reviews
+  KreditBee: Personal Loans, UPI: 50 reviews
+  Navi: UPI, Payments, Insurance: 100 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   Moneyview: Personal Loan App: 0 reviews
-  Personal Loan App by Fibe: 50 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Personal Loan App by Fibe: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   mPokket: Instant Personal Loan: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
@@ -40,10 +39,158 @@ trends: 5 terms, 2019-01..2026-11
   Online Gold loan: Rupeek: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   IIFL Finance: 0 reviews
-AI classifier skipped (no GEMINI_API_KEY or ANTHROPIC_API_KEY)
-app reviews: 50 reviews from 1 apps, 2026-10..2026-11; not found: []
+AI classifier labelled 5 of 30 reviews
+app reviews: 150 reviews from 2 apps, 2026-10..2026-11; not found: []
 
 === review_dataset ===
 review dataset: data/raw/slicepay_reviews.csv not found and no Kaggle credentials; skipping
 
+=== gold_auctions ===
+[robots] allowed: https://www.manappuram.com/auction-publications?field_state_target_id=1032&page=0
+notices listed: 99 across 10 pages, 2026-04-30..2026-10-14
+  2026-05_The-New-Indian-Express-Chennai-30-04-2026-page-12.pdf: ocr, 36439 chars
+  2026-05_Dinamani---Tiruchy-30-04-2026-page-5.pdf: ocr, 22141 chars
+  2026-05_Dinamani--Tirunelveli-30-04-2026-page-2.pdf: ocr, 20982 chars
+  2026-05_Dinamani-Madurai-30-04-2026-page-2.pdf: ocr, 18081 chars
+  2026-05_Dinamani-Coimbatore-30-04-2026-page-5.pdf: ocr, 25546 chars
+  2026-05_The-New-Indian-Express-Coimbatore-30-04-2026-page-5.pdf: ocr, 18756 chars
+  2026-05_The-New-Indian-Express-Tiruchy-30-04-2026-page-9.pdf: ocr, 24076 chars
+  2026-05_The-New-Indian-Express-Tirunelveli-30-04-2026-page-12.pdf: ocr, 19643 chars
+  2026-05_The-New-Indian-Express-Madurai-30-04-2026-page-12.pdf: ocr, 19541 chars
+  2026-05_Dinamani-Chennai-30-04-2026-page-12.pdf: ocr, 24299 chars
+  2026-06_26.5.2026_20Andaman_20kural_20NEW.pdf: ocr, 20247 chars
+  2026-06_Dinamani---Vellore-26-05-2026-page-9.pdf: ocr, 24973 chars
+  2026-06_Dinamani---Tiruchy-26-05-2026-page-9.pdf: ocr, 22063 chars
+  2026-06_Dinamani--Tirunelveli-26-05-2026-page-9.pdf: ocr, 20360 chars
+  2026-06_Dinamani-Madurai-26-05-2026-page-9.pdf: ocr, 21183 chars
+  2026-06_Dinamani-Coimbatore-26-05-2026-page-12.pdf: ocr, 17500 chars
+  2026-06_Dinamani---Dharmapuri-26-05-2026-page-9.pdf: ocr, 28244 chars
+  2026-06_The-New-Indian-Express-Vellore-26-05-2026-page-9.pdf: ocr, 20593 chars
+  2026-06_The-New-Indian-Express-Tiruchy-26-05-2026-page-9.pdf: ocr, 21701 chars
+  2026-06_The-New-Indian-Express-Tirunelveli-26-05-2026-page-5.pdf: ocr, 22634 chars
+  2026-06_The-New-Indian-Express-Madurai-26-05-2026-page-7.pdf: ocr, 28618 chars
+  2026-06_The-New-Indian-Express-Dharmapuri-26-05-2026-page-9.pdf: ocr, 25379 chars
+  2026-06_The-New-Indian-Express-Coimbatore-26-05-2026-page-5.pdf: ocr, 26259 chars
+  2026-06_The-New-Indian-Express-Chennai-26-05-2026-page-7.pdf: ocr, 30238 chars
+  2026-06_Dinamani-Chennai-26-05-2026-page-2.pdf: ocr, 22121 chars
+  2026-07_Dinamani---Dharmapuri-29-06-2026-page-3.pdf: ocr, 17161 chars
+  2026-07_Andaman_20Kural_20NEW_20PDF_2029.06.26.pdf: ocr, 19695 chars
+  2026-07_Dinamani---Vellore-29-06-2026-page-5.pdf: ocr, 17849 chars
+  2026-07_Dinamani---Tiruchy-29-06-2026-page-2.pdf: ocr, 19019 chars
+  2026-07_Dinamani--Tirunelveli-29-06-2026-page-5.pdf: ocr, 18281 chars
+  2026-07_Dinamani-Madurai-29-06-2026-page-2.pdf: ocr, 15918 chars
+  2026-07_Dinamani-Coimbatore-29-06-2026-page-3.pdf: ocr, 17216 chars
+  2026-07_The-New-Indian-Express-Madurai-29-06-2026-page-7.pdf: ocr, 22918 chars
+  2026-07_Echo_20of_20India_2029.06.26.pdf: ocr, 22692 chars
+  2026-07_The-New-Indian-Express-Vellore-29-06-2026-page-3.pdf: ocr, 17963 chars
+  2026-07_The-New-Indian-Express-Tiruchy-29-06-2026-page-7.pdf: ocr, 21259 chars
+  2026-07_The-New-Indian-Express-Tirunelveli-29-06-2026--page-9.pdf: ocr, 19638 chars
+  2026-07_The-New-Indian-Express-Dharmapuri-29-06-2026-page-9.pdf: ocr, 19269 chars
+  2026-07_The-New-Indian-Express-Coimbatore-29-06-2026-page-7.pdf: ocr, 23008 chars
+  2026-07_Dinamani-Chennai-29-06-2026-page-5.pdf: ocr, 23153 chars
+  2026-07_The-New-Indian-Express-Chennai-29-06-2026-page-11.pdf: ocr, 21959 chars
+  2026-09_The-New-Indian-Express-Chennai-28-07-2026-page-11.pdf: ocr, 36181 chars
+  2026-09_Dinamani-Chennai-28-07-2026-page-9.pdf: ocr, 28912 chars
+  2026-09_Dinamani-Coimbatore-28-07-2026-page-5.pdf: ocr, 26248 chars
+  2026-09_Dinamani---Dharmapuri-28-07-2026-page-2.pdf: ocr, 29521 chars
+  2026-09_Dinamani-Madurai-28-07-2026-page-2.pdf: ocr, 25084 chars
+  2026-09_Dinamani---Tiruchy-28-07-2026-page-3.pdf: ocr, 22949 chars
+  2026-09_Dinamani--Tirunelveli-28-07-2026-page-5.pdf: ocr, 25575 chars
+  2026-09_Dinamani---Vellore-28-07-2026-page-3.pdf: ocr, 22076 chars
+  2026-09_The-New-Indian-Express-Coimbatore-28-07-2026-page-9.pdf: ocr, 25254 chars
+  2026-09_The-New-Indian-Express-Madurai-28-07-2026-page-11.pdf: ocr, 22289 chars
+  2026-09_The-New-Indian-Express-Tirunelveli-28-07-2026-page-3.pdf: ocr, 24453 chars
+  2026-09_The-New-Indian-Express-Tiruchy-28-07-2026-page-5.pdf: ocr, 26918 chars
+  2026-09_The-New-Indian-Express-Vellore-28-07-2026-page-5.pdf: ocr, 24451 chars
+  2026-09_The-New-Indian-Express-Dharmapuri-28-07-2026-page-2.pdf: ocr, 32934 chars
+  2026-10_The-New-Indian-Express-Dharmapuri-19-08-2026-page-6.pdf: ocr, 38122 chars
+  2026-10_Dinamani---Vellore-19-08-2026-page-2.pdf: ocr, 22412 chars
+  2026-10_Dinamani---Tiruchy-19-08-2026-page-9.pdf: ocr, 31579 chars
+  2026-10_Dinamani--Tirunelveli-19-08-2026-page-5.pdf: ocr, 26466 chars
+  2026-10_Dinamani-Madurai-19-08-2026-page-5.pdf: ocr, 30419 chars
+  2026-10_Dinamani-Coimbatore-19-08-2026-page-9.pdf: ocr, 32255 chars
+  2026-10_Dinamani---Dharmapuri-19-08-2026-page-10.pdf: ocr, 33580 chars
+  2026-10_The-New-Indian-Express-Vellore-19-08-2026-page-12.pdf: ocr, 21137 chars
+  2026-10_The-New-Indian-Express-Tiruchy-19-08-2026-page-6.pdf: ocr, 37704 chars
+  2026-10_The-New-Indian-Express-Tirunelveli-19-08-2026-page-12.pdf: ocr, 23625 chars
+  2026-10_The-New-Indian-Express-Madurai-19-08-2026-page-11.pdf: ocr, 30785 chars
+  2026-10_The-New-Indian-Express-Coimbatore-19-08-2026-page-6.pdf: ocr, 39383 chars
+  2026-10_The-New-Indian-Express-Chennai-19-08-2026-page-12.pdf: ocr, 44429 chars
+  2026-10_Dinamani-Chennai-19-08-2026-page-6.pdf: ocr, 40971 chars
+  2026-10_Echo_20Of_20India_20-_20PB_20MF_2020.8.26.pdf: ocr, 20443 chars
+  2026-10_Andaman_20Kural_2020.08.2026.pdf: ocr, 3959 chars
+  2026-11_The-New-Indian-Express-Dharmapuri-22-08-2026-page-6.pdf: ocr, 31884 chars
+  2026-11_The-New-Indian-Express-Vellore-22-08-2026-page-5.pdf: ocr, 26476 chars
+  2026-11_The-New-Indian-Express-Tiruchy-22-08-2026-page-6.pdf: ocr, 39860 chars
+gold auctions: 1440 accounts, 176 branches, 36 districts, months 2026-04..2026-08
+status
+no branch found                   37
+rules                             33
+skipped: time budget, next run    25
+no Manappuram notice found         4
+district  Chennai  Coimbatore  Madurai  Villupuram
+month                                             
+2026-04         0           1        1           1
+2026-05        76          42        0          11
+2026-06        19           6        2           8
+2026-07       131          53       15          19
+2026-08        96          27        0           4
+
 Done. Failed: none
+                series  seasonal_strength  peak_month  trough_month  peak_vs_avg_pct
+0          pawn_search               0.52           2             1             46.8
+1     trends_gold_loan               0.10           2             4             22.0
+2  trends_instant_loan               0.15          12             4              9.8 
+
+                 driver       transform   n  best_lag  corr_at_best  corr_lag0  granger_best_lag  granger_p
+0         rain_deficit           level  93         4         -0.19      -0.04                 4      0.121
+1     gold_inr_yoy_pct  1-month change  81         6         -0.16       0.04                 6      0.525
+2            repo_rate  1-month change  94         6          0.15       0.09                 6      0.103
+3  trends_instant_loan           level  94        -6          0.10      -0.05                 1      0.590
+4      trends_loan_app  1-month change  94        -6          0.26      -0.03                 5      0.126
+5  app_complaint_share           level  45        -6         -0.26      -0.14                 1      0.362 
+
+                    episode            months       where                      context  z_pawn_search  z_trends_gold_loan  z_trends_instant_loan  z_rain_deficit  z_gold_inr_yoy_pct
+0           COVID lockdown  2020-04..2020-06         all  income stop, gold loan rush          -0.84               -0.66                  -1.30            0.70                0.81
+1               Delta wave  2021-04..2021-06         all        second lockdown in TN           0.32               -0.39                  -1.18           -0.01               -1.03
+2           RBI tightening  2022-05..2023-02         all            repo 4.0% to 6.5%          -0.41               -0.38                  -0.78            0.03               -0.88
+3  Cyclone Michaung floods  2023-12..2024-01     Chennai             Chennai flooding          -0.24               -0.25                   1.10           -1.04               -0.65
+4    Cyclone Fengal floods  2024-12..2025-01  Villupuram          Villupuram flooding          -0.33                0.28                   0.55           -0.78                0.50
+                episode           window      where  mean_index  peak_index  months_high_or_worse  months_scored
+         COVID lockdown 2020-04..2020-07        all        39.5        50.2                     0             16
+             Delta wave 2021-04..2021-07        all        59.8        79.4                     8             16
+         RBI tightening 2022-05..2023-03        all        43.9        62.2                     1             44
+Cyclone Michaung floods 2023-12..2024-02    Chennai        63.4        77.8                     2              3
+  Cyclone Fengal floods 2024-12..2025-02 Villupuram        42.6        53.9                     0              3
+  district   month  stress_index  band                                                                                                                       why
+   Chennai 2026-11          45.1 Watch demand for and complaints about instant loan apps (75/100); unusual rainfall (drought or flood) in recent months (68/100)
+Coimbatore 2026-11          33.5   Low                                                                demand for and complaints about instant loan apps (75/100)
+   Madurai 2026-11          38.6   Low                                                                demand for and complaints about instant loan apps (75/100)
+Villupuram 2026-11          34.6   Low                                                                demand for and complaints about instant loan apps (75/100)
+            count  mean   std   min   25%   50%   75%   max
+district                                                   
+Chennai      83.0  52.8  14.6  16.7  41.8  52.4  65.2  79.4
+Coimbatore   83.0  52.7  13.2  16.0  45.1  52.8  62.2  79.6
+Madurai      83.0  52.5  11.0  20.5  45.0  52.3  59.8  74.5
+Villupuram   83.0  51.1  12.7  25.2  42.6  50.7  60.6  79.4
+298 flags; latest month:
+  district   month              flag                                detail
+Coimbatore 2026-07        index_jump              index up 18 points to 59
+Coimbatore 2026-07 component_extreme         gold loan auctions at 100/100
+   Madurai 2026-07        index_jump              index up 17 points to 60
+   Madurai 2026-07           band_up                       moved into High
+   Madurai 2026-07 component_extreme         gold loan auctions at 100/100
+Villupuram 2026-07           band_up                       moved into High
+Villupuram 2026-07 component_extreme         gold loan auctions at 100/100
+   Madurai 2026-07       raw_outlier auction accounts high (+8.8 robust z)
+[notes] ml failed: 503 Server Error: Service Unavailable for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent
+**Credit Stress Radar – November 2026**
+
+For the risk team, November shows no anomaly flags across monitored regions. 
+
+The biggest change this month is in Coimbatore, which saw the largest regional decrease, falling 4 points from last month to 34/100 (Low stress). Yearly comparisons remain positive, with all cities showing significant declines in stress compared to a year ago, led by Chennai and Villupuram (both down 25 points). 
+
+Current regional index levels are Chennai at 45/100 (Watch), Madurai at 39/100 (Low), Villupuram at 35/100 (Low), and Coimbatore at 34/100 (Low). Across all four cities, high demand for and complaints about instant loan apps remain a primary driver at 75/100. Additionally, Chennai reflects stress from unusual recent rainfall at 68/100. 
+
+What to watch next month: The ongoing impact of instant loan app demand and complaints, alongside weather recovery in Chennai.
+Power BI files: ['dim_component.csv', 'dim_date.csv', 'dim_district.csv', 'fact_signals.csv', 'fact_stress.csv']

@@ -252,13 +252,13 @@ Madurai,2025-02,index_jump,index up 15 points to 36
 Villupuram,2025-02,index_jump,index up 20 points to 47
 Chennai,2025-04,index_jump,index up 18 points to 45
 Chennai,2025-05,component_extreme,people searching to pawn jewellery at 95/100
-Coimbatore,2025-05,index_jump,index up 16 points to 61
+Coimbatore,2025-05,index_jump,index up 16 points to 62
 Coimbatore,2025-05,band_up,moved into High
 Coimbatore,2025-05,component_extreme,people searching to pawn jewellery at 95/100
 Madurai,2025-05,index_jump,index up 19 points to 60
 Madurai,2025-05,band_up,moved into High
 Madurai,2025-05,component_extreme,people searching to pawn jewellery at 95/100
-Villupuram,2025-05,index_jump,index up 19 points to 48
+Villupuram,2025-05,index_jump,index up 20 points to 48
 Villupuram,2025-05,component_extreme,people searching to pawn jewellery at 95/100
 Chennai,2025-10,band_up,moved into High
 Chennai,2025-10,component_extreme,people searching to pawn jewellery at 95/100
@@ -289,5 +289,11 @@ Coimbatore,2026-03,component_extreme,people searching to pawn jewellery at 96/10
 Madurai,2026-03,component_extreme,people searching to pawn jewellery at 96/100
 Villupuram,2026-03,band_up,moved into High
 Villupuram,2026-03,component_extreme,people searching to pawn jewellery at 96/100
-Coimbatore,2026-08,component_extreme,gold loan auctions at 100/100
-Coimbatore,2026-08,raw_outlier,auction accounts high (+8.0 robust z)
+Coimbatore,2026-07,index_jump,index up 18 points to 59
+Coimbatore,2026-07,component_extreme,gold loan auctions at 100/100
+Madurai,2026-07,index_jump,index up 17 points to 60
+Madurai,2026-07,band_up,moved into High
+Madurai,2026-07,component_extreme,gold loan auctions at 100/100
+Madurai,2026-07,raw_outlier,auction accounts high (+8.8 robust z)
+Villupuram,2026-07,band_up,moved into High
+Villupuram,2026-07,component_extreme,gold loan auctions at 100/100

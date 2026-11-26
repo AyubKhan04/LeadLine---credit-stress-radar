@@ -17,7 +17,7 @@ Gold auction counts would be the better target, but the lender only posts about
 | series | seasonal_strength | peak_month | trough_month | peak_vs_avg_pct |
 |---|---|---|---|---|
 | pawn_search | 0.52 | 2 | 1 | 46.8 |
-| trends_gold_loan | 0.1 | 2 | 4 | 21.9 |
+| trends_gold_loan | 0.1 | 2 | 4 | 22.0 |
 | trends_instant_loan | 0.15 | 12 | 4 | 9.8 |
 
 *Seasonal strength* runs 0 to 1 (STL decomposition); above about 0.4 the calendar
@@ -35,7 +35,7 @@ month in other years, not with last month.
 | repo_rate | 1-month change | 94 | 6 | 0.15 | 0.09 | 6 | 0.103 |
 | trends_instant_loan | level | 94 | -6 | 0.1 | -0.05 | 1 | 0.59 |
 | trends_loan_app | 1-month change | 94 | -6 | 0.26 | -0.03 | 5 | 0.126 |
-| app_complaint_share | level | 47 | 3 | -0.22 | -0.06 | 3 | 0.622 |
+| app_complaint_share | level | 45 | -6 | -0.26 | -0.14 | 1 | 0.362 |
 
 How to read it: `best_lag` > 0 means the driver moves that many months **before**
 pawn searches. `granger_p` < 0.05 means past values of the driver improve a forecast

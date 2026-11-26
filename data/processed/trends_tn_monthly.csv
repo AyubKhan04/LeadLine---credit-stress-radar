@@ -93,7 +93,7 @@ gold loan,2026-07,40.0,False
 gold loan,2026-08,37.0,False
 gold loan,2026-09,32.0,False
 gold loan,2026-10,31.0,False
-gold loan,2026-11,43.0,True
+gold loan,2026-11,42.0,True
 instant loan,2019-01,66.0,False
 instant loan,2019-02,59.0,False
 instant loan,2019-03,64.0,False
@@ -283,7 +283,7 @@ loan app,2026-07,86.0,False
 loan app,2026-08,91.0,False
 loan app,2026-09,99.0,False
 loan app,2026-10,100.0,False
-loan app,2026-11,100.0,True
+loan app,2026-11,98.0,True
 நகை அடகு,2019-01,0.0,False
 நகை அடகு,2019-02,0.0,False
 நகை அடகு,2019-03,0.0,False
@@ -378,7 +378,7 @@ loan app,2026-11,100.0,True
 நகை அடகு,2026-08,62.0,False
 நகை அடகு,2026-09,45.0,False
 நகை அடகு,2026-10,64.0,False
-நகை அடகு,2026-11,49.0,True
+நகை அடகு,2026-11,50.0,True
 நகை கடன்,2019-01,0.0,False
 நகை கடன்,2019-02,0.0,False
 நகை கடன்,2019-03,6.0,False
