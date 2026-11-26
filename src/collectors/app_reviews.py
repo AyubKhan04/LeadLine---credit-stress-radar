@@ -105,7 +105,7 @@ def main():
     todo = todo.head(int(os.getenv("LEADLINE_AI_MAX_REVIEWS", "300")))
     ai = ai_labels(todo["text"].tolist())
     if ai is None:
-        print("AI classifier skipped (no ANTHROPIC_API_KEY)")
+        print("AI classifier skipped (no GEMINI_API_KEY or ANTHROPIC_API_KEY)")
     else:
         for idx, labels in zip(todo.index, ai):
             if labels:

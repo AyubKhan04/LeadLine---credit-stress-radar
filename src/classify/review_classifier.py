@@ -1,9 +1,9 @@
 """Label loan-app reviews as credit-stress complaints.
 
 Step 1 (always): keyword rules in English, Tamil script and common Tanglish.
-Step 2 (optional): if ANTHROPIC_API_KEY is set, low-star reviews that no rule
-matched are sent in small batches to Claude Haiku. Capped per run to keep cost
-to cents.
+Step 2 (optional): if GEMINI_API_KEY (free tier) or ANTHROPIC_API_KEY is set,
+low-star reviews that no rule matched are sent in small batches to the AI model.
+Capped per run.
 """
 import json
 import os
@@ -86,36 +86,25 @@ SCHEMA = {
 
 
 def ai_labels(texts: list[str], batch_size: int = 20) -> list[list[str]] | None:
-    """Return labels per text, or None if no API key is configured."""
-    if not os.getenv("ANTHROPIC_API_KEY"):
-        return None
-    import anthropic
+    """Return labels per text, or None if no AI provider is configured.
 
-    client = anthropic.Anthropic()
-    model = os.getenv("LEADLINE_AI_MODEL", "claude-haiku-5-5")
+    Uses src.ai.common: Gemini's free tier if GEMINI_API_KEY is set, Claude if
+    ANTHROPIC_API_KEY is set. Review text is public app-store text."""
+    from src.ai.common import available, ask_ai
+    if not available():
+        return None
     out: list[list[str]] = [[] for _ in texts]
+    instr = (SYSTEM + "\nReply with JSON only, matching this schema: " + json.dumps(SCHEMA))
     for start in range(0, len(texts), batch_size):
         chunk = texts[start:start + batch_size]
         listing = "\n".join(f"[{i}] {t[:600]}" for i, t in enumerate(chunk))
         try:
-            resp = client.messages.create(
-                model=model,
-                max_tokens=2048,
-                system=SYSTEM,
-                output_config={"effort": "low", "format": {"type": "json_schema", "schema": SCHEMA}},
-                messages=[{"role": "user", "content": listing}],
-            )
-        except anthropic.APIStatusError as e:
-            print(f"[ai] batch {start} failed: {e.status_code} {e.message}")
+            text = ask_ai(listing, system=instr, max_tokens=2048, json_mode=True)
+            data = json.loads(text[text.find("{"): text.rfind("}") + 1])
+        except Exception as e:
+            print(f"[ai] batch {start} failed: {e}")
             continue
-        except anthropic.APIConnectionError as e:
-            print(f"[ai] batch {start} connection error: {e}")
-            continue
-        if resp.stop_reason != "end_turn":
-            print(f"[ai] batch {start} stopped: {resp.stop_reason}")
-            continue
-        text = next(b.text for b in resp.content if b.type == "text")
-        for r in json.loads(text)["results"]:
-            if 0 <= r["i"] < len(chunk):
-                out[start + r["i"]] = r["labels"]
+        for r in data.get("results", []):
+            if isinstance(r, dict) and 0 <= r.get("i", -1) < len(chunk):
+                out[start + r["i"]] = [l for l in r.get("labels", []) if l in LABELS]
     return out

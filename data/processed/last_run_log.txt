@@ -23,8 +23,7 @@ trends: 5 terms, 2019-01..2026-11
   Navi: UPI, Payments, Insurance: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   Moneyview: Personal Loan App: 0 reviews
-    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
-  Personal Loan App by Fibe: 0 reviews
+  Personal Loan App by Fibe: 50 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   mPokket: Instant Personal Loan: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
@@ -33,15 +32,16 @@ trends: 5 terms, 2019-01..2026-11
   Kissht: Instant Personal Loan: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   Bajaj Finance: Loans, UPI & FD: 0 reviews
-  Muthoot FinCorp ONE: 50 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Muthoot FinCorp ONE: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   Manappuram OGL Lite: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   Online Gold loan: Rupeek: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   IIFL Finance: 0 reviews
-AI classifier skipped (no ANTHROPIC_API_KEY)
-app reviews: 50 reviews from 1 apps, 2026-07..2026-11; not found: []
+AI classifier skipped (no GEMINI_API_KEY or ANTHROPIC_API_KEY)
+app reviews: 50 reviews from 1 apps, 2026-10..2026-11; not found: []
 
 === review_dataset ===
 review dataset: data/raw/slicepay_reviews.csv not found and no Kaggle credentials; skipping

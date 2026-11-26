@@ -27,6 +27,7 @@ jobs:
           restore-keys: manappuram-
       - name: Run auction collector
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           AUCTION_PROBE: "1"
         run: python run_collectors.py gold_auctions 2>&1 | tee data/processed/last_auction_run_log.txt
