@@ -187,17 +187,15 @@ def download(url):
 
 
 def ocr_pdf(path):
-    """OCR the largest embedded image of each page (native resolution)."""
+    """Render each page at 2x the scan's resolution and OCR it. The loan numbers
+    are tiny newspaper type; upscaling roughly doubles what Tesseract reads."""
     if not shutil.which("tesseract"):
         return ""
     texts = []
     with tempfile.TemporaryDirectory() as tmp:
-        subprocess.run(["pdfimages", "-png", str(path), f"{tmp}/img"], check=False, capture_output=True)
-        imgs = sorted(Path(tmp).glob("img-*.png"), key=lambda p: p.stat().st_size, reverse=True)
-        if not imgs or imgs[0].stat().st_size < 200_000:  # no real scan inside: render the page
-            subprocess.run(["pdftoppm", "-r", "400", "-png", str(path), f"{tmp}/pg"], check=False, capture_output=True)
-            imgs = sorted(Path(tmp).glob("pg-*.png"))
-        for img in imgs[:3]:
+        subprocess.run(["pdftoppm", "-r", "450", "-gray", "-png", str(path), f"{tmp}/pg"],
+                       check=False, capture_output=True)
+        for img in sorted(Path(tmp).glob("pg-*.png"))[:3]:
             r = subprocess.run(["tesseract", str(img), "-", "--psm", "3", "-l", "eng"],
                                capture_output=True, text=True)
             texts.append(r.stdout)
@@ -205,7 +203,7 @@ def ocr_pdf(path):
 
 
 def pdf_text(path):
-    cache = path.with_suffix(".txt")
+    cache = path.with_suffix(".ocr450.txt")
     if cache.exists():
         return cache.read_text()
     import pdfplumber
@@ -220,7 +218,41 @@ def pdf_text(path):
 
 
 # ------------------------------------------------------------ 4. text -> counts
-LOAN_RE = re.compile(r"\b[A-Z]{0,4}\d{8,20}\b")
+# Manappuram loan numbers are 15-16 digits. OCR swaps some digits for look-alike
+# letters, so accept those and normalise before de-duplicating.
+LOAN_RE = re.compile(r"(?<![0-9A-Z])[0-9OIL|SB]{13,18}(?![0-9A-Z])")
+_FIX = str.maketrans("OILSB|", "011581")
+
+
+def loans_in(text):
+    out = set()
+    for t in LOAN_RE.findall(text):
+        if sum(c.isdigit() for c in t) >= 11:
+            out.add(t.translate(_FIX))
+    return out
+
+
+DISTRICT_RX = re.compile(r"\b(" + "|".join(sorted(
+    {d.upper() for d in TN_DISTRICTS} | {a.upper() for a in DISTRICT_ALIASES}, key=len, reverse=True)) + r")\b")
+
+
+def split_by_district(section):
+    """Notices list 'DISTRICT, BRANCH, loan no, loan no, ...'. Anchor on district
+    names; the words between the district and the first loan number are the branch."""
+    up = section.upper()
+    hits = list(DISTRICT_RX.finditer(up))
+    out = []
+    for i, m in enumerate(hits):
+        end = hits[i + 1].start() if i + 1 < len(hits) else len(up)
+        chunk = up[m.end():end]
+        loans = loans_in(chunk)
+        if not loans:
+            continue
+        first = LOAN_RE.search(chunk)
+        branch = re.sub(r"[^A-Z .-]", " ", chunk[:first.start() if first else 0]).strip(" ,.-")
+        branch = " ".join(branch.split()[:4]).title() or m.group(1).title()
+        out.append((branch, "", canon_district(m.group(1)), loans))
+    return out
 
 
 def notice_section(text):
@@ -264,7 +296,7 @@ def split_by_branch(section, pats):
     out = []
     for i, (s, e, name, code, dist) in enumerate(hits):
         nxt = hits[i + 1][0] if i + 1 < len(hits) else len(up)
-        loans = set(LOAN_RE.findall(up[e:nxt]))
+        loans = loans_in(up[e:nxt])
         if loans:
             out.append((name, code, dist, loans))
     return out
@@ -328,7 +360,9 @@ def main():
             probe(text, pats, n.title)
             probe_left -= 1
         sec = notice_section(text)
-        parts = split_by_branch(sec, pats)
+        parts = split_by_district(sec)
+        if not parts:
+            parts = split_by_branch(sec, pats)
         status = "rules"
         if not parts:
             ai = ai_split(sec)
