@@ -305,7 +305,19 @@ def probe(text, pats, label):
 
 
 # ------------------------------------------------------------------------ main
+def robots_status():
+    """Say why robots.txt check failed (403 from a firewall reads as 'disallow all')."""
+    try:
+        r = session.get(BASE + "/robots.txt", timeout=30)
+        print(f"[robots] {BASE}/robots.txt -> HTTP {r.status_code}, {len(r.text)} bytes")
+        p = session.get(LIST_URL, timeout=30)
+        print(f"[robots] {LIST_URL} -> HTTP {p.status_code}, server={p.headers.get('server')}")
+    except Exception as e:
+        print(f"[robots] fetch error: {e}")
+
+
 def main():
+    robots_status()
     if not robots_allows(LIST_URL + f"?field_state_target_id={TN_STATE_ID}&page=0"):
         print("auction list disallowed by robots.txt; skipping")
         return
