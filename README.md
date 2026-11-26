@@ -10,32 +10,82 @@ Early-warning system for household credit stress in Tamil Nadu. It builds a dist
 |---|---|---|
 | 1 | Context data: rainfall, gold price, repo rate | done |
 | 2 | Alternative data: Google Trends, loan-app reviews | done |
-| 3 | Gold auction notice scraper | next |
-| 4-8 | Analysis, index, API, dashboard, AI notes | planned |
+| 3 | Gold auction notice scraper (Manappuram, OCR) | done, short history |
+| 4 | Analysis: seasonality, lead-lag, Granger, known stress periods | done: [docs/analysis.md](docs/analysis.md) |
+| 5 | Stress index 0-100 with "why" breakdown | done |
+| 6 | FastAPI score API | done |
+| 7 | Streamlit map dashboard (6 languages, what-if) + Power BI files | done |
+| 8 | AI monthly note, anomaly flags, monthly refresh, ask-the-data | done (AI parts need an API key) |
 
 ## Layout
 
 ```
-data/raw/          downloads and review text (git-ignored: may hold personal details)
-data/processed/    tidy monthly CSVs (committed)
-src/collectors/    one script per source
+data/raw/          downloads, OCR text, review text (git-ignored: may hold personal details)
+data/processed/    tidy monthly CSVs, index, flags, notes (committed)
+data/powerbi/      star-schema CSVs for Power BI
+src/collectors/    one script per source (gold_auctions.py = phase 3)
 src/classify/      review complaint classifier (rules + optional Claude Haiku)
-src/config.py      districts, date range, robots.txt check
-i18n/              UI strings per language (en, ta) for the later language picker
-notebooks/         analysis (phase 4)
-run_collectors.py  runs every collector; one failing source doesn't stop the rest
+src/analysis/      panel builder + phase 4 analysis (writes docs/analysis.md)
+src/index/         stress index (phase 5) and Power BI export
+src/api/           FastAPI app (phase 6)
+src/ai/            anomaly flags, monthly note, ask-the-data (phase 8)
+dashboard/app.py   Streamlit dashboard (phase 7)
+i18n/              UI text: en, ta, hi, te, ml, kn
+docs/              analysis write-up, Power BI guide, LinkedIn draft
+run_collectors.py  runs collectors; one failing source doesn't stop the rest
 ```
 
 ## Run it
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env          # optional: add ANTHROPIC_API_KEY for the AI classifier
-python run_collectors.py      # or: python run_collectors.py gold trends
+cp .env.example .env              # optional: ANTHROPIC_API_KEY turns on the AI parts
+python run_collectors.py          # phase 1-2 sources (add gold_auctions for phase 3; needs tesseract)
+python -m src.analysis.explore    # phase 4 -> docs/analysis.md
+python -m src.index.stress_index  # phase 5 -> data/processed/stress_index_monthly.csv
+python -m src.ai.anomaly          # anomaly flags
+python -m src.ai.notes            # monthly note (rules; Claude rewrites it in 6 languages if a key is set)
+python -m src.index.powerbi_export
+uvicorn src.api.main:app --reload # API docs at http://127.0.0.1:8000/docs
+streamlit run dashboard/app.py    # dashboard
 ```
 
-The GitHub Actions workflow `collect-data.yml` runs the same thing and commits refreshed CSVs.
-To use the AI classifier there, add `ANTHROPIC_API_KEY` as a repository secret.
+GitHub Actions: `monthly-refresh.yml` runs all of that on the 5th of each month and commits
+the results (also runnable by hand from the Actions tab). `collect-data.yml` and
+`collect-auctions.yml` run when their code changes on a `claude/` branch.
+To turn on AI notes, ask-the-data and the AI fallbacks, add `ANTHROPIC_API_KEY` as a
+repository secret (Settings > Secrets and variables > Actions).
+
+## The stress index (phase 5)
+
+Each month every district gets a 0-100 score. Each signal is turned into a 0-100
+sub-score (its percentile against the district's own past, so no look-ahead), then
+weighted. Missing signals drop out and the rest are re-weighted.
+
+| Component | Weight | Signal |
+|---|---|---|
+| Pawn searches | 30 | Tamil searches "நகை அடகு", "நகை கடன்", year on year |
+| Rainfall | 20 | two-tailed rainfall z-score vs the same calendar month, mean of last 4 months |
+| Gold auctions | 20 | Manappuram auction accounts in the district (when notices exist) |
+| Digital credit | 15 | instant loan / loan app searches year on year, loan-app complaint share |
+| Rates | 10 | repo rate plus hikes in the last 12 months |
+| Gold price | 5 | falling gold price (loans go under water) |
+
+Bands: Low < 40, Watch 40-60, High 60-75, Severe 75+. The `why` column names the
+components scoring 65+. Weights are set by judgement guided by [phase 4](docs/analysis.md),
+not fitted, because there is no ground-truth stress series to fit to.
+
+**Backtest** (`data/processed/stress_index_backtest.csv`): the index ran High during the
+Delta wave (mean 61, peak 79) and reached 56 in Chennai after Cyclone Michaung, but it
+did **not** flag the 2020 lockdown (mean 38) or the Villupuram floods after Cyclone Fengal
+(mean 44). Searches for pawning fell when branches were shut, and the rainfall signal
+averages over 4 months. These are listed as gaps below.
+
+## API (phase 6)
+
+`GET /districts` latest score per district · `GET /score/{district}?month=YYYY-MM` score,
+band, reason and component breakdown · `GET /history/{district}` · `POST /whatif`
+with `{"district": "Madurai", "scores": {"rain": 90}}` re-scores with changed components.
 
 ## Data sources (phases 1-2)
 
@@ -70,6 +120,12 @@ programmatic use under its own terms, so we use it (4 requests per run) and log 
 To rebuild the slice numbers, put `slicepay_reviews.csv` in `data/raw/` (Kaggle needs a login to download), or add `KAGGLE_USERNAME` and `KAGGLE_KEY` as repository secrets so the workflow fetches it. Reviewer names and ids are never loaded.
 
 ## Known gaps and caveats (honest list)
+
+- **The index has no ground truth.** No public monthly district series of household credit stress exists, so phase 4 uses Tamil pawn searches as the yardstick and the weights are judgement, not fitted. Treat scores as a ranking of "how unusual is this month for this district", not a default probability.
+- **It missed two known episodes** (2020 lockdown, Cyclone Fengal in Villupuram), see the backtest above. Search signals fall when access to branches stops.
+- **State-level signals dominate.** Trends, gold, rates and app reviews are the same for every district; only rainfall and auctions vary by district, so districts move together.
+- **The latest month is partial** (Trends and rainfall for the current month are incomplete; gold lags a month).
+- **Translations** for hi, te, ml and kn were drafted without native-speaker review.
 
 - **Rainfall is not IMD.** IMD district rainfall on data.gov.in needs an API key and its open district series ends years ago. Open-Meteo is modelled grid data at one point per district, not a gauge average over the district. The "normal" for anomalies is the 2019-now mean per calendar month, a short baseline (IMD normals use 1971-2020).
 - **Gold is the international price in rupees,** without import duty and GST, so it sits below IBJA/retail rates. Levels differ; month-on-month moves track closely. IBJA has no open API. The World Bank file updates early each month and FRED's FX series lags about a month, so the newest month can be missing.

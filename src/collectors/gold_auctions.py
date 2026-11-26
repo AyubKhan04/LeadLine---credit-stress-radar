@@ -278,7 +278,7 @@ def ai_split(section):
     import anthropic
     client = anthropic.Anthropic(api_key=key)
     msg = client.messages.create(
-        model="claude-haiku-4-5", max_tokens=1500,
+        model=os.getenv("LEADLINE_AI_MODEL", "claude-haiku-5-5"), max_tokens=1500,
         messages=[{"role": "user", "content":
                    "This is OCR text of a Manappuram Finance gold auction notice from a Tamil Nadu "
                    "newspaper. List each branch and how many loan accounts are listed under it. "

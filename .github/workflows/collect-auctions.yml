@@ -2,8 +2,6 @@ name: Collect gold auction notices (phase 3)
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "30 3 5 * *"   # 5th of each month, 09:00 IST
   push:
     branches: ["claude/**"]
     paths: ["src/collectors/gold_auctions.py", ".github/workflows/collect-auctions.yml"]

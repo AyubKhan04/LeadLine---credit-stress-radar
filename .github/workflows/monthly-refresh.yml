@@ -1,0 +1,53 @@
+name: Monthly refresh (all phases)
+
+# Collects every source, rebuilds the analysis, index, anomaly flags, AI note and
+# Power BI files, then commits the results. AI steps run only if the
+# ANTHROPIC_API_KEY repository secret is set.
+on:
+  schedule:
+    - cron: "30 3 5 * *"   # 5th of each month, 09:00 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq tesseract-ocr poppler-utils
+      - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: data/raw/manappuram_auctions
+          key: manappuram-${{ github.run_id }}
+          restore-keys: manappuram-
+      - name: Collect, analyse, score, note
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          set -o pipefail
+          {
+            python run_collectors.py repo_rate rainfall gold trends app_reviews review_dataset gold_auctions
+            python -m src.analysis.explore
+            python -m src.index.stress_index
+            python -m src.ai.anomaly
+            python -m src.ai.notes
+            python -m src.index.powerbi_export
+          } 2>&1 | tee data/processed/last_run_log.txt
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/processed data/powerbi docs
+          git diff --cached --quiet || git commit -m "data: monthly refresh $(date +%Y-%m)"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push
