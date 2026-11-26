@@ -2,15 +2,14 @@
 
 Uses pytrends (unofficial). robots.txt on trends.google.com only disallows the
 /explore? web page, not the /trends/api endpoints pytrends calls; we still keep
-volume tiny (one request per term, plus one city snapshot per term per year) with
-pauses between calls.
+volume tiny (one request per term) with pauses between calls.
 
 Outputs
 - trends_tn_monthly.csv: monthly 0-100 interest per term for Tamil Nadu (IN-TN).
   Each term is fetched on its own, so values compare months within a term, not
   terms with each other.
-- trends_tn_city_yearly.csv: per-year city breakdown inside Tamil Nadu. Google
-  gives no city-level time series for India, only these cross-sections.
+City level: Google gives no city time series for India, and the city breakdown
+inside IN-TN came back empty for every term and year in testing, so it was dropped.
 """
 import time
 import pandas as pd
@@ -42,7 +41,7 @@ def with_retry(fn, tries=3):
 
 def main():
     py = client()
-    frames, cities, failed = [], [], []
+    frames, failed = [], []
     timeframe = f"{START.isoformat()} {TODAY.isoformat()}"
     for term in TERMS:
         try:
@@ -60,19 +59,6 @@ def main():
             failed.append((term, f"timeseries: {e}"))
         time.sleep(PAUSE)
 
-        for year in range(START.year, TODAY.year + 1):
-            end = min(pd.Timestamp(f"{year}-12-31").date(), TODAY)
-            try:
-                def city_call():
-                    py.build_payload([term], timeframe=f"{year}-01-01 {end.isoformat()}", geo=GEO)
-                    return py.interest_by_region(resolution="CITY", inc_low_vol=True, inc_geo_code=False)
-                c = with_retry(city_call)
-                c = c.reset_index().rename(columns={"geoName": "city", term: "interest"})
-                c["term"], c["year"] = term, year
-                cities.append(c[["year", "term", "city", "interest"]])
-            except Exception as e:
-                failed.append((term, f"city {year}: {e}"))
-            time.sleep(PAUSE)
 
     if frames:
         ts = pd.concat(frames)
@@ -83,13 +69,10 @@ def main():
         out["interest"] = out["interest"].round(1)
         out.to_csv(PROCESSED / "trends_tn_monthly.csv", index=False)
         print(f"trends: {out['term'].nunique()} terms, {out['month'].min()}..{out['month'].max()}")
-    if cities:
-        c = pd.concat(cities)
-        c = c[c["interest"] > 0]
-        c.to_csv(PROCESSED / "trends_tn_city_yearly.csv", index=False)
-        print(f"trends city: {len(c)} rows")
+    fail_file = PROCESSED / "trends_failures.csv"
+    fail_file.unlink(missing_ok=True)
     if failed:
-        pd.DataFrame(failed, columns=["term", "error"]).to_csv(PROCESSED / "trends_failures.csv", index=False)
+        pd.DataFrame(failed, columns=["term", "error"]).to_csv(fail_file, index=False)
         print(f"trends: {len(failed)} calls failed (see trends_failures.csv)")
 
 
