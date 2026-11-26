@@ -1,5 +1,7 @@
 
 === gold_auctions ===
+[robots] https://www.manappuram.com/robots.txt -> HTTP 200, 1988 bytes
+[robots] https://www.manappuram.com/auction-publications -> HTTP 200, server=cloudflare
 [robots] DISALLOWED: https://www.manappuram.com/auction-publications?field_state_target_id=1032&page=0
 auction list disallowed by robots.txt; skipping
 
