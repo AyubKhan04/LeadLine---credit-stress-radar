@@ -1,86 +1,10 @@
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/connectionpool.py", line 470, in _make_request
-    self._validate_conn(conn)
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/connectionpool.py", line 1125, in _validate_conn
-    conn.connect()
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/connection.py", line 878, in connect
-    wrapped_socket, is_verified = _ssl_wrap_socket_and_match_hostname(
-                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/connection.py", line 1080, in _ssl_wrap_socket_and_match_hostname
-    ssl_sock = ssl_wrap_socket(
-               ^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/util/ssl_.py", line 437, in ssl_wrap_socket
-    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/util/ssl_.py", line 481, in _ssl_wrap_socket_impl
-    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/ssl.py", line 455, in wrap_socket
-    return self.sslsocket_class._create(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/ssl.py", line 1054, in _create
-    self.do_handshake()
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/ssl.py", line 1332, in do_handshake
-    self._sslobj.do_handshake()
-TimeoutError: _ssl.c:994: The handshake operation timed out
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/requests/adapters.py", line 696, in send
-    resp = conn.urlopen(
-           ^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/connectionpool.py", line 847, in urlopen
-    retries = retries.increment(
-              ^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/util/retry.py", line 510, in increment
-    raise reraise(type(error), error, _stacktrace)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
-    raise value
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/connectionpool.py", line 793, in urlopen
-    response = self._make_request(
-               ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/connectionpool.py", line 494, in _make_request
-    raise new_e
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/connectionpool.py", line 472, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/urllib3/connectionpool.py", line 373, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read timeout=60)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/LeadLine---credit-stress-radar/LeadLine---credit-stress-radar/run_collectors.py", line 14, in <module>
-    importlib.import_module(f"src.collectors.{name}").main()
-  File "/home/runner/work/LeadLine---credit-stress-radar/LeadLine---credit-stress-radar/src/collectors/rainfall.py", line 36, in main
-    daily = pd.concat([fetch_district(n, *ll) for n, ll in DISTRICTS.items() if not time.sleep(1)])
-                       ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/LeadLine---credit-stress-radar/LeadLine---credit-stress-radar/src/collectors/rainfall.py", line 23, in fetch_district
-    r = requests.get(URL, params=params, headers={"User-Agent": USER_AGENT}, timeout=60)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/requests/api.py", line 87, in get
-    return request("get", url, params=params, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/requests/api.py", line 71, in request
-    return session.request(method=method, url=url, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/requests/sessions.py", line 651, in request
-    resp = self.send(prep, **send_kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/requests/sessions.py", line 784, in send
-    r = adapter.send(request, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/requests/adapters.py", line 742, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read timeout=60)
 
 === repo_rate ===
 repo rate: 95 months, latest {'month': '2026-11', 'repo_rate': 5.5, 'repo_rate_change_bps': 0}
 
 === rainfall ===
 [robots] DISALLOWED: https://archive-api.open-meteo.com/v1/archive
+rainfall: 380 rows, 2019-01..2026-11
 
 === gold ===
 [gold] retry https://fred.stlouisfed.org/graph/fredgraph.csv?id=EXINUS: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=60)
@@ -89,7 +13,6 @@ repo rate: 95 months, latest {'month': '2026-11', 'repo_rate': 5.5, 'repo_rate_c
 gold: 94 rows, 2019-01..2026-10, FX missing for 0 months
 
 === trends ===
-[trends] retry in 60s after: The request failed: Google returned a response with code 429
 trends: 5 terms, 2019-01..2026-11
 
 === app_reviews ===
@@ -104,21 +27,23 @@ trends: 5 terms, 2019-01..2026-11
   Personal Loan App by Fibe: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   mPokket: Instant Personal Loan: 0 reviews
-  CASHe: Online Instant Loan App: 50 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  CASHe: Online Instant Loan App: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   Kissht: Instant Personal Loan: 0 reviews
-  Bajaj Finance: Loans, UPI & FD: 50 reviews
-  Muthoot FinCorp ONE: 50 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Bajaj Finance: Loans, UPI & FD: 0 reviews
+    page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
+  Muthoot FinCorp ONE: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   Manappuram OGL Lite: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   Online Gold loan: Rupeek: 0 reviews
     page 1: no entries; feed keys ['author', 'updated', 'rights', 'title', 'icon', 'link', 'id']
   IIFL Finance: 0 reviews
-AI classifier skipped (no ANTHROPIC_API_KEY)
-app reviews: 142 reviews from 3 apps, 2026-05..2026-11; not found: []
+app reviews: nothing collected
 
 === review_dataset ===
 review dataset: data/raw/slicepay_reviews.csv not found and no Kaggle credentials; skipping
 
-Done. Failed: ['rainfall']
+Done. Failed: none

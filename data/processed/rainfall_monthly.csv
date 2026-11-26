@@ -93,7 +93,7 @@ Chennai,2026-07,68.5,117.0,-41.5,31,True
 Chennai,2026-08,113.0,150.2,-24.7,31,True
 Chennai,2026-09,105.6,150.8,-30.0,30,True
 Chennai,2026-10,264.8,247.4,7.0,31,True
-Chennai,2026-11,117.8,368.6,,26,False
+Chennai,2026-11,118.3,368.6,,26,False
 Coimbatore,2019-01,22.3,38.0,-41.3,31,True
 Coimbatore,2019-02,10.0,5.9,69.5,28,True
 Coimbatore,2019-03,7.7,16.9,-54.3,31,True
@@ -188,7 +188,7 @@ Coimbatore,2026-07,73.9,147.8,-50.0,31,True
 Coimbatore,2026-08,161.8,152.6,6.0,31,True
 Coimbatore,2026-09,108.2,143.6,-24.7,30,True
 Coimbatore,2026-10,245.8,225.1,9.2,31,True
-Coimbatore,2026-11,94.0,208.2,,26,False
+Coimbatore,2026-11,92.6,208.2,,26,False
 Madurai,2019-01,5.8,46.7,-87.6,31,True
 Madurai,2019-02,15.5,13.2,17.8,28,True
 Madurai,2019-03,5.0,22.7,-78.0,31,True
@@ -283,7 +283,7 @@ Madurai,2026-07,36.3,55.6,-34.7,31,True
 Madurai,2026-08,81.9,115.6,-29.1,31,True
 Madurai,2026-09,106.0,97.0,9.3,30,True
 Madurai,2026-10,212.7,251.5,-15.4,31,True
-Madurai,2026-11,110.3,285.2,,26,False
+Madurai,2026-11,103.4,285.2,,26,False
 Villupuram,2019-01,5.3,44.8,-88.2,31,True
 Villupuram,2019-02,9.4,8.2,13.9,28,True
 Villupuram,2019-03,4.3,15.6,-72.4,31,True
@@ -378,4 +378,4 @@ Villupuram,2026-07,32.5,87.9,-63.0,31,True
 Villupuram,2026-08,142.1,124.0,14.6,31,True
 Villupuram,2026-09,120.8,144.3,-16.3,30,True
 Villupuram,2026-10,226.1,253.5,-10.8,31,True
-Villupuram,2026-11,131.1,332.2,,26,False
+Villupuram,2026-11,131.3,332.2,,26,False
