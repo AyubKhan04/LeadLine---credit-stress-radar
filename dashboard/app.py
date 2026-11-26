@@ -3,9 +3,8 @@
 Run:  streamlit run dashboard/app.py
 Map (Folium), trend, "why" breakdown, what-if sliders, language picker
 (English, Tamil, Hindi, Telugu, Malayalam, Kannada), AI monthly note and
-"ask the data" when they exist.
+"ask the data" when they exist. More pages in dashboard/pages/ (Story, Replay, Alerts).
 """
-import json
 import sys
 from pathlib import Path
 
@@ -15,38 +14,14 @@ import plotly.express as px
 import streamlit as st
 from streamlit_folium import st_folium
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-from src.config import DISTRICTS, PROCESSED  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from common import (BAND_COLOURS, DISTRICTS, PROCESSED, ROOT, language_picker,  # noqa: E402,F401
+                    load_index, load_notes, load_secrets)
 from src.index.stress_index import WEIGHTS, BANDS  # noqa: E402
 
-LANGS = ["en", "ta", "hi", "te", "ml", "kn"]
-BAND_COLOURS = {"Low": "#2e7d32", "Watch": "#f9a825", "High": "#ef6c00", "Severe": "#c62828"}
-
 st.set_page_config(page_title="Credit Stress Radar", page_icon="📡", layout="wide")
-
-
-@st.cache_data
-def load_lang(code):
-    return json.loads((ROOT / "i18n" / f"{code}.json").read_text(encoding="utf-8"))
-
-
-@st.cache_data
-def load_index():
-    return pd.read_csv(PROCESSED / "stress_index_monthly.csv").dropna(subset=["stress_index"])
-
-
-@st.cache_data
-def load_notes():
-    p = PROCESSED / "ai_notes.json"
-    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
-
-
-names = {c: load_lang(c)["_language_name"] for c in LANGS}
-lang = st.sidebar.selectbox("🌐 Language / மொழி", LANGS, format_func=names.get)
-t = load_lang(lang)
-en = load_lang("en")
-tr = lambda k: t.get(k, en.get(k, k))  # noqa: E731
+load_secrets()
+lang, tr = language_picker()
 
 idx = load_index()
 months = sorted(idx.month.unique())

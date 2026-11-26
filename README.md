@@ -1,6 +1,43 @@
 # LeadLine - Credit Stress Radar
 
+[![Monthly refresh](https://github.com/AyubKhan04/LeadLine---credit-stress-radar/actions/workflows/monthly-refresh.yml/badge.svg)](https://github.com/AyubKhan04/LeadLine---credit-stress-radar/actions/workflows/monthly-refresh.yml)
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![Streamlit](https://img.shields.io/badge/app-Streamlit-ff4b4b)
+![Cost](https://img.shields.io/badge/running%20cost-%E2%82%B90-brightgreen)
+![Languages](https://img.shields.io/badge/UI-6%20Indian%20languages-orange)
+
+**Live app:** _LIVE_APP_URL_ (Streamlit Community Cloud, free)
+
 Early-warning system for household credit stress in Tamil Nadu. It builds a district-level 0-100 stress index from public signals like gold loan auctions, loan app complaints, search trends, rainfall and gold prices. It includes a risk score API, a map dashboard and AI credit notes in Tamil, English and other Indian languages.
+
+| The story in 60 seconds | Alert preview |
+|---|---|
+| ![Story page](docs/img/screen_story.png) | ![WhatsApp-style alert](docs/img/screen_alerts.png) |
+
+## How it works
+
+```mermaid
+flowchart LR
+  subgraph Sources["Public data (monthly)"]
+    A[Google Trends<br/>pawn & loan-app searches]
+    B[Rainfall, gold price,<br/>RBI repo rate]
+    C[Loan-app reviews]
+    D[Gold auction notices<br/>PDF + OCR, counts only]
+  end
+  Sources --> P[District x month panel]
+  P --> X[Analysis<br/>seasonality, Granger]
+  P --> I[Stress index 0-100<br/>+ why breakdown]
+  I --> F[Anomaly flags]
+  F --> N[AI notes, 6 languages<br/>Gemini free tier or rules]
+  I --> API[FastAPI]
+  I --> UI[Streamlit: map, story,<br/>replay, alerts]
+  I --> BI[Power BI CSVs]
+  I -. checked against .-> V[SLBC district NPA]
+  GH[[GitHub Actions<br/>5th of every month]] -.-> Sources
+```
+
+**Dashboard pages:** main map with what-if sliders · **Story** (four findings, each with how much to trust it) ·
+**Replay** (press play to watch every month since 2020) · **Alerts** (WhatsApp-style message when a district jumps).
 
 **v1 scope:** Chennai, Coimbatore, Madurai, Villupuram. Monthly, January 2019 to now.
 
@@ -23,13 +60,14 @@ Early-warning system for household credit stress in Tamil Nadu. It builds a dist
 data/raw/          downloads, OCR text, review text (git-ignored: may hold personal details)
 data/processed/    tidy monthly CSVs, index, flags, notes (committed)
 data/powerbi/      star-schema CSVs for Power BI
+data/external/     hand-entered SLBC district NPA figures for validation
 src/collectors/    one script per source (gold_auctions.py = phase 3)
 src/classify/      review complaint classifier (rules + optional AI: Gemini free tier or Claude)
 src/analysis/      panel builder + phase 4 analysis (writes docs/analysis.md)
 src/index/         stress index (phase 5) and Power BI export
 src/api/           FastAPI app (phase 6)
 src/ai/            anomaly flags, monthly note, ask-the-data (phase 8)
-dashboard/app.py   Streamlit dashboard (phase 7)
+dashboard/app.py   Streamlit dashboard (phase 7); pages/ = Story, Replay, Alerts
 i18n/              UI text: en, ta, hi, te, ml, kn
 docs/              analysis write-up, Power BI guide, LinkedIn draft
 run_collectors.py  runs collectors; one failing source doesn't stop the rest
@@ -116,6 +154,21 @@ and the rainfall signal averages over 4 months. These are listed as gaps below.
 `GET /districts` latest score per district · `GET /score/{district}?month=YYYY-MM` score,
 band, reason and component breakdown · `GET /history/{district}` · `POST /whatif`
 with `{"district": "Madurai", "scores": {"rain": 90}}` re-scores with changed components.
+
+## Validation against real defaults
+
+`python -m src.analysis.validate_npa` asks: does a high index come 1-2 quarters before a rise in
+district NPA (bad loan) ratios? The figures come from the Tamil Nadu SLBC quarterly agenda books
+(https://www.indianbank.in/slbc/), typed into `data/external/slbc_tn_npa.csv`. **Status: not validated
+yet**, because no NPA figures are entered so far. Until they are, the only check is the stress-episode
+backtest above, which is weaker. The result is written to [docs/validation.md](docs/validation.md).
+
+## Deploy the dashboard (free)
+
+1. Go to https://share.streamlit.io, sign in with GitHub, and click **Create app**.
+2. Pick this repo, branch `main`, main file `dashboard/app.py`.
+3. Optional, for AI answers: **Advanced settings > Secrets**, paste `GEMINI_API_KEY = "your-key"`.
+4. Deploy. It redeploys on every push to `main`, including the monthly data refresh.
 
 ## Data sources (phases 1-2)
 

@@ -40,6 +40,7 @@ jobs:
             python run_collectors.py repo_rate rainfall gold trends app_reviews review_dataset gold_auctions
             python -m src.analysis.explore
             python -m src.index.stress_index
+            python -m src.analysis.validate_npa
             python -m src.ai.anomaly
             python -m src.ai.notes
             python -m src.index.powerbi_export
